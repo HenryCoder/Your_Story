@@ -1,1 +1,2 @@
-# Your_Story
+# Your Story
+A choose your own adventure game
