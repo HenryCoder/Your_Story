@@ -4,11 +4,33 @@ var HeroName;
 var HeroAbilites = {};
 var HeroInv = [];
 
+// http://stackoverflow.com/questions/1181575/determine-whether-an-array-contains-a-value
+var contains = function(needle) {
+	var findNaN = needle !== needle;
+	var indexOf;
+	if(!findNaN && typeof Array.prototype.indexOf === 'function') {
+		indexOf = Array.prototype.indexOf;
+	} else {
+		indexOf = function(needle) {
+			var i = -1, index = -1;
+			for(i = 0; i < this.length; i++) {
+				var item = this[i];
+				if((findNaN && item !== item) || item === needle) {
+					index = i;
+					break;
+				}
+			}
+		return index;
+		};
+	}
+	return indexOf.call(this, needle) > -1;
+};
+
 // Doesn't actually create a table, but "sanitizes" it.
 function CreatePage(tab)
 {
 	obj = 			tab; // Don't mind this
-	obj.id = 		obj.id || 		1;		// Page ID (Must be unique)
+	obj.page_id = 		obj.page_id || 		1;		// Page ID (Must be unique)
 	obj.main_text = 	obj.main_text || 	"Main text";	// What text should show up on the page?
 	obj.header = 		obj.header || 		"Header";	// What should the header say?
 	obj.has_item = 		obj.has_item || 	false;		// Does the page give (an) item(s) to the player?
@@ -41,7 +63,7 @@ function DoPage(page)
 	}
 	if (page.does_need_items)
 	{
-		for (var i = 0; i < obj.needed_items.length; i++) {
+		for (var i = 0; i < obj.item_punish.length; i++) {
     			HeroInv.push(obj.give_items[i])
 		}
 	}
