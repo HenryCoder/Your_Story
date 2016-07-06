@@ -1,3 +1,4 @@
+var YS_LOADING = true;
 var FirstPage;
 var CurPage;
 var HeroName;
@@ -35,8 +36,9 @@ function CreatePage(tab)
 	obj.header = 		obj.header || 		"Header";	// What should the header say?
 	obj.has_item = 		obj.has_item || 	false;		// Does the page give (an) item(s) to the player?
 	obj.left_text = 	obj.left_text || 	"Left text"; 	// What text is on the left button
-	obj.left_page = 	obj.legt_page || 	{}; 		// What page does the left button go to?
+	obj.left_page = 	obj.left_page || 	{}; 		// What page does the left button go to?
 	obj.right_text = 	obj.right_text || 	"Right text"; 	// What text is on the right button?
+	obj.right_page = 	obj.right_page || 	{}; 		// What page does the right button go to?
 	obj.background_color = 	obj.background_color || "white"; 	// What should the background color be?
 	obj.wrapper_color = 	obj.wrapper_color || 	"blue"; 	// What should the wrapper color be?
 	obj.text_color = 	obj.text_color || 	"white"; 	// What should the text color be?
@@ -50,11 +52,16 @@ function CreatePage(tab)
 	return obj; // Don't mind this either
 }
 
+var PAGENAME = CreatePage({page_id = 13, main_text = "Hi", header = "Die", has_item = true, left_text});
+
 function DoPage(page)
 {
+	CurPage = page;
 	document.body.style.backgroundColor = page.background_color;
-	$("#StoryHeader").html("<h2>" + page.header + "</h2>")
-	$("#StoryMainText").html("<p>" + page.main_text + "</p>")
+	$("#StoryHeader").html("<h2>" + page.header + "</h2>");
+	$("#StoryMainText").html("<p>" + page.main_text + "</p>");
+	$("#StoryLeftButton").html("<button id=\"StoryLeftButton\" onclick=\"DoPage(" + page.left_page + ")\">" + page.left_text + "</button>");
+	$("#StoryRightButton").html("<button id=\"StoryRightButton\" onclick=\"DoPage(" + page.right_page + ")\">" + page.right_text + "</button>");
 	if (page.has_item)
 	{
 		for (var i = 0; i < obj.give_items.length; i++) {
@@ -64,7 +71,11 @@ function DoPage(page)
 	if (page.does_need_items)
 	{
 		for (var i = 0; i < obj.item_punish.length; i++) {
-    			HeroInv.push(obj.give_items[i])
+    			if  (contains.call(myArray, needle))
+    			{
+    				
+    			}
 		}
 	}
 }
+var YS_LOADING = false;
