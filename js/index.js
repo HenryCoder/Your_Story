@@ -46,13 +46,16 @@ function CreatePage(tab)
 	obj.does_need_items = 	obj.does_need_items || 	false; 		// Does the player need any items?
 	obj.needed_items = 	obj.needed_items || 	[];		// What items does the player need?
 	obj.item_punish = 	obj.item_punish || 	[]; 		// Kill the player if they don't have these items?
+	obj.punish_page = 	obj.punish_page || 	PAGE_LOSE;	// What page "kills" the player? (See item_punish)
 	obj.take_items = 	obj.take_items || 	[];		// Take these items from the player if they have them
 	obj.lose =		obj.lose || 		false;		// Does the player lose on this page?
 	obj.win = 		obj.win || 		false;		// Does the player win on this page?
 	return obj; // Don't mind this either
 }
 
-var PAGENAME = CreatePage({page_id = 13, main_text = "Hi", header = "Die", has_item = true, left_text});
+// Create default pages
+PAGE_LOSE = CreatePage({});
+PAGE_WIN = CreatePage({});
 
 function DoPage(page)
 {
@@ -65,13 +68,19 @@ function DoPage(page)
 	if (page.has_item)
 	{
 		for (var i = 0; i < obj.give_items.length; i++) {
-    			HeroInv.push(obj.give_items[i])
+    			HeroInv.push(obj.give_items[i]);
 		}
 	}
 	if (page.does_need_items)
 	{
+		for (var i = 0; i < obj.take_items.length; i++) {
+    			if  (contains.call(HeroInv, obj.take_items[i]))
+    			{
+    				DoPage(PAGE_LOSE);
+    			}
+		}
 		for (var i = 0; i < obj.item_punish.length; i++) {
-    			if  (contains.call(myArray, needle))
+    			if  !(contains.call(HeroInv, obj.item_punish[i]))
     			{
     				
     			}
