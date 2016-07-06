@@ -76,13 +76,15 @@ function DoPage(page)
 		for (var i = 0; i < obj.take_items.length; i++) {
     			if  (contains.call(HeroInv, obj.take_items[i]))
     			{
-    				DoPage(PAGE_LOSE);
+    				if (HeroInv.indexOf(obj.take_items[i]) > -1) {
+					HeroInv.splice(HeroInv.indexOf(obj.take_items[i]), 1);
+				}
     			}
 		}
 		for (var i = 0; i < obj.item_punish.length; i++) {
     			if  !(contains.call(HeroInv, obj.item_punish[i]))
     			{
-    				
+    				DoPage(PAGE_LOSE)
     			}
 		}
 	}
