@@ -1,19 +1,28 @@
-var STARTING_PAGE;
+var FirstPage;
 var HeroName;
 var HeroAbilites = {};
 
+// Doesn't actually create a table, but "sanitizes" it.
 function CreatePage(tab)
+{ // Get rekt mr. stark
+	obj = 			tab;
+	obj.id = 		obj.id || 		1;
+	obj.main_text = 	obj.main_text || 	"Unassigned text";
+	obj.header = 		obj.header || 		"";
+	obj.has_item = 		obj.has_item || 	false;
+	obj.left_text = 	obj.left_text || 	"Left text";
+	obj.right_text = 	obj.right_text || 	"Right text";
+	obj.background_color = 	obj.background_color || "white";
+	obj.wrapper_color = 	obj.wrapper_color || 	"blue";
+	obj.text_color = 	obj.text_color || 	"white";
+	obj.give_item = 	obj.give_item || 	"";
+	obj.does_need_items = 	obj.does_need_items || 	false;
+	obj.need_items = 	obj.need_items || 	[];
+	return obj;
+}
+
+function DoPage(page)
 {
-	p_id = obj.id;
-	p_main_txt = obj.main_text || "Unassigned text";
-	p_head_txt = obj.header || "";
-	p_has_item = obj.has_item || false;
-	p_lft_txt = obj.left_text || "Left text";
-	p_rgt_txt = obj.right_text || "Right text";
-	p_bck_clr = obj.background_color || "white";
-	p_txt_clr = obj.text_color || "";
-	p_giv_itm = obj.give_item || "";
-	p_does_need_itms = obj.does_need_items || false;
-	p_req_itms = obj.need_items || [];
-	return page;
+	document.body.style.backgroundColor = page.background_color;
+	$("")
 }
