@@ -20,8 +20,9 @@ function CreatePage(tab)
 	obj.text_color = 	obj.text_color || 	"white"; 	// What should the text color be?
 	obj.give_item = 	obj.give_items || 	[]; 		// What items should we give the player?
 	obj.does_need_items = 	obj.does_need_items || 	false; 		// Does the player need any items?
-	obj.needed_items = 	obj.needed_items || 	[]; 		// What items does the player need?
-	obj.item_punish = 	obj.item_punish || 	false; 		// Kill the player if they don't have items?
+	obj.needed_items = 	obj.needed_items || 	[];		// What items does the player need?
+	obj.item_punish = 	obj.item_punish || 	[]; 		// Kill the player if they don't have these items?
+	obj.take_items = 	obj.take_items || 	[];		// Take these items from the player if they have them
 	obj.lose =		obj.lose || 		false;		// Does the player lose on this page?
 	obj.win = 		obj.win || 		false;		// Does the player win on this page?
 	return obj; // Don't mind this either
@@ -34,6 +35,14 @@ function DoPage(page)
 	$("#StoryMainText").html("<p>" + page.main_text + "</p>")
 	if (page.has_item)
 	{
-		HeroInv
+		for (var i = 0; i < obj.give_items.length; i++) {
+    			HeroInv.push(obj.give_items[i])
+		}
+	}
+	if (page.does_need_items)
+	{
+		for (var i = 0; i < obj.needed_items.length; i++) {
+    			HeroInv.push(obj.give_items[i])
+		}
 	}
 }
