@@ -35,7 +35,6 @@ var contains = function(needle)
 // Doesn't actually create a table, but "sanitizes" it.
 function CreatePage(tab)
 {
-	//var obj = 		tab; // Don't mind this
 	this.page_id = 		tab.page_id || 		1;		// Page ID (Must be unique)
 	this.main_text = 	tab.main_text || 	"Main text";	// What text should show up on the page?
 	this.header = 		tab.header || 		"Header";	// What should the header say?
@@ -55,7 +54,6 @@ function CreatePage(tab)
 	this.take_items = 	tab.take_items || 	[];		// Take these items from the player if they have them
 	this.lose =		tab.lose || 		false;		// Does the player lose on this page?
 	this.win = 		tab.win || 		false;		// Does the player win on this page?
-	//return obj; // Don't mind this either
 }
 
 // Create default pages
@@ -117,7 +115,7 @@ function DoPage(page)
 		}
 		for (var i = 0; i < obj.item_punish.length; i++)
 		{
-    			if  !(contains.call(HeroInv, obj.item_punish[i]))
+    			if  (contains.call(HeroInv, obj.item_punish[i]) !== true) // "Workaround"
     			{
     				DoPage(page_lose)
     			}
