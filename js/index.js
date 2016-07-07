@@ -6,17 +6,24 @@ var HeroAbilites = {};
 var HeroInv = [];
 
 // http://stackoverflow.com/questions/1181575/determine-whether-an-array-contains-a-value
-var contains = function(needle) {
+var contains = function(needle)
+{
 	var findNaN = needle !== needle;
 	var indexOf;
-	if(!findNaN && typeof Array.prototype.indexOf === 'function') {
+	if (!findNaN && typeof Array.prototype.indexOf === 'function')
+	{
 		indexOf = Array.prototype.indexOf;
-	} else {
-		indexOf = function(needle) {
+	}
+	else
+	{
+		indexOf = function(needle)
+		{
 			var i = -1, index = -1;
-			for(i = 0; i < this.length; i++) {
+			for(i = 0; i < this.length; i++)
+			{
 				var item = this[i];
-				if((findNaN && item !== item) || item === needle) {
+				if ((findNaN && item !== item) || item === needle)
+				{
 					index = i;
 					break;
 				}
@@ -54,8 +61,9 @@ function CreatePage(tab)
 }
 
 // Create default pages
-PAGE_LOSE = CreatePage({page_id = 0, main_text = "You have died.", header = "You Lose", left_text = "Start Over", left_page = PAGE_START, right_text = "Start Over", ""});
-PAGE_WIN = CreatePage({});
+PAGE_START = CreatePage({page_id = 1, main_text = "Welcome to Your Story. You come to a fork in the path.", header = "Welcome", left_text = "Go left", left_page = PAGE_WIN, right_text = "Go right", right_page = PAGE_LOSE});
+PAGE_LOSE = CreatePage({page_id = 2, main_text = "You have died.", header = "You Lose", left_text = "Start over", left_page = PAGE_START, right_text = "Start over", right_page = PAGE_START});
+PAGE_WIN = CreatePage({page_id = 3, main_text = "You have won!", header = "Congrats!", left_text = "Start over", left_page = PAGE_START, right_text = "Start over", right_page = PAGE_START});
 
 function DoPage(page)
 {
@@ -89,4 +97,7 @@ function DoPage(page)
 		}
 	}
 }
+
+document.onload = function() {DoPage(PAGE_START)};
+
 var YS_LOADING = false;
