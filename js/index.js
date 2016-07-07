@@ -36,25 +36,25 @@ var contains = function(needle)
 function CreatePage(tab)
 {
 	var obj = 		tab; // Don't mind this
-	obj.page_id : 		obj.page_id || 		1;		// Page ID (Must be unique)
-	obj.main_text : 	obj.main_text || 	"Main text";	// What text should show up on the page?
-	obj.header : 		obj.header || 		"Header";	// What should the header say?
-	obj.has_item : 		obj.has_item || 	false;		// Does the page give (an) item(s) to the player?
-	obj.left_text : 	obj.left_text || 	"Left text"; 	// What text is on the left button
-	obj.left_page : 	obj.left_page || 	{}; 		// What page does the left button go to?
-	obj.right_text : 	obj.right_text || 	"Right text"; 	// What text is on the right button?
-	obj.right_page : 	obj.right_page || 	{}; 		// What page does the right button go to?
-	obj.background_color : 	obj.background_color || "purple"; 	// What should the background color be?
-	obj.wrapper_color : 	obj.wrapper_color || 	"purple"; 	// What should the wrapper color be?
-	obj.text_color : 	obj.text_color || 	"purple"; 	// What should the text color be?
-	obj.give_item : 	obj.give_items || 	[]; 		// What items should we give the player?
-	obj.does_need_items : 	obj.does_need_items || 	false; 		// Does the player need any items?
-	obj.needed_items : 	obj.needed_items || 	[];		// What items does the player need?
-	obj.item_punish : 	obj.item_punish || 	[]; 		// Kill the player if they don't have these items?
-	obj.punish_page : 	obj.punish_page || 	PAGE_LOSE;	// What page "kills" the player? (See item_punish)
-	obj.take_items : 	obj.take_items || 	[];		// Take these items from the player if they have them
-	obj.lose :		obj.lose || 		false;		// Does the player lose on this page?
-	obj.win : 		obj.win || 		false;		// Does the player win on this page?
+	obj.page_id: 		tab.page_id || 		1;		// Page ID (Must be unique)
+	obj.main_text : 	tab.main_text || 	"Main text";	// What text should show up on the page?
+	obj.header : 		tab.header || 		"Header";	// What should the header say?
+	obj.has_item : 		tab.has_item || 	false;		// Does the page give (an) item(s) to the player?
+	obj.left_text : 	tab.left_text || 	"Left text"; 	// What text is on the left button
+	obj.left_page : 	tab.left_page || 	{}; 		// What page does the left button go to?
+	obj.right_text : 	tab.right_text || 	"Right text"; 	// What text is on the right button?
+	obj.right_page : 	tab.right_page || 	{}; 		// What page does the right button go to?
+	obj.background_color : 	tab.background_color || "purple"; 	// What should the background color be?
+	obj.wrapper_color : 	tab.wrapper_color || 	"purple"; 	// What should the wrapper color be?
+	obj.text_color : 	tab.text_color || 	"purple"; 	// What should the text color be?
+	obj.give_item : 	tab.give_items || 	[]; 		// What items should we give the player?
+	obj.does_need_items : 	tab.does_need_items || 	false; 		// Does the player need any items?
+	obj.needed_items : 	tab.needed_items || 	[];		// What items does the player need?
+	obj.item_punish : 	tab.item_punish || 	[]; 		// Kill the player if they don't have these items?
+	obj.punish_page : 	tab.punish_page || 	PAGE_LOSE;	// What page "kills" the player? (See item_punish)
+	obj.take_items : 	tab.take_items || 	[];		// Take these items from the player if they have them
+	obj.lose :		tab.lose || 		false;		// Does the player lose on this page?
+	obj.win : 		tab.win || 		false;		// Does the player win on this page?
 	return obj; // Don't mind this either
 }
 
