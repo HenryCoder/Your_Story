@@ -44,9 +44,9 @@ function CreatePage(tab)
 	obj.left_page = 	obj.left_page || 	{}; 		// What page does the left button go to?
 	obj.right_text = 	obj.right_text || 	"Right text"; 	// What text is on the right button?
 	obj.right_page = 	obj.right_page || 	{}; 		// What page does the right button go to?
-	obj.background_color = 	obj.background_color || "white"; 	// What should the background color be?
-	obj.wrapper_color = 	obj.wrapper_color || 	"blue"; 	// What should the wrapper color be?
-	obj.text_color = 	obj.text_color || 	"white"; 	// What should the text color be?
+	obj.background_color = 	obj.background_color || "purple"; 	// What should the background color be?
+	obj.wrapper_color = 	obj.wrapper_color || 	"purple"; 	// What should the wrapper color be?
+	obj.text_color = 	obj.text_color || 	"purple"; 	// What should the text color be?
 	obj.give_item = 	obj.give_items || 	[]; 		// What items should we give the player?
 	obj.does_need_items = 	obj.does_need_items || 	false; 		// Does the player need any items?
 	obj.needed_items = 	obj.needed_items || 	[];		// What items does the player need?
@@ -60,9 +60,30 @@ function CreatePage(tab)
 
 // Create default pages
 var PAGE_START, PAGE_LOSE, PAGE_WIN, PAGE_CURRENT;
-PAGE_START = CreatePage({page_id = 1, main_text = "Welcome to Your Story. You come to a fork in the path.", header = "Welcome", left_text = "Go left", left_page = PAGE_WIN, right_text = "Go right", right_page = PAGE_LOSE});
-PAGE_LOSE = CreatePage({page_id = 2, main_text = "You have died.", header = "You Lose", left_text = "Start over", left_page = PAGE_START, right_text = "Start over", right_page = PAGE_START});
-PAGE_WIN = CreatePage({page_id = 3, main_text = "You have won!", header = "Congratulations!", left_text = "Start over", left_page = PAGE_START, right_text = "Start over", right_page = PAGE_START});
+PAGE_START = CreatePage({page_id = 1,
+	main_text = "Welcome to Your Story. You come to a fork in the path.",
+	header = "Welcome",
+	left_text = "Go left",
+	left_page = PAGE_WIN,
+	right_text = "Go right",
+	right_page = PAGE_LOSE
+});
+PAGE_LOSE = CreatePage({page_id = 2,
+	main_text = "You have died.",
+	header = "You Lose",
+	left_text = "Start over",
+	left_page = PAGE_START,
+	right_text = "Start over",
+	right_page = PAGE_START
+});
+PAGE_WIN = CreatePage({page_id = 3,
+	main_text = "You have won!",
+	header = "Congratulations!",
+	left_text = "Start over",
+	left_page = PAGE_START,
+	right_text = "Start over", 
+	right_page = PAGE_START
+});
 
 function DoPage(page)
 {
