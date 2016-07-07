@@ -57,10 +57,10 @@ function CreatePage(tab)
 }
 
 // Set them to a value so they aren't undefined before "creation"
-var PAGE_START = 1;
-var PAGE_LOSE = 1;
-var PAGE_WIN = 1;
-var PAGE_CURRENT = 1;
+var PAGE_START, PAGE_LOSE, PAGE_WIN, PAGE_CURRENT = 1;
+// var PAGE_LOSE = 1;
+// var PAGE_WIN = 1;
+// var PAGE_CURRENT = 1;
 
 // Create default pages
 var PAGE_START = new CreatePage({
@@ -121,7 +121,7 @@ function DoPage(page)
 		}
 		for (var i = 0; i < obj.item_punish.length; i++)
 		{
-    			if  (contains.call(HeroInv, obj.item_punish[i]) !== true)
+    			if  (!contains.call(HeroInv, obj.item_punish[i]))
     			{
     				DoPage(PAGE_LOSE)
     			}
