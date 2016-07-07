@@ -60,31 +60,31 @@ function CreatePage(tab)
 
 // Create default pages
 var page_start = new CreatePage({
-	this.page_id = 1,
-	this.main_text = "Welcome to Your Story. You come to a fork in the path.",
-	this.header = "Welcome",
-	this.left_text = "Go left",
-	this.left_page = PAGE_WIN,
-	this.right_text = "Go right",
-	this.right_page = PAGE_LOSE
+	page_id : 1,
+	main_text : "Welcome to Your Story. You come to a fork in the path.",
+	header : "Welcome",
+	left_text : "Go left",
+	left_page : PAGE_WIN,
+	right_text : "Go right",
+	right_page : PAGE_LOSE
 });
 var page_lose = new CreatePage({
-	this.page_id = 2,
-	this.main_text = "You have died.",
-	this.header = "You Lose",
-	this.left_text = "Start over",
-	this.left_page = PAGE_START,
-	this.right_text = "Start over",
-	this.right_page = PAGE_START
+	page_id : 2,
+	main_text : "You have died.",
+	header : "You Lose",
+	left_text : "Start over",
+	left_page : PAGE_START,
+	right_text : "Start over",
+	right_page : PAGE_START
 });
 var page_win = new CreatePage({
-	this.page_id = 3,
-	this.main_text = "You have won!",
-	this.header = "Congratulations!",
-	this.left_text = "Start over",
-	this.left_page = PAGE_START,
-	this.right_text = "Start over", 
-	this.right_page = PAGE_START
+	page_id : 3,
+	main_text : "You have won!",
+	header : "Congratulations!",
+	left_text : "Start over",
+	left_page : PAGE_START,
+	right_text : "Start over", 
+	right_page : PAGE_START
 });
 var page_current = page_start;
 
