@@ -35,54 +35,57 @@ var contains = function(needle)
 // Doesn't actually create a table, but "sanitizes" it.
 function CreatePage(tab)
 {
-	var obj = 		tab; // Don't mind this
-	obj.page_id: 		tab.page_id || 		1;		// Page ID (Must be unique)
-	obj.main_text : 	tab.main_text || 	"Main text";	// What text should show up on the page?
-	obj.header : 		tab.header || 		"Header";	// What should the header say?
-	obj.has_item : 		tab.has_item || 	false;		// Does the page give (an) item(s) to the player?
-	obj.left_text : 	tab.left_text || 	"Left text"; 	// What text is on the left button
-	obj.left_page : 	tab.left_page || 	{}; 		// What page does the left button go to?
-	obj.right_text : 	tab.right_text || 	"Right text"; 	// What text is on the right button?
-	obj.right_page : 	tab.right_page || 	{}; 		// What page does the right button go to?
-	obj.background_color : 	tab.background_color || "purple"; 	// What should the background color be?
-	obj.wrapper_color : 	tab.wrapper_color || 	"purple"; 	// What should the wrapper color be?
-	obj.text_color : 	tab.text_color || 	"purple"; 	// What should the text color be?
-	obj.give_item : 	tab.give_items || 	[]; 		// What items should we give the player?
-	obj.does_need_items : 	tab.does_need_items || 	false; 		// Does the player need any items?
-	obj.needed_items : 	tab.needed_items || 	[];		// What items does the player need?
-	obj.item_punish : 	tab.item_punish || 	[]; 		// Kill the player if they don't have these items?
-	obj.punish_page : 	tab.punish_page || 	PAGE_LOSE;	// What page "kills" the player? (See item_punish)
-	obj.take_items : 	tab.take_items || 	[];		// Take these items from the player if they have them
-	obj.lose :		tab.lose || 		false;		// Does the player lose on this page?
-	obj.win : 		tab.win || 		false;		// Does the player win on this page?
-	return obj; // Don't mind this either
+	//var obj = 		tab; // Don't mind this
+	this.page_id = 		tab.page_id || 		1;		// Page ID (Must be unique)
+	this.main_text = 	tab.main_text || 	"Main text";	// What text should show up on the page?
+	this.header = 		tab.header || 		"Header";	// What should the header say?
+	this.has_item = 	tab.has_item || 	false;		// Does the page give (an) item(s) to the player?
+	this.left_text = 	tab.left_text || 	"Left text"; 	// What text is on the left button
+	this.left_page = 	tab.left_page || 	{}; 		// What page does the left button go to?
+	this.right_text = 	tab.right_text || 	"Right text"; 	// What text is on the right button?
+	this.right_page = 	tab.right_page || 	{}; 		// What page does the right button go to?
+	this.background_color = tab.background_color || "purple"; 	// What should the background color be?
+	this.wrapper_color = 	tab.wrapper_color || 	"purple"; 	// What should the wrapper color be?
+	this.text_color = 	tab.text_color || 	"purple"; 	// What should the text color be?
+	this.give_item = 	tab.give_items || 	[]; 		// What items should we give the player?
+	this.does_need_items = 	tab.does_need_items || 	false; 		// Does the player need any items?
+	this.needed_items = 	tab.needed_items || 	[];		// What items does the player need?
+	this.item_punish = 	tab.item_punish || 	[]; 		// Kill the player if they don't have these items?
+	this.punish_page = 	tab.punish_page || 	PAGE_LOSE;	// What page "kills" the player? (See item_punish)
+	this.take_items = 	tab.take_items || 	[];		// Take these items from the player if they have them
+	this.lose =		tab.lose || 		false;		// Does the player lose on this page?
+	this.win = 		tab.win || 		false;		// Does the player win on this page?
+	//return obj; // Don't mind this either
 }
 
 // Create default pages
-var PAGE_START, PAGE_LOSE, PAGE_WIN, PAGE_CURRENT;
-PAGE_START = CreatePage({page_id = 1,
-	main_text : "Welcome to Your Story. You come to a fork in the path.",
-	header : "Welcome",
-	left_text : "Go left",
-	left_page : PAGE_WIN,
-	right_text : "Go right",
-	right_page : PAGE_LOSE
+var PAGE_START;
+var PAGE_LOSE;
+var PAGE_WIN;
+var PAGE_CURRENT;
+PAGE_START = new CreatePage({page_id = 1,
+	main_text = "Welcome to Your Story. You come to a fork in the path.",
+	header = "Welcome",
+	left_text = "Go left",
+	left_page = PAGE_WIN,
+	right_text = "Go right",
+	right_page = PAGE_LOSE
 });
-PAGE_LOSE = CreatePage({page_id = 2,
-	main_text : "You have died.",
-	header : "You Lose",
-	left_text : "Start over",
-	left_page : PAGE_START,
-	right_text : "Start over",
-	right_page : PAGE_START
+PAGE_LOSE = new CreatePage({page_id = 2,
+	main_text = "You have died.",
+	header = "You Lose",
+	left_text = "Start over",
+	left_page = PAGE_START,
+	right_text = "Start over",
+	right_page = PAGE_START
 });
-PAGE_WIN = CreatePage({page_id = 3,
-	main_text : "You have won!",
-	header : "Congratulations!",
-	left_text : "Start over",
-	left_page : PAGE_START,
-	right_text : "Start over", 
-	right_page : PAGE_START
+PAGE_WIN = new CreatePage({page_id = 3,
+	main_text = "You have won!",
+	header = "Congratulations!",
+	left_text = "Start over",
+	left_page = PAGE_START,
+	right_text = "Start over", 
+	right_page = PAGE_START
 });
 
 function DoPage(page)
