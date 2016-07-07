@@ -59,7 +59,8 @@ function CreatePage(tab)
 }
 
 // Create default pages
-var PAGE_START = new CreatePage({page_id = 1,
+var PAGE_START = new CreatePage({
+	this.page_id = 1,
 	this.main_text = "Welcome to Your Story. You come to a fork in the path.",
 	this.header = "Welcome",
 	this.left_text = "Go left",
@@ -67,7 +68,8 @@ var PAGE_START = new CreatePage({page_id = 1,
 	this.right_text = "Go right",
 	this.right_page = PAGE_LOSE
 });
-var PAGE_LOSE = new CreatePage({page_id = 2,
+var PAGE_LOSE = new CreatePage({
+	this.page_id = 2,
 	this.main_text = "You have died.",
 	this.header = "You Lose",
 	this.left_text = "Start over",
@@ -75,7 +77,8 @@ var PAGE_LOSE = new CreatePage({page_id = 2,
 	this.right_text = "Start over",
 	this.right_page = PAGE_START
 });
-var PAGE_WIN = new CreatePage({page_id = 3,
+var PAGE_WIN = new CreatePage({
+	this.page_id = 3,
 	this.main_text = "You have won!",
 	this.header = "Congratulations!",
 	this.left_text = "Start over",
