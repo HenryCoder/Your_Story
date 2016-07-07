@@ -1,6 +1,4 @@
 var YS_LOADING = true;
-var FirstPage;
-var CurPage;
 var HeroName;
 var HeroAbilites = {};
 var HeroInv = [];
@@ -19,7 +17,7 @@ var contains = function(needle)
 		indexOf = function(needle)
 		{
 			var i = -1, index = -1;
-			for(i = 0; i < this.length; i++)
+			for (i = 0; i < this.length; i++)
 			{
 				var item = this[i];
 				if ((findNaN && item !== item) || item === needle)
@@ -28,7 +26,7 @@ var contains = function(needle)
 					break;
 				}
 			}
-		return index;
+			return index;
 		};
 	}
 	return indexOf.call(this, needle) > -1;
@@ -61,13 +59,14 @@ function CreatePage(tab)
 }
 
 // Create default pages
+var PAGE_START, PAGE_LOSE, PAGE_WIN, PAGE_CURRENT;
 PAGE_START = CreatePage({page_id = 1, main_text = "Welcome to Your Story. You come to a fork in the path.", header = "Welcome", left_text = "Go left", left_page = PAGE_WIN, right_text = "Go right", right_page = PAGE_LOSE});
 PAGE_LOSE = CreatePage({page_id = 2, main_text = "You have died.", header = "You Lose", left_text = "Start over", left_page = PAGE_START, right_text = "Start over", right_page = PAGE_START});
-PAGE_WIN = CreatePage({page_id = 3, main_text = "You have won!", header = "Congrats!", left_text = "Start over", left_page = PAGE_START, right_text = "Start over", right_page = PAGE_START});
+PAGE_WIN = CreatePage({page_id = 3, main_text = "You have won!", header = "Congratulations!", left_text = "Start over", left_page = PAGE_START, right_text = "Start over", right_page = PAGE_START});
 
 function DoPage(page)
 {
-	CurPage = page;
+	PAGE_CURRENT = page;
 	document.body.style.backgroundColor = page.background_color;
 	$("#StoryHeader").html("<h2>" + page.header + "</h2>");
 	$("#StoryMainText").html("<p>" + page.main_text + "</p>");
@@ -75,21 +74,25 @@ function DoPage(page)
 	$("#StoryRightButton").html("<button id=\"StoryRightButton\" onclick=\"DoPage(" + page.right_page + ")\">" + page.right_text + "</button>");
 	if (page.has_item)
 	{
-		for (var i = 0; i < obj.give_items.length; i++) {
+		for (var i = 0; i < obj.give_items.length; i++)
+		{
     			HeroInv.push(obj.give_items[i]);
 		}
 	}
 	if (page.does_need_items)
 	{
-		for (var i = 0; i < obj.take_items.length; i++) {
+		for (var i = 0; i < obj.take_items.length; i++)
+		{
     			if  (contains.call(HeroInv, obj.take_items[i]))
     			{
-    				if (HeroInv.indexOf(obj.take_items[i]) > -1) {
+    				if (HeroInv.indexOf(obj.take_items[i]) > -1)
+    				{
 					HeroInv.splice(HeroInv.indexOf(obj.take_items[i]), 1);
 				}
     			}
 		}
-		for (var i = 0; i < obj.item_punish.length; i++) {
+		for (var i = 0; i < obj.item_punish.length; i++)
+		{
     			if  !(contains.call(HeroInv, obj.item_punish[i]))
     			{
     				DoPage(PAGE_LOSE)
