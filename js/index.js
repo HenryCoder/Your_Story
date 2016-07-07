@@ -59,7 +59,7 @@ function CreatePage(tab)
 }
 
 // Create default pages
-var PAGE_START = new CreatePage({
+var page_start = new CreatePage({
 	this.page_id = 1,
 	this.main_text = "Welcome to Your Story. You come to a fork in the path.",
 	this.header = "Welcome",
@@ -68,7 +68,7 @@ var PAGE_START = new CreatePage({
 	this.right_text = "Go right",
 	this.right_page = PAGE_LOSE
 });
-var PAGE_LOSE = new CreatePage({
+var page_lose = new CreatePage({
 	this.page_id = 2,
 	this.main_text = "You have died.",
 	this.header = "You Lose",
@@ -77,7 +77,7 @@ var PAGE_LOSE = new CreatePage({
 	this.right_text = "Start over",
 	this.right_page = PAGE_START
 });
-var PAGE_WIN = new CreatePage({
+var page_win = new CreatePage({
 	this.page_id = 3,
 	this.main_text = "You have won!",
 	this.header = "Congratulations!",
@@ -86,11 +86,11 @@ var PAGE_WIN = new CreatePage({
 	this.right_text = "Start over", 
 	this.right_page = PAGE_START
 });
-var PAGE_CURRENT = PAGE_START;
+var page_current = page_start;
 
 function DoPage(page)
 {
-	PAGE_CURRENT = page;
+	page_current = page;
 	document.body.style.backgroundColor = page.background_color;
 	$("#StoryHeader").html("<h2>" + page.header + "</h2>");
 	$("#StoryMainText").html("<p>" + page.main_text + "</p>");
@@ -119,12 +119,12 @@ function DoPage(page)
 		{
     			if  !(contains.call(HeroInv, obj.item_punish[i]))
     			{
-    				DoPage(PAGE_LOSE)
+    				DoPage(page_lose)
     			}
 		}
 	}
 }
 
-document.onload = function() {DoPage(PAGE_START)};
+document.onload = function() {DoPage(page_start)};
 
 var YS_LOADING = false;
