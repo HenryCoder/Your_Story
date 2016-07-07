@@ -56,6 +56,12 @@ function CreatePage(tab)
 	this.win = 		tab.win || 		false;		// Does the player win on this page?
 }
 
+// Set them to a value so they aren't undefined before "creation"
+var PAGE_START = 1;
+var PAGE_LOSE = 1;
+var PAGE_WIN = 1;
+var PAGE_CURRENT = 1;
+
 // Create default pages
 var PAGE_START = new CreatePage({
 	page_id : 1,
@@ -115,7 +121,7 @@ function DoPage(page)
 		}
 		for (var i = 0; i < obj.item_punish.length; i++)
 		{
-    			if  (contains.call(HeroInv, obj.item_punish[i]) !== true) // "Workaround"
+    			if  (contains.call(HeroInv, obj.item_punish[i]) !== true)
     			{
     				DoPage(PAGE_LOSE)
     			}
