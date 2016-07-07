@@ -57,7 +57,7 @@ function CreatePage(tab)
 }
 
 // Create default pages
-var page_start = new CreatePage({
+var PAGE_START = new CreatePage({
 	page_id : 1,
 	main_text : "Welcome to Your Story. You come to a fork in the path.",
 	header : "Welcome",
@@ -66,7 +66,7 @@ var page_start = new CreatePage({
 	right_text : "Go right",
 	right_page : PAGE_LOSE
 });
-var page_lose = new CreatePage({
+var PAGE_LOSE = new CreatePage({
 	page_id : 2,
 	main_text : "You have died.",
 	header : "You Lose",
@@ -75,7 +75,7 @@ var page_lose = new CreatePage({
 	right_text : "Start over",
 	right_page : PAGE_START
 });
-var page_win = new CreatePage({
+var PAGE_WIN = new CreatePage({
 	page_id : 3,
 	main_text : "You have won!",
 	header : "Congratulations!",
@@ -84,7 +84,7 @@ var page_win = new CreatePage({
 	right_text : "Start over", 
 	right_page : PAGE_START
 });
-var page_current = page_start;
+var PAGE_CURRENT = PAGE_START;
 
 function DoPage(page)
 {
@@ -117,12 +117,12 @@ function DoPage(page)
 		{
     			if  (contains.call(HeroInv, obj.item_punish[i]) !== true) // "Workaround"
     			{
-    				DoPage(page_lose)
+    				DoPage(PAGE_LOSE)
     			}
 		}
 	}
 }
 
-document.onload = function() {DoPage(page_start)};
+document.onload = function() {DoPage(PAGE_START)};
 
 var YS_LOADING = false;
