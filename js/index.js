@@ -35,7 +35,7 @@ var contains = function(needle)
 // Doesn't actually create a table, but "sanitizes" it.
 function CreatePage(tab)
 {
-	obj = 			tab; // Don't mind this
+	var obj = 		tab; // Don't mind this
 	obj.page_id : 		obj.page_id || 		1;		// Page ID (Must be unique)
 	obj.main_text : 	obj.main_text || 	"Main text";	// What text should show up on the page?
 	obj.header : 		obj.header || 		"Header";	// What should the header say?
