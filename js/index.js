@@ -54,7 +54,7 @@ function CreatePage(tab)
 }
 
 // Create default pages
-PAGE_LOSE = CreatePage({});
+PAGE_LOSE = CreatePage({page_id = 0, main_text = "You have died.", header = "You Lose", left_text = "Start Over", left_page = PAGE_START, right_text = "Start Over", ""});
 PAGE_WIN = CreatePage({});
 
 function DoPage(page)
