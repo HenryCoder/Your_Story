@@ -61,28 +61,28 @@ function CreatePage(tab)
 // Create default pages
 var PAGE_START, PAGE_LOSE, PAGE_WIN, PAGE_CURRENT;
 PAGE_START = CreatePage({page_id = 1,
-	main_text = "Welcome to Your Story. You come to a fork in the path.",
-	header = "Welcome",
-	left_text = "Go left",
-	left_page = PAGE_WIN,
-	right_text = "Go right",
-	right_page = PAGE_LOSE
+	main_text : "Welcome to Your Story. You come to a fork in the path.",
+	header : "Welcome",
+	left_text : "Go left",
+	left_page : PAGE_WIN,
+	right_text : "Go right",
+	right_page : PAGE_LOSE
 });
 PAGE_LOSE = CreatePage({page_id = 2,
-	main_text = "You have died.",
-	header = "You Lose",
-	left_text = "Start over",
-	left_page = PAGE_START,
-	right_text = "Start over",
-	right_page = PAGE_START
+	main_text : "You have died.",
+	header : "You Lose",
+	left_text : "Start over",
+	left_page : PAGE_START,
+	right_text : "Start over",
+	right_page : PAGE_START
 });
 PAGE_WIN = CreatePage({page_id = 3,
-	main_text = "You have won!",
-	header = "Congratulations!",
-	left_text = "Start over",
-	left_page = PAGE_START,
-	right_text = "Start over", 
-	right_page = PAGE_START
+	main_text : "You have won!",
+	header : "Congratulations!",
+	left_text : "Start over",
+	left_page : PAGE_START,
+	right_text : "Start over", 
+	right_page : PAGE_START
 });
 
 function DoPage(page)
