@@ -123,7 +123,7 @@ function DoPage(page)
 		{
     			if  (!contains.call(HeroInv, obj.item_punish[i]))
     			{
-    				DoPage(PAGE_LOSE)
+    				DoPage(PAGE_LOSE);
     			}
 		}
 	}
