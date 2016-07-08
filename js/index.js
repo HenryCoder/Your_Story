@@ -1,6 +1,7 @@
 var YS_LOADING = true;
-var HeroName;
-var HeroAbilites = {};
+var IsHeroNameSet = false;
+var HeroName = "Bob";
+var HeroStats = {"Strengh":5, "Intellect":5};
 var HeroInv = [];
 
 var StoryWrapper_ID = "StoryWrapper";
@@ -52,7 +53,8 @@ function CreatePage(tab)
 	this.background_color = tab.background_color || "purple"; 	// What should the background color be?
 	this.wrapper_color = 	tab.wrapper_color || 	"magenta"; 	// What should the wrapper color be?
 	this.text_color = 	tab.text_color || 	"white"; 	// What should the text color be?
-	this.give_item = 	tab.give_items || 	[]; 		// What items should we give the player?
+	this.give_items = 	tab.give_items || 	[]; 		// What items should we give the player?
+	this.give_stats = 	tab.give_stats || 	{};		// What stats should be added to the player's current stats?
 	this.does_need_items = 	tab.does_need_items || 	false; 		// Does the player need any items?
 	this.needed_items = 	tab.needed_items || 	[];		// What items does the player need?
 	this.item_punish = 	tab.item_punish || 	[]; 		// Kill the player if they don't have these items?
@@ -107,28 +109,28 @@ function DoPage(page)
 	document.getElementById(StoryRightButton_ID).outerHTML = "<button id=\"" + StoryRightButton_ID + "\" onclick=\"DoPage(" + page.right_page + ")\">" + page.right_text + "</button>";
 	if (page.has_item)
 	{
-		for (var i = 0; i < obj.give_items.length; i++)
+		for (var i = 0; i < page.give_items.length; i++)
 		{
-    			HeroInv.push(obj.give_items[i]);
+    			HeroInv.push(page.give_items[i]);
 		}
 	}
 	if (page.does_need_items)
 	{
-		for (var i = 0; i < obj.take_items.length; i++)
+		for (var i = 0; i < page.take_items.length; i++)
 		{
-    			if  (contains.call(HeroInv, obj.take_items[i]))
+    			if  (contains.call(HeroInv, page.take_items[i]))
     			{
-    				if (HeroInv.indexOf(obj.take_items[i]) > -1)
+    				if (HeroInv.indexOf(page.take_items[i]) > -1)
     				{
-					HeroInv.splice(HeroInv.indexOf(obj.take_items[i]), 1);
+					HeroInv.splice(HeroInv.indexOf(page.take_items[i]), 1);
 				}
     			}
 		}
-		for (var i = 0; i < obj.item_punish.length; i++)
+		for (var i = 0; i < page.item_punish.length; i++)
 		{
-    			if  (!contains.call(HeroInv, obj.item_punish[i]))
+    			if  (!contains.call(HeroInv, page.item_punish[i]))
     			{
-    				DoPage(PAGE_LOSE);
+    				DoPage(eval(page.punish_page));
     			}
 		}
 	}
