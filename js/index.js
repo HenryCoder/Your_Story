@@ -3,7 +3,7 @@ var IsHeroNameSet = false;
 var IsHeroGenderSet = false;
 var HeroName = "Unnamed";
 var HeroGender = "Unknown";
-var HeroStats = {"Strengh":5, "Intellect":5};
+var HeroStats = {"Strength":5, "Intellect":5};
 var HeroInv = [];
 
 var StoryWrapper_ID = "StoryWrapper";
