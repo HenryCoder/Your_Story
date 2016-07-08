@@ -10,14 +10,19 @@
 		<div id="StoryWrapper">
 			<h1 id="YourStory">Your Story</h1>
 			<div id="StoryInfo">
-				<p class="Info">Hero Info:</p>
-				<input type="text" value="Unnamed">
-				<input type="checkbox">
+				<p class="InfoLabel">Hero Info:</p>
+				<input id="HeroNameTextEntry" type="text" value="Name">
+				<div class="GenericPurple">
+					<button id="HeroGenderButtonMale" type="button" onlick="SetHeroGender(false)">Male</button>
+					<button id="HeroGenderButtonFemale" type="button" onclick="SetHeroGender(true)">Female</button>
+				</div>
 			</div>
 			<h2 id="StoryHeader">Story Header</h2>
 			<p id="StoryMainText">Story Main Text</p>
-			<button type="button" id="StoryLeftButton">Left Button</button>
-			<button type="button" id="StoryRightButton">Right Button</button>
+			<div class="GenericMagenta">
+				<button type="button" id="StoryLeftButton">Left Button</button>
+				<button type="button" id="StoryRightButton">Right Button</button>
+			</div>
 		</div>
 	</body>
 </html>
