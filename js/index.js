@@ -3,6 +3,7 @@ var HeroName;
 var HeroAbilites = {};
 var HeroInv = [];
 
+var StoryWrapper_ID = "StoryWrapper";
 var StoryHeader_ID = "StoryHeader";
 var StoryMainText_ID = "StoryMainText";
 var StoryLeftButton_ID = "StoryLeftButton";
@@ -49,23 +50,20 @@ function CreatePage(tab)
 	this.right_text = 	tab.right_text || 	"Right text"; 	// What text is on the right button?
 	this.right_page = 	tab.right_page || 	{}; 		// What page does the right button go to?
 	this.background_color = tab.background_color || "purple"; 	// What should the background color be?
-	this.wrapper_color = 	tab.wrapper_color || 	"purple"; 	// What should the wrapper color be?
-	this.text_color = 	tab.text_color || 	"purple"; 	// What should the text color be?
+	this.wrapper_color = 	tab.wrapper_color || 	"magenta"; 	// What should the wrapper color be?
+	this.text_color = 	tab.text_color || 	"white"; 	// What should the text color be?
 	this.give_item = 	tab.give_items || 	[]; 		// What items should we give the player?
 	this.does_need_items = 	tab.does_need_items || 	false; 		// Does the player need any items?
 	this.needed_items = 	tab.needed_items || 	[];		// What items does the player need?
 	this.item_punish = 	tab.item_punish || 	[]; 		// Kill the player if they don't have these items?
-	this.punish_page = 	tab.punish_page || 	PAGE_LOSE;	// What page "kills" the player? (See item_punish)
+	this.punish_page = 	tab.punish_page || 	"PAGE_LOSE";	// What page "kills" the player? (See item_punish)
 	this.take_items = 	tab.take_items || 	[];		// Take these items from the player if they have them
 	this.lose =		tab.lose || 		false;		// Does the player lose on this page?
 	this.win = 		tab.win || 		false;		// Does the player win on this page?
 }
 
-// Set them to a value so they aren't undefined before "creation"
-var PAGE_START, PAGE_LOSE, PAGE_WIN, PAGE_CURRENT = 1;
-// var PAGE_LOSE = 1;
-// var PAGE_WIN = 1;
-// var PAGE_CURRENT = 1;
+// Set them to a value so they aren't undefined before "creation" - NO LONGER NECESSARY, JUST KEEPING
+// var PAGE_START, PAGE_LOSE, PAGE_WIN, PAGE_CURRENT = 1;
 
 // Create default pages
 var PAGE_START = new CreatePage({
@@ -79,7 +77,7 @@ var PAGE_START = new CreatePage({
 });
 var PAGE_LOSE = new CreatePage({
 	page_id : 2,
-	main_text : "You have died.",
+	main_text : "You have lost.",
 	header : "You Lose",
 	left_text : "Start over",
 	left_page : "PAGE_START",
@@ -89,7 +87,7 @@ var PAGE_LOSE = new CreatePage({
 var PAGE_WIN = new CreatePage({
 	page_id : 3,
 	main_text : "You have won!",
-	header : "Congratulations!",
+	header : "You Win!",
 	left_text : "Start over",
 	left_page : "PAGE_START",
 	right_text : "Start over", 
@@ -99,8 +97,10 @@ var PAGE_CURRENT = PAGE_START;
 
 function DoPage(page)
 {
-	page_current = page;
+	PAGE_CURRENT = page;
 	document.body.style.backgroundColor = page.background_color;
+	document.getElementById(StoryWrapper_ID).style.color = page.text_color;
+	document.getElementById(StoryWrapper_ID).style.backgroundColor = page.wrapper_color;
 	document.getElementById(StoryHeader_ID).outerHTML = "<h2 id=\"" + StoryHeader_ID + "\">" + page.header + "</h2>";
 	document.getElementById(StoryMainText_ID).outerHTML = "<p id=\"" + StoryMainText_ID + "\">" + page.main_text + "</p>";
 	document.getElementById(StoryLeftButton_ID).outerHTML = "<button id=\"" + StoryLeftButton_ID + "\" onclick=\"DoPage(" + page.left_page + ")\">" + page.left_text + "</button>";
