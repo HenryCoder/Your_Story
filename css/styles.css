@@ -19,6 +19,16 @@ h1, h2, p {
 	margin: 24px;
 	padding: 24px;
 	color: white;
-	background-color: magenta;
+	background-color: purple;
 	float: left;
+}
+
+.GenericPurple {
+	background-color: purple;
+	color: white;
+}
+
+.GenericMagenta {
+	background-color: magenta;
+	color: white;
 }
