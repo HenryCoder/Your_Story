@@ -1,9 +1,12 @@
-body{
+body {
 	text-align: center;
-	background-color:purple;
-	color:white;
 }
 
-h1{
+h1, h2, p {
 	font-family: fantasy;
+}
+
+#StoryWrapper {
+	margin: 24px;
+	padding: 24px;
 }
