@@ -65,7 +65,7 @@ function CreatePage(tab)
 // Set them to a value so they aren't undefined before "creation" - NO LONGER NECESSARY, JUST KEEPING
 // var PAGE_START, PAGE_LOSE, PAGE_WIN, PAGE_CURRENT = 1;
 
-// Create default pages
+// Create default pages (and Charles thinks I don't organize my code enough, at least I don't use separate functions every page, ha!)
 var PAGE_START = new CreatePage({
 	page_id : 1,
 	main_text : "Welcome to Your Story. You come to a fork in the path.",
