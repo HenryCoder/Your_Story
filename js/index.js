@@ -1,6 +1,8 @@
 var YS_LOADING = true;
 var IsHeroNameSet = false;
-var HeroName = "Bob";
+var IsHeroGenderSet = false;
+var HeroName = "Unnamed";
+var HeroGender = "Unknown";
 var HeroStats = {"Strengh":5, "Intellect":5};
 var HeroInv = [];
 
@@ -55,6 +57,8 @@ function CreatePage(tab)
 	this.text_color = 	tab.text_color || 	"white"; 	// What should the text color be?
 	this.give_items = 	tab.give_items || 	[]; 		// What items should we give the player?
 	this.give_stats = 	tab.give_stats || 	{};		// What stats should be added to the player's current stats?
+	this.needed_stats = 	tab.needed_stats || 	{};		// What stats does the player need to live?
+	this.stat_punish = 	tab.stat_punish || 	true;		// Does the player die if they don't have the stats above? (Can't be disabled ATM)
 	this.does_need_items = 	tab.does_need_items || 	false; 		// Does the player need any items?
 	this.needed_items = 	tab.needed_items || 	[];		// What items does the player need?
 	this.item_punish = 	tab.item_punish || 	[]; 		// Kill the player if they don't have these items?
