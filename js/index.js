@@ -3,6 +3,11 @@ var HeroName;
 var HeroAbilites = {};
 var HeroInv = [];
 
+var StoryHeader_ID = "StoryHeader";
+var StoryMainText_ID = "StoryMainText";
+var StoryLeftButton_ID = "StoryLeftButton";
+var StoryRightButton_ID = "StoryRightButton";
+
 // http://stackoverflow.com/questions/1181575/determine-whether-an-array-contains-a-value
 var contains = function(needle)
 {
@@ -96,10 +101,10 @@ function DoPage(page)
 {
 	page_current = page;
 	document.body.style.backgroundColor = page.background_color;
-	document.getElementById("StoryHeader").outerHTML = "<h2>" + page.header + "</h2>";
-	document.getElementById("StoryMainText").outerHTML = "<p>" + page.main_text + "</p>";
-	document.getElementById("StoryLeftButton").outerHTML = "<button id=\"StoryLeftButton\" onclick=\"DoPage(" + page.left_page + ")\">" + page.left_text + "</button>";
-	document.getElementById("StoryRightButton").outerHTML = "<button id=\"StoryRightButton\" onclick=\"DoPage(" + page.right_page + ")\">" + page.right_text + "</button>";
+	document.getElementById(StoryHeader_ID).outerHTML = "<h2 id=\"" + StoryHeader_ID + "\">" + page.header + "</h2>";
+	document.getElementById(StoryMainText_ID).outerHTML = "<p id=\"" + StoryMainText_ID + "\">" + page.main_text + "</p>";
+	document.getElementById(StoryLeftButton_ID).outerHTML = "<button id=\"" + StoryLeftButton_ID + "\" onclick=\"DoPage(" + page.left_page + ")\">" + page.left_text + "</button>";
+	document.getElementById(StoryRightButton_ID).outerHTML = "<button id=\"" + StoryRightButton_ID + "\" onclick=\"DoPage(" + page.right_page + ")\">" + page.right_text + "</button>";
 	if (page.has_item)
 	{
 		for (var i = 0; i < obj.give_items.length; i++)
