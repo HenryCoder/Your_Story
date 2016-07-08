@@ -68,27 +68,27 @@ var PAGE_START = new CreatePage({
 	main_text : "Welcome to Your Story. You come to a fork in the path.",
 	header : "Welcome",
 	left_text : "Go left",
-	left_page : PAGE_WIN,
+	left_page : "PAGE_WIN",
 	right_text : "Go right",
-	right_page : PAGE_LOSE
+	right_page : "PAGE_LOSE"
 });
 var PAGE_LOSE = new CreatePage({
 	page_id : 2,
 	main_text : "You have died.",
 	header : "You Lose",
 	left_text : "Start over",
-	left_page : PAGE_START,
+	left_page : "PAGE_START",
 	right_text : "Start over",
-	right_page : PAGE_START
+	right_page : "PAGE_START"
 });
 var PAGE_WIN = new CreatePage({
 	page_id : 3,
 	main_text : "You have won!",
 	header : "Congratulations!",
 	left_text : "Start over",
-	left_page : PAGE_START,
+	left_page : "PAGE_START",
 	right_text : "Start over", 
-	right_page : PAGE_START
+	right_page : "PAGE_START"
 });
 var PAGE_CURRENT = PAGE_START;
 
@@ -96,10 +96,10 @@ function DoPage(page)
 {
 	page_current = page;
 	document.body.style.backgroundColor = page.background_color;
-	document.getElementById("#StoryHeader").outerHTML = "<h2>" + page.header + "</h2>";
-	document.getElementById("#StoryMainText").outerHTML = "<p>" + page.main_text + "</p>";
-	document.getElementById("#StoryLeftButton").outerHTML = "<button id=\"StoryLeftButton\" onclick=\"DoPage(" + page.left_page + ")\">" + page.left_text + "</button>";
-	document.getElementById("#StoryRightButton").outerHTML = "<button id=\"StoryRightButton\" onclick=\"DoPage(" + page.right_page + ")\">" + page.right_text + "</button>";
+	document.getElementById("StoryHeader").outerHTML = "<h2>" + page.header + "</h2>";
+	document.getElementById("StoryMainText").outerHTML = "<p>" + page.main_text + "</p>";
+	document.getElementById("StoryLeftButton").outerHTML = "<button id=\"StoryLeftButton\" onclick=\"DoPage(" + page.left_page + ")\">" + page.left_text + "</button>";
+	document.getElementById("StoryRightButton").outerHTML = "<button id=\"StoryRightButton\" onclick=\"DoPage(" + page.right_page + ")\">" + page.right_text + "</button>";
 	if (page.has_item)
 	{
 		for (var i = 0; i < obj.give_items.length; i++)
