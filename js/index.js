@@ -69,10 +69,10 @@ function DoPage(page)
 {
 	CurPage = page;
 	document.body.style.backgroundColor = page.background_color;
-	$("#StoryHeader").html("<h2>" + page.header + "</h2>");
-	$("#StoryMainText").html("<p>" + page.main_text + "</p>");
-	$("#StoryLeftButton").html("<button id=\"StoryLeftButton\" onclick=\"DoPage(" + page.left_page + ")\">" + page.left_text + "</button>");
-	$("#StoryRightButton").html("<button id=\"StoryRightButton\" onclick=\"DoPage(" + page.right_page + ")\">" + page.right_text + "</button>");
+	document.getElementById("#StoryHeader").outerHTML = "<h2>" + page.header + "</h2>";
+	document.getElementById("#StoryMainText").outerHTML = "<p>" + page.main_text + "</p>";
+	document.getElementById("#StoryLeftButton").outerHTML = "<button id=\"StoryLeftButton\" onclick=\"DoPage(" + page.left_page + ")\">" + page.left_text + "</button>";
+	document.getElementById("#StoryRightButton").outerHTML = "<button id=\"StoryRightButton\" onclick=\"DoPage(" + page.right_page + ")\">" + page.right_text + "</button>";
 	if (page.has_item)
 	{
 		for (var i = 0; i < obj.give_items.length; i++) {
