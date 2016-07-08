@@ -1,12 +1,35 @@
 body {
 	text-align: center;
+	background-color: purple;
 }
 
 h1, h2, p {
 	font-family: fantasy;
+	color: white;
 }
 
 #StoryWrapper {
 	margin: 24px;
 	padding: 24px;
+	color: white;
+	background-color: magenta;
+}
+
+#StoryInfo {
+	margin: 24px;
+	padding: 24px;
+	margin-top: -64px;
+	color: white;
+	background-color: purple;
+	float: left;
+}
+
+.GenericPurple {
+	background-color: purple;
+	color: white;
+}
+
+.GenericMagenta {
+	background-color: magenta;
+	color: white;
 }

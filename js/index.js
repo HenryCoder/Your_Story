@@ -3,7 +3,7 @@ var IsHeroNameSet = false;
 var IsHeroGenderSet = false;
 var HeroName = "Unnamed";
 var HeroGender = "Unknown";
-var HeroStats = {"Strengh":5, "Intellect":5};
+var HeroStats = {"Strength":5, "Intellect":5};
 var HeroInv = [];
 
 var StoryWrapper_ID = "StoryWrapper";
@@ -41,6 +41,23 @@ var contains = function(needle)
 	return indexOf.call(this, needle) > -1;
 };
 
+// http://stackoverflow.com/questions/3387427/remove-element-by-id
+Element.prototype.remove = function()
+{
+	this.parentElement.removeChild(this);
+}
+
+NodeList.prototype.remove = HTMLCollection.prototype.remove = function()
+{
+	for(var i = this.length - 1; i >= 0; i--)
+	{
+		if(this[i] && this[i].parentElement)
+        	{
+			this[i].parentElement.removeChild(this[i]);
+        	}
+	}
+}
+
 // Doesn't actually create a table, but "sanitizes" it.
 function CreatePage(tab)
 {
@@ -56,7 +73,9 @@ function CreatePage(tab)
 	this.wrapper_color = 	tab.wrapper_color || 	"magenta"; 	// What should the wrapper color be?
 	this.text_color = 	tab.text_color || 	"white"; 	// What should the text color be?
 	this.give_items = 	tab.give_items || 	[]; 		// What items should we give the player?
+	this.gives_stats = 	tab.gives_stats || 	false;		// Does the page give the player stats?
 	this.give_stats = 	tab.give_stats || 	{};		// What stats should be added to the player's current stats?
+	this.needs_stats = 	tab.needs_stats || 	false;		// Does the page need stats?
 	this.needed_stats = 	tab.needed_stats || 	{};		// What stats does the player need to live?
 	this.stat_punish = 	tab.stat_punish || 	true;		// Does the player die if they don't have the stats above? (Can't be disabled ATM)
 	this.does_need_items = 	tab.does_need_items || 	false; 		// Does the player need any items?
@@ -71,7 +90,7 @@ function CreatePage(tab)
 // Set them to a value so they aren't undefined before "creation" - NO LONGER NECESSARY, JUST KEEPING
 // var PAGE_START, PAGE_LOSE, PAGE_WIN, PAGE_CURRENT = 1;
 
-// Create default pages (and Charles thinks I don't organize my code enough, at least I don't use separate functions every page, ha!)
+// Create default pages
 var PAGE_START = new CreatePage({
 	page_id : 1,
 	main_text : "Welcome to Your Story. You come to a fork in the path.",
@@ -138,6 +157,24 @@ function DoPage(page)
     			}
 		}
 	}
+}
+
+function SetHeroGender(gender)
+{
+	if (gender)
+	{
+		HeroGender = "Female";
+	}
+	else
+	{
+		HeroGender = "Male";
+	}
+	HeroName = document.getElementById("HeroNameTextEntry").value;
+	document.getElementById("HeroNameTextEntry").remove();
+	document.getElementById("HeroGenderButtonMale").remove();
+	document.getElementById("HeroGenderButtonFemale").remove();
+	document.getElementById("HeroInfoDisplayName").innerHTML = "Name: " + HeroName;
+	document.getElementById("HeroInfoDisplayGender").innerHTML = "Gender: " + HeroGender;
 }
 
 function GoBackToStartPage()

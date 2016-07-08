@@ -8,11 +8,27 @@
 	<body>
 		<link rel="stylesheet"  href="css/styles.css">
 		<div id="StoryWrapper">
-			<h1 id="YourStory">Your Story</h1>
+			<div class="GenericMagenta">
+				<h1 id="YourStory">Your Story</h1>
+			</div>
+			<div id="StoryInfo">
+				<p class="InfoLabel">Hero Info:</p>
+				<input id="HeroNameTextEntry" type="text" value="Name">
+				<div class="GenericPurple">
+					<p id="HeroInfoDisplayName"></p>
+					<p id="HeroInfoDisplayGender"></p>
+					<button id="HeroGenderButtonMale" type="button" onclick="SetHeroGender(false)">Male</button>
+					<button id="HeroGenderButtonFemale" type="button" onclick="SetHeroGender(true)">Female</button>
+					<p id="HeroInfoDisplayInventory">Inventory: </p>
+					<p id="HeroInfoDisplayStats">Stats: </p>
+				</div>
+			</div>
 			<h2 id="StoryHeader">Story Header</h2>
 			<p id="StoryMainText">Story Main Text</p>
-			<button type="button" id="StoryLeftButton">Left Button</button>
-			<button type="button" id="StoryRightButton">Right Button</button>
+			<div class="GenericMagenta">
+				<button type="button" id="StoryLeftButton">Left Button</button>
+				<button type="button" id="StoryRightButton">Right Button</button>
+			</div>
 		</div>
 	</body>
 </html>
