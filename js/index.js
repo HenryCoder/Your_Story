@@ -134,6 +134,11 @@ function DoPage(page)
 	}
 }
 
-document.onload = function() {DoPage(PAGE_START)};
+function GoBackToStartPage()
+{
+	DoPage(PAGE_START);
+}
+
+window.onload = GoBackToStartPage;
 
 var YS_LOADING = false;
