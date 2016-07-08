@@ -18,6 +18,7 @@ h1, h2, p {
 #StoryInfo {
 	margin: 24px;
 	padding: 24px;
+	margin-top: -64px;
 	color: white;
 	background-color: purple;
 	float: left;
