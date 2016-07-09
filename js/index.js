@@ -1,6 +1,5 @@
 var YS_LOADING = true;
-var IsHeroNameSet = false;
-var IsHeroGenderSet = false;
+
 var HeroName = "Unnamed";
 var HeroGender = "Unknown";
 var HeroStats = {"Strength":5, "Intellect":5};
