@@ -1,6 +1,6 @@
 body {
-	text-align: center;
 	background-color: purple;
+	text-align: center;
 }
 
 h1, h2, p {
@@ -8,20 +8,31 @@ h1, h2, p {
 	color: white;
 }
 
+button {
+	border: none;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	padding: 10px 24px;
+	font-size: 16px;
+	border-radius: 8px;
+}
+
 #StoryWrapper {
+	background-color: magenta;
+	color: white;
 	margin: 24px;
 	padding: 24px;
-	color: white;
-	background-color: magenta;
+	padding-bottom: 116px;
 }
 
 #StoryInfo {
-	margin: 24px;
-	padding: 24px;
-	margin-top: -64px;
-	color: white;
 	background-color: purple;
+	color: white;
 	float: left;
+	margin: 24px;
+	margin-top: -64px;
+	padding: 24px;
 }
 
 .GenericPurple {
