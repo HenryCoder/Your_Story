@@ -11,14 +11,15 @@ h1, h2, p {
 #StoryWrapper {
 	margin: 24px;
 	padding: 24px;
+	padding-bottom: 116px;
 	color: white;
 	background-color: magenta;
 }
 
 #StoryInfo {
 	margin: 24px;
-	padding: 24px;
 	margin-top: -64px;
+	padding: 24px;
 	color: white;
 	background-color: purple;
 	float: left;
