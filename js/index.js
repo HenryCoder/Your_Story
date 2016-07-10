@@ -93,7 +93,7 @@ function CreatePage(tab)
 var PAGE_START = new CreatePage({
 	page_id : 1,
 	main_text : "Welcome to Your Story. You come to a fork in the path.",
-	header : "Welcome",
+	header : "Hello! This is an app created by Aidan, Nick, Rian and Henry.",
 	left_text : "Go left",
 	left_page : "PAGE_WIN",
 	right_text : "Go right",
