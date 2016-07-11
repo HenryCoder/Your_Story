@@ -2,7 +2,8 @@ var YS_LOADING = true;
 
 var HeroName = "Unnamed";
 var HeroGender = "Unknown";
-var HeroStats = {"Strength" : 5, "Intellect" : 5};
+var HeroStrength = 5;
+var HeroIntel = 5;
 var HeroInv = [];
 
 var StoryWrapper_ID = "StoryWrapper";
@@ -72,11 +73,8 @@ function CreatePage(tab)
 	this.wrapper_color = 	tab.wrapper_color || 	"magenta"; 	// What should the wrapper color be?
 	this.text_color = 	tab.text_color || 	"white"; 	// What should the text color be?
 	this.give_items = 	tab.give_items || 	[]; 		// What items should we give the player?
-	this.gives_stats = 	tab.gives_stats || 	false;		// Does the page give the player stats?
-	this.give_stats = 	tab.give_stats || 	{};		// What stats should be added to the player's current stats?
-	this.needs_stats = 	tab.needs_stats || 	false;		// Does the page need stats?
-	this.needed_stats = 	tab.needed_stats || 	{};		// What stats does the player need to live?
-	this.stat_punish = 	tab.stat_punish || 	true;		// Does the player die if they don't have the stats above? (Can't be disabled ATM)
+	this.give_strength = 	tab.give_strength || 	0;		// How much strength should the player gain?
+	this.give_intel = 	tab.give_intel || 	0;		// How much intellect should the player gain?
 	this.does_need_items = 	tab.does_need_items || 	false; 		// Does the player need any items?
 	this.needed_items = 	tab.needed_items || 	[];		// What items does the player need?
 	this.item_punish = 	tab.item_punish || 	[]; 		// Kill the player if they don't have these items?
@@ -180,7 +178,7 @@ function SetHeroGender(gender)
 function UpdateInfoBox()
 {
 	var InvStr = "Inventory: ";
-	var StatStr = "Stats: ";
+	var StatStr = "Stats: Strength: " + HeroStrength + ", Intellect: " + HeroIntel;
 	for (var i = 0; i < HeroInv.length; i++)
 	{
 		if (HeroInv[i] == HeroInv.length)
@@ -193,19 +191,29 @@ function UpdateInfoBox()
 		}
     		
 	}
-	for (var i = 0; i < Object.keys(HeroStats).length; i++)
-	{
-		if (Object.keys(HeroStats)[i] == Object.keys(HeroStats).length)
-		{
-			StatStr += Object.keys(HeroStats)[i] + ": " + HeroStats[Object.keys(HeroStats)[i]];
-		}
-		else
-		{
-			StatStr += Object.keys(HeroStats)[i] + ": " + HeroStats[Object.keys(HeroStats)[i]] + ", ";
-		}
-	}
 	document.getElementById("HeroInfoDisplayInventory").innerHTML = InvStr;
-	document.getElementById("HeroInfoDisplayStats").innerHTML = ""; // Stats have been removed
+	document.getElementById("HeroInfoDisplayStats").innerHTML = StatStr;
+}
+
+function AddInventoryItem(item)
+{
+	HeroInv.push(item);
+	UpdateInfoBox();
+	return item;
+}
+
+function SetHeroStrength(num)
+{
+	HeroStrength += num;
+	UpdateInfoBox();
+	return num;
+}
+
+function SetHeroIntellect(num)
+{
+	HeroIntel += num;
+	UpdateInfoBox();
+	return num;
 }
 
 function GoBackToStartPage()
