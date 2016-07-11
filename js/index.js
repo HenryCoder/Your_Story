@@ -133,29 +133,30 @@ function DoPage(page)
 	{
 		for (var i = 0; i < page.give_items.length; i++)
 		{
-    			HeroInv.push(page.give_items[i]);
+			HeroInv.push(page.give_items[i]);
 		}
 	}
 	if (page.does_need_items)
 	{
 		for (var i = 0; i < page.take_items.length; i++)
 		{
-    			if  (contains.call(HeroInv, page.take_items[i]))
-    			{
-    				if (HeroInv.indexOf(page.take_items[i]) > -1)
-    				{
+			if  (contains.call(HeroInv, page.take_items[i]))
+			{
+				if (HeroInv.indexOf(page.take_items[i]) > -1)
+				{
 					HeroInv.splice(HeroInv.indexOf(page.take_items[i]), 1);
 				}
-    			}
+			}
 		}
 		for (var i = 0; i < page.item_punish.length; i++)
 		{
-    			if  (!contains.call(HeroInv, page.item_punish[i]))
-    			{
-    				DoPage(eval(page.punish_page));
-    			}
+			if  (!contains.call(HeroInv, page.item_punish[i]))
+			{
+				DoPage(eval(page.punish_page));
+			}
 		}
 	}
+	UpdateInfoBox();
 }
 
 function SetHeroGender(gender)
