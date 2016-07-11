@@ -2,7 +2,7 @@ var YS_LOADING = true;
 
 var HeroName = "Unnamed";
 var HeroGender = "Unknown";
-var HeroStats = {"Strength":5, "Intellect":5};
+var HeroStats = {"Strength" : 5, "Intellect" : 5};
 var HeroInv = [];
 
 var StoryWrapper_ID = "StoryWrapper";
