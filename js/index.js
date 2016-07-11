@@ -183,10 +183,22 @@ function SetHeroGender(gender)
 	if (HeroName == "Tai Lopez")
 	{
 		HeroInv.push("Lamborghini");
+		UpdateInfoBox();
 	}
 	else if (HeroName == "Donald Trump")
 	{
-		HeroInv.push("a small loan of $1,000,000");
+		HeroInv.push("small loan of $1,000,000");
+		UpdateInfoBox();
+	}
+	else if (HeroName == "John Cena")
+	{
+		HeroStrength += 5;
+		UpdateInfoBox();
+	}
+	else if (HeroName == "Steve Jobs")
+	{
+		HeroInv.push("iPhone");
+		UpdateInfoBox();
 	}
 }
 
@@ -271,7 +283,6 @@ function StartTheAdventure()
 {
 	HeroInv.push("Apple");
 	DoPage(PAGE_START);
-	return "The adventure has been started!";
 	console.log("The adventure has been started!");
 }
 
