@@ -67,7 +67,6 @@ function CreatePage(tab)
 	this.page_id = 		tab.page_id || 		1;		// Page ID (Must be unique)
 	this.main_text = 	tab.main_text || 	"Main text";	// What text should show up on the page?
 	this.header = 		tab.header || 		"Header";	// What should the header say?
-	this.has_item = 	tab.has_item || 	false;		// Does the page give (an) item(s) to the player?
 	this.left_text = 	tab.left_text || 	"Left text"; 	// What text is on the left button
 	this.left_page = 	tab.left_page || 	{}; 		// What page does the left button go to?
 	this.right_text = 	tab.right_text || 	"Right text"; 	// What text is on the right button?
@@ -78,7 +77,6 @@ function CreatePage(tab)
 	this.give_items = 	tab.give_items || 	[]; 		// What items should we give the player?
 	this.give_strength = 	tab.give_strength || 	0;		// How much strength should the player gain?
 	this.give_intel = 	tab.give_intel || 	0;		// How much intellect should the player gain?
-	this.does_need_items = 	tab.does_need_items || 	false; 		// Does the player need any items?
 	this.needed_items = 	tab.needed_items || 	[];		// What items does the player need?
 	this.item_punish = 	tab.item_punish || 	[]; 		// Kill the player if they don't have these items?
 	this.punish_page = 	tab.punish_page || 	"PAGE_LOSE";	// What page "kills" the player? (See item_punish)
@@ -131,14 +129,14 @@ function DoPage(page)
 	document.getElementById(StoryLeftButton_ID).outerHTML = "<button id=\"" + StoryLeftButton_ID + "\" onclick=\"DoPage(" + page.left_page + ")\">" + page.left_text + "</button>";
 	document.getElementById(StoryRightButton_ID).outerHTML = "<button id=\"" + StoryRightButton_ID + "\" onclick=\"DoPage(" + page.right_page + ")\">" + page.right_text + "</button>";
 
-	if (page.has_item)
+	if (page.give_items.length)
 	{
 		for (var i = 0; i < page.give_items.length; i++)
 		{
 			HeroInv.push(page.give_items[i]);
 		}
 	}
-	if (page.does_need_items)
+	if (page.take_items.length)
 	{
 		for (var i = 0; i < page.take_items.length; i++)
 		{
@@ -150,6 +148,9 @@ function DoPage(page)
 				}
 			}
 		}
+	}
+	if (page.item_punish.length)
+	{
 		for (var i = 0; i < page.item_punish.length; i++)
 		{
 			if  (!contains.call(HeroInv, page.item_punish[i]))
