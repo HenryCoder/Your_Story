@@ -198,27 +198,58 @@ function UpdateInfoBox()
 	document.getElementById("HeroInfoDisplayStats").innerHTML = StatStr;
 }
 
+// Debugging commands
 function AddInventoryItem(item)
 {
 	HeroInv.push(item);
 	UpdateInfoBox();
-	return item;
+	return item = " has been added to inventory";
 }
 
 function AddHeroStrength(num)
 {
 	HeroStrength += num;
 	UpdateInfoBox();
-	return num;
+	return "Hero strength is now " + num;
 }
 
 function AddHeroIntellect(num)
 {
 	HeroIntel += num;
 	UpdateInfoBox();
-	return num;
+	return "Hero intellect is now " + num;
 }
 
+function ClearInventory()
+{
+	HeroInv = [];
+	UpdateInfoBox();
+	return "Inventory cleared";
+}
+
+function ResetStrength()
+{
+	HeroStrength = 5;
+	UpdateInfoBox();
+	return "Strength reset";
+}
+
+function ResetIntellect()
+{
+	HeroIntel = 5;
+	UpdateInfoBox();
+	return "Intellect reset";
+}
+
+function ResetStats()
+{
+	HeroStrength = 5;
+	HeroIntel = 5;
+	UpdateInfoBox();
+	return "Stats reset";
+}
+
+// On page load
 function GoBackToStartPage()
 {
 	DoPage(PAGE_START);
