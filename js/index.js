@@ -176,6 +176,37 @@ function SetHeroGender(gender)
 	document.getElementById("HeroInfoDisplayGender").innerHTML = "Gender: " + HeroGender;
 }
 
+function UpdateInfoBox()
+{
+	var InvStr = "Inventory: ";
+	var StatStr = "Stats: ";
+	for (var i = 0; i < HeroInv.length; i++)
+	{
+		if (HeroInv[i] == HeroInv.length)
+		{
+			InvStr += HeroInv[i];
+		}
+		else
+		{
+			InvStr += HeroInv[i] + ", ";	
+		}
+    		
+	}
+	for (var i = 0; i < Object.keys(HeroStats).length; i++)
+	{
+		if (Object.keys(HeroStats)[i] == Object.keys(HeroStats).length)
+		{
+			StatStr += Object.keys(HeroStats)[i] + ": " + HeroStats[Object.keys(HeroStats)[i]];
+		}
+		else
+		{
+			StatStr += Object.keys(HeroStats)[i] + ": " + HeroStats[Object.keys(HeroStats)[i]] + ", ";
+		}
+	}
+	document.getElementById("HeroInfoDisplayInventory").innerHTML = InvStr;
+	document.getElementById("HeroInfoDisplayStats").innerHTML = StatStr;
+}
+
 function GoBackToStartPage()
 {
 	DoPage(PAGE_START);
