@@ -127,6 +127,7 @@ function DoPage(page)
 	document.getElementById(StoryMainText_ID).outerHTML = "<p id=\"" + StoryMainText_ID + "\">" + page.main_text + "</p>";
 	document.getElementById(StoryLeftButton_ID).outerHTML = "<button id=\"" + StoryLeftButton_ID + "\" onclick=\"DoPage(" + page.left_page + ")\">" + page.left_text + "</button>";
 	document.getElementById(StoryRightButton_ID).outerHTML = "<button id=\"" + StoryRightButton_ID + "\" onclick=\"DoPage(" + page.right_page + ")\">" + page.right_text + "</button>";
+
 	if (page.has_item)
 	{
 		for (var i = 0; i < page.give_items.length; i++)
@@ -154,6 +155,8 @@ function DoPage(page)
 			}
 		}
 	}
+	HeroStrength += page.give_strength;
+	HeroIntel += page.give_intel;
 	UpdateInfoBox();
 }
 
@@ -202,14 +205,14 @@ function AddInventoryItem(item)
 	return item;
 }
 
-function SetHeroStrength(num)
+function AddHeroStrength(num)
 {
 	HeroStrength += num;
 	UpdateInfoBox();
 	return num;
 }
 
-function SetHeroIntellect(num)
+function AddHeroIntellect(num)
 {
 	HeroIntel += num;
 	UpdateInfoBox();
