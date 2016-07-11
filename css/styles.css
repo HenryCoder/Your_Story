@@ -3,11 +3,14 @@ body {
 	text-align: center;
 }
 
-h1, h2, p {
+ h2, p {
 	font-family: fantasy;
 	color: white;
 }
 
+h1{
+	font-sze: 10;
+}
 
 button {
 	border: none;
