@@ -1,6 +1,7 @@
 var YS_LOADING = true;
 
-var DefaultStats = 0
+var DefaultStats = 0;
+var HelpText = "AddInventoryItem, AddHeroStrength, AddHeroIntellect, ClearInventory, ResetStrength, ResetIntellect, ResetStats";
 
 var HeroName = "Unnamed";
 var HeroGender = "Unknown";
@@ -205,42 +206,42 @@ function AddInventoryItem(item)
 {
 	HeroInv.push(item);
 	UpdateInfoBox();
-	return item = " has been added to inventory";
+	console.log(item + " has been added to inventory");
 }
 
 function AddHeroStrength(num)
 {
 	HeroStrength += num;
 	UpdateInfoBox();
-	return "Hero strength is now " + num;
+	console.log("Hero strength is now " + num);
 }
 
 function AddHeroIntellect(num)
 {
 	HeroIntel += num;
 	UpdateInfoBox();
-	return "Hero intellect is now " + num;
+	console.log("Hero intellect is now " + num);
 }
 
 function ClearInventory()
 {
 	HeroInv = [];
 	UpdateInfoBox();
-	return "Inventory cleared";
+	console.log("Inventory cleared");
 }
 
 function ResetStrength()
 {
 	HeroStrength = DefaultStats;
 	UpdateInfoBox();
-	return "Strength reset";
+	console.log("Strength reset");
 }
 
 function ResetIntellect()
 {
 	HeroIntel = DefaultStats;
 	UpdateInfoBox();
-	return "Intellect reset";
+	console.log("Intellect reset");
 }
 
 function ResetStats()
@@ -248,7 +249,12 @@ function ResetStats()
 	HeroStrength = DefaultStats;
 	HeroIntel = DefaultStats;
 	UpdateInfoBox();
-	return "Stats reset";
+	console.log("Stats reset");
+}
+
+function YourStoryHelp()
+{
+	console.log("Debugging Functions: " + HelpText);
 }
 
 // On page load
