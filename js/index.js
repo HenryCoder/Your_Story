@@ -180,6 +180,14 @@ function SetHeroGender(gender)
 	document.getElementById("HeroGenderButtonFemale").remove();
 	document.getElementById("HeroInfoDisplayName").innerHTML = "Name: " + HeroName;
 	document.getElementById("HeroInfoDisplayGender").innerHTML = "Gender: " + HeroGender;
+	if (HeroName == "Tai Lopez")
+	{
+		HeroInv.push("Lamborghini");
+	}
+	else if (HeroName == "Donald Trump")
+	{
+		HeroInv.push("a small loan of $1,000,000");
+	}
 }
 
 function UpdateInfoBox()
