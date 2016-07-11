@@ -205,7 +205,7 @@ function UpdateInfoBox()
 		}
 	}
 	document.getElementById("HeroInfoDisplayInventory").innerHTML = InvStr;
-	document.getElementById("HeroInfoDisplayStats").innerHTML = StatStr;
+	document.getElementById("HeroInfoDisplayStats").innerHTML = ""; // Stats have been removed
 }
 
 function GoBackToStartPage()
