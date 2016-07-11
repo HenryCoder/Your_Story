@@ -1,9 +1,11 @@
 var YS_LOADING = true;
 
+var DefaultStats = 0
+
 var HeroName = "Unnamed";
 var HeroGender = "Unknown";
-var HeroStrength = 5;
-var HeroIntel = 5;
+var HeroStrength = DefaultStats;
+var HeroIntel = DefaultStats;
 var HeroInv = [];
 
 var StoryWrapper_ID = "StoryWrapper";
@@ -229,32 +231,35 @@ function ClearInventory()
 
 function ResetStrength()
 {
-	HeroStrength = 5;
+	HeroStrength = DefaultStats;
 	UpdateInfoBox();
 	return "Strength reset";
 }
 
 function ResetIntellect()
 {
-	HeroIntel = 5;
+	HeroIntel = DefaultStats;
 	UpdateInfoBox();
 	return "Intellect reset";
 }
 
 function ResetStats()
 {
-	HeroStrength = 5;
-	HeroIntel = 5;
+	HeroStrength = DefaultStats;
+	HeroIntel = DefaultStats;
 	UpdateInfoBox();
 	return "Stats reset";
 }
 
 // On page load
-function GoBackToStartPage()
+function StartTheAdventure()
 {
+	HeroInv.push("Apple");
 	DoPage(PAGE_START);
+	return "The adventure has been started!";
+	console.log("The adventure has been started!");
 }
 
-window.onload = GoBackToStartPage;
+window.onload = StartTheAdventure;
 
 var YS_LOADING = false;
