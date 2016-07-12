@@ -200,6 +200,10 @@ function SetHeroGender(gender)
 		HeroInv.push("iPhone");
 		UpdateInfoBox();
 	}
+	else if (heroName == "Casper")
+		
+		HeroInv.push(" ");
+		UpdateInfoBox();
 }
 
 function UpdateInfoBox()
