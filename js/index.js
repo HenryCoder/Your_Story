@@ -91,12 +91,12 @@ function CreatePage(tab)
 // Create default pages
 var PAGE_START = new CreatePage({
 	page_id : 1,
-	main_text : "Welcome to Your Story. You come to a fork in the path.",
-	header : "Hello! This is an app created by Aidan, Nick, Rian and Henry.",
-	left_text : "Go left",
-	left_page : "PAGE_WIN",
-	right_text : "Go right",
-	right_page : "PAGE_LOSE"
+	main_text : "You wake up in a small house. There is a table with an apple, knife, and book on it. You pick up the apple and decide if you are going to take the knife or the book.",
+	header : "Welcome to You Story",
+	left_text : "Pick up knife",
+	left_page : "PAGE_0",
+	right_text : "Pick up book",
+	right_page : "PAGE_1"
 });
 var PAGE_LOSE = new CreatePage({
 	page_id : 2,
@@ -169,10 +169,37 @@ function SetHeroGender(gender)
 	if (gender)
 	{
 		HeroGender = "Female";
+		// Female easter eggs
+		if (HeroName == "Marie Curie")
+		{
+			HeroInv.push("Radiation posioning"); // That's pretty dark
+			UpdateInfoBox();
+		}
 	}
 	else
 	{
 		HeroGender = "Male";
+		// Male easter eggs
+		if (HeroName == "Tai Lopez")
+		{
+			HeroInv.push("Lamborghini");
+			UpdateInfoBox();
+		}
+		else if (HeroName == "Donald Trump")
+		{
+			HeroInv.push("Small loan of $1,000,000");
+			UpdateInfoBox();
+		}
+		else if (HeroName == "John Cena")
+		{
+			HeroStrength += 5;
+			UpdateInfoBox();
+		}
+		else if (HeroName == "Steve Jobs")
+		{
+			HeroInv.push("iPhone");
+			UpdateInfoBox();
+		}
 	}
 	HeroName = document.getElementById("HeroNameTextEntry").value;
 	document.getElementById("HeroNameTextEntry").remove();
@@ -180,31 +207,6 @@ function SetHeroGender(gender)
 	document.getElementById("HeroGenderButtonFemale").remove();
 	document.getElementById("HeroInfoDisplayName").innerHTML = "Name: " + HeroName;
 	document.getElementById("HeroInfoDisplayGender").innerHTML = "Gender: " + HeroGender;
-	if (HeroName == "Tai Lopez")
-	{
-		HeroInv.push("Lamborghini");
-		UpdateInfoBox();
-	}
-	else if (HeroName == "Donald Trump")
-	{
-		HeroInv.push("small loan of $1,000,000");
-		UpdateInfoBox();
-	}
-	else if (HeroName == "John Cena")
-	{
-		HeroStrength += 5;
-		UpdateInfoBox();
-	}
-	else if (HeroName == "Steve Jobs")
-	{
-		HeroInv.push("iPhone");
-		UpdateInfoBox();
-	}
-	else if (HeroName == "Casper")
-	{	
-		HeroInv.push("something a ghost would have");
-		UpdateInfoBox();
-	}
 }
 
 function UpdateInfoBox()
@@ -292,5 +294,24 @@ function StartTheAdventure()
 }
 
 window.onload = StartTheAdventure;
+
+///////////////////////////////////////
+////////// CREATE PAGES HERE //////////
+///////////////////////////////////////
+
+var PAGE_0 = new CreatePage({
+	page_id : 3,
+	header : "You walk outside and see a path.",
+	main_text : "The path leads to an arena. You look around some more and find another path that leads to a church.",
+	left_text : "Go to arena",
+	left_page : "PAGE_00",
+	right_text : "Go to church", 
+	right_page : "PAGE_01",
+	give_strength : 5
+});
+
+///////////////////////////////////////
+////////// CREATE PAGES HERE //////////
+///////////////////////////////////////
 
 var YS_LOADING = false;
