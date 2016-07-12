@@ -1,22 +1,27 @@
 var YS_LOADING = true;
 
+// Information
 var YS_LONG_NAME = "Your Story";
 var YS_SHORT_NAME = "YS";
 var YS_DESCRIPTION = "A choose your own adventure game.";
-var YS_VERSION = "0.7";
+var YS_VERSION = "Alpha 0.8";
 
+// Default values, feel free to edit
 var DefaultStats = 0;
 var DefaultItems = ["Apple"];
 
+// Help text
 var HelpTextPre = "Debugging functions: ";
 var HelpText = "AddInventoryItem, AddHeroStrength, AddHeroIntellect, ClearInventory, ResetStrength, ResetIntellect, ResetStats";
 
+// Hero information, do not edit
 var HeroName = "Unnamed";
 var HeroGender = "Unknown";
 var HeroStrength = DefaultStats;
 var HeroIntel = DefaultStats;
 var HeroInv = [];
 
+// HTML element IDs, do not edit unless they are changed in the actual HTML
 var StoryWrapper_ID = "StoryWrapper";
 var StoryHeader_ID = "StoryHeader";
 var StoryMainText_ID = "StoryMainText";
@@ -158,7 +163,7 @@ function CreatePage(tab)
 // Set them to a value so they aren't undefined before "creation" - NO LONGER NECESSARY, JUST KEEPING
 // var PAGE_START, PAGE_LOSE, PAGE_WIN, PAGE_CURRENT = 1;
 
-// Create default pages
+// Create default pages, feel free to edit values but do not change object name
 var PAGE_START = new CreatePage({
 	page_id : 1,
 	main_text : "You wake up in a small house. There is a table with an apple, knife, and book on it. You pick up the apple and decide if you are going to take the knife or the book.",
@@ -388,6 +393,10 @@ window.onload = StartTheAdventure;
 ////////// CREATE PAGES HERE //////////
 ///////////////////////////////////////
 
+// Comment this out, this isn't the actual story
+
+/*
+
 var PAGE_0 = new CreatePage({
 	page_id : 3,
 	header : "You walk outside and see a path.",
@@ -536,6 +545,12 @@ var PAGE_PRAISE = new CreatePage({
 	right_page : "PAGE_PRAISE",
 	give_intel : 5
 });
+
+*/
+
+///////////////////////////////////////
+////// ACTUAL STORY BELOW HERE ////////
+///////////////////////////////////////
 
 ///////////////////////////////////////
 ////////// CREATE PAGES HERE //////////
