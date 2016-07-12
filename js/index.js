@@ -59,19 +59,19 @@ function OnInvItemAdded(inv, item)
 }
 
 // OnStatChanged - Called when a stat is changed
-// stat - The stat changed
-// old - The old level
-// new - The new level
-function OnStatChanged(stat, old, new)
+// changed_stat - The stat changed
+// old_val - The old level
+// new_val - The new level
+function OnStatChanged(changed_stat, old_val, new_val)
 {
 	// Do stuff here
 }
 
 // OnInfoSet - Called when the player chooses their name and gender
-// name - The player's name
+// ply_name - The player's name
 // gender - The gender bool. false = male, true = female
 // gender_str - The gender string
-function OnInfoSet(stat, old, new)
+function OnInfoSet(ply_name, gender, gender_str)
 {
 	// Do stuff here
 }
