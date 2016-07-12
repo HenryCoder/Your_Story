@@ -163,6 +163,10 @@ function DoPage(page)
 	}
 	HeroStrength += page.give_strength;
 	HeroIntel += page.give_intel;
+	if (HeroStrength < page.needed_strength || HeroIntel < page.needed_intel)
+	{
+		DoPage(eval(page.punish_page));
+	}
 	UpdateInfoBox();
 }
 
@@ -355,14 +359,48 @@ var PAGE_BRUTE = new CreatePage({
 	right_page : "PAGE_BLOCK"
 });
 
-var PAGE_ATTACK = new CreatePage({
+var PAGE_BLOCK = new CreatePage({
 	page_id : 3,
-	header : "You use brute force to fight.",
-	main_text : "You swing and stab with all your might.",
+	header : "You attempt to block.",
+	main_text : "You are struck with a heavy, blunt attack and pass out.",
+	left_text : "Wake up",
+	left_page : "PAGE_START",
+	right_text : "Wake up", 
+	right_page : "PAGE_START"
+});
+
+var PAGE_BRUTE_ATTACK = new CreatePage({
+	page_id : 3,
+	header : "You attack brutally.",
+	main_text : "You successfully destroy your target.",
+	left_text : "Run Away",
+	left_page : "PAGE_ARENA",
+	right_text : "Block", 
+	right_page : "PAGE_BLOCK",
+	punish_page : "PAGE_WEAK",
+	needed_strength : 10
+});
+
+var PAGE_TACTIC_ATTACK = new CreatePage({
+	page_id : 3,
+	header : "You flank your opponent.",
+	main_text : "You successfully destroy your target.",
 	left_text : "Attack",
 	left_page : "PAGE_ATTACK",
 	right_text : "Block", 
-	right_page : "PAGE_BLOCK"
+	right_page : "PAGE_BLOCK",
+	punish_page : "PAGE_WEAK",
+	needed_intel : 10
+});
+
+var PAGE_WEAK = new CreatePage({
+	page_id : 3,
+	header : "You are too weak to fight.",
+	main_text : "You swing and stab with all your might, but you are too weak. Your enemy's sword hits you square in the neck, killing you instantly.",
+	left_text : "Accept defeat",
+	left_page : "PAGE_LOSE",
+	right_text : "Accept defeat", 
+	right_page : "PAGE_LOSE"
 });
 
 var PAGE_CHURCH = new CreatePage({
