@@ -77,6 +77,8 @@ function CreatePage(tab)
 	this.give_items = 	tab.give_items || 	[]; 		// What items should we give the player?
 	this.give_strength = 	tab.give_strength || 	0;		// How much strength should the player gain?
 	this.give_intel = 	tab.give_intel || 	0;		// How much intellect should the player gain?
+	this.needed_strength = 	tab.needed_strength || 	0;		// How much strength does the player need?
+	this.needed_intel = 	tab.needed_intel || 	0;		// How much intellect does the player need?
 	this.needed_items = 	tab.needed_items || 	[];		// What items does the player need?
 	this.item_punish = 	tab.item_punish || 	[]; 		// Kill the player if they don't have these items?
 	this.punish_page = 	tab.punish_page || 	"PAGE_LOSE";	// What page "kills" the player? (See item_punish)
@@ -304,9 +306,9 @@ var PAGE_0 = new CreatePage({
 	header : "You walk outside and see a path.",
 	main_text : "The path leads to an arena. You look around some more and find another path that leads to a church.",
 	left_text : "Go to arena",
-	left_page : "PAGE_00",
+	left_page : "PAGE_ARENA",
 	right_text : "Go to church", 
-	right_page : "PAGE_01",
+	right_page : "PAGE_CHURCH",
 	give_strength : 5,
 	give_items : ["Knife"]
 });
@@ -316,31 +318,102 @@ var PAGE_1 = new CreatePage({
 	header : "You walk outside and see a path.",
 	main_text : "The path leads to an arena. You look around some more and find another path that leads to a church.",
 	left_text : "Go to arena",
-	left_page : "PAGE_10",
+	left_page : "PAGE_ARENA",
 	right_text : "Go to church", 
-	right_page : "PAGE_11",
+	right_page : "PAGE_CHURCH",
 	give_intel : 5,
 	give_items : ["Book"]
 });
 
-var PAGE_00 = new CreatePage({
+var PAGE_ARENA = new CreatePage({
 	page_id : 3,
 	header : "You walk towards the arena and see that there is a fight.",
 	main_text : "There aren't that many people watching, and there is no security. Do you want to fight or train?",
 	left_text : "Fight",
-	left_page : "PAGE_000",
+	left_page : "PAGE_FIGHT",
 	right_text : "Train", 
-	right_page : "PAGE_001",
+	right_page : "PAGE_TRAIN"
 });
 
-var PAGE_01 = new CreatePage({
+var PAGE_FIGHT = new CreatePage({
+	page_id : 3,
+	header : "You decide to fight.",
+	main_text : "You run into the arena. The crowd starts booing. How shall you fight.",
+	left_text : "Brute force",
+	left_page : "PAGE_BRUTE",
+	right_text : "Tactics", 
+	right_page : "PAGE_TACTICS"
+});
+
+var PAGE_BRUTE = new CreatePage({
+	page_id : 3,
+	header : "You use brute force to fight.",
+	main_text : "You swing and stab with all your might.",
+	left_text : "Attack",
+	left_page : "PAGE_ATTACK",
+	right_text : "Block", 
+	right_page : "PAGE_BLOCK"
+});
+
+var PAGE_ATTACK = new CreatePage({
+	page_id : 3,
+	header : "You use brute force to fight.",
+	main_text : "You swing and stab with all your might.",
+	left_text : "Attack",
+	left_page : "PAGE_ATTACK",
+	right_text : "Block", 
+	right_page : "PAGE_BLOCK"
+});
+
+var PAGE_CHURCH = new CreatePage({
 	page_id : 3,
 	header : "You walk towards the church.",
 	main_text : "There are people. They seem to be waiting for the priest to show up.",
 	left_text : "Sit down with the people",
-	left_page : "PAGE_010",
+	left_page : "PAGE_CHURCH_SIT",
 	right_text : "Pretend to be a priest", 
-	right_page : "PAGE_011",
+	right_page : "PAGE_PRIEST"
+});
+
+var PAGE_CHURCH_SIT = new CreatePage({
+	page_id : 3,
+	header : "You sit down on one of the pues.",
+	main_text : "You have no idea why you did this. The priest is obviously not coming.",
+	left_text : "Get up",
+	left_page : "PAGE_CHURCH",
+	right_text : "Wait", 
+	right_page : "PAGE_WAIT"
+});
+
+var PAGE_WAIT = new CreatePage({
+	page_id : 3,
+	header : "You wait.",
+	main_text : "And you wait. And you wait. Everybody leaves. You keep waiting. You die where you sit. You never stopped waiting, even break your thirst.",
+	left_text : "Accept defeat",
+	left_page : "PAGE_LOSE",
+	right_text : "Accept defeat", 
+	right_page : "PAGE_LOSE"
+});
+
+var PAGE_PRIEST = new CreatePage({
+	page_id : 3,
+	header : "You get up on to the stand.",
+	main_text : "The people start clapping. They think you are the priest. What do you say.",
+	left_text : "Praise God",
+	left_page : "PAGE_PRAISE",
+	right_text : "Praise Satan", 
+	right_page : "PAGE_PRAISE"
+});
+
+var PAGE_PRAISE = new CreatePage({
+	page_id : 3,
+	header : "You praise.",
+	main_text : "The people clap for your praise. You realise how good of a priest you are.",
+	left_text : "Praise God",
+	left_page : "PAGE_PRAISE",
+	right_text : "Praise Satan", 
+	right_page : "PAGE_PRAISE",
+	give_intel : 5
 });
 
 ///////////////////////////////////////
