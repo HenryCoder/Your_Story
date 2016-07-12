@@ -1,6 +1,13 @@
 var YS_LOADING = true;
 
+var YS_LONG_NAME = "Your Story";
+var YS_SHORT_NAME = "YS";
+var YS_DESCRIPTION = "A choose your own adventure game.";
+var YS_VERSION = "0.7";
+
 var DefaultStats = 0;
+var DefaultItems = ["Apple"];
+
 var HelpText = "AddInventoryItem, AddHeroStrength, AddHeroIntellect, ClearInventory, ResetStrength, ResetIntellect, ResetStats";
 
 var HeroName = "Unnamed";
@@ -14,6 +21,13 @@ var StoryHeader_ID = "StoryHeader";
 var StoryMainText_ID = "StoryMainText";
 var StoryLeftButton_ID = "StoryLeftButton";
 var StoryRightButton_ID = "StoryRightButton";
+var StoryHeroNameTextEntry_ID = "HeroNameTextEntry";
+var StoryHeroGenderButtonMale_ID = "HeroGenderButtonMale";
+var StoryHeroGenderButtonFemale_ID = "HeroGenderButtonFemale";
+var StoryHeroInfoDisplayName_ID = "HeroInfoDisplayName";
+var StoryHeroInfoDisplayGender_ID = "HeroInfoDisplayGender";
+var StoryHeroInfoDisplayInventory_ID = "HeroInfoDisplayInventory";
+var StoryHeroInfoDisplayStats_ID = "HeroInfoDisplayStats";
 
 // http://stackoverflow.com/questions/1181575/determine-whether-an-array-contains-a-value
 var contains = function(needle)
@@ -175,7 +189,19 @@ function SetHeroGender(gender)
 	if (gender)
 	{
 		HeroGender = "Female";
-		// Female easter eggs
+	}
+	else
+	{
+		HeroGender = "Male";
+	}
+	HeroName = document.getElementById(StoryHeroNameTextEntry_ID).value;
+	document.getElementById(StoryHeroNameTextEntry_ID).remove();
+	document.getElementById(StoryHeroGenderButtonMale_ID).remove();
+	document.getElementById(StoryHeroGenderButtonFemale_ID).remove();
+	document.getElementById(StoryHeroInfoDisplayName_ID).innerHTML = "Name: " + HeroName;
+	document.getElementById(StoryHeroInfoDisplayGender_ID).innerHTML = "Gender: " + HeroGender;
+	if (gender) // Make a new if statement so we have the update HeroName and HeroGender in our scope
+	{
 		if (HeroName == "Marie Curie")
 		{
 			HeroInv.push("Radiation posioning"); // That's pretty dark
@@ -184,8 +210,6 @@ function SetHeroGender(gender)
 	}
 	else
 	{
-		HeroGender = "Male";
-		// Male easter eggs
 		if (HeroName == "Tai Lopez")
 		{
 			HeroInv.push("Lamborghini");
@@ -207,12 +231,6 @@ function SetHeroGender(gender)
 			UpdateInfoBox();
 		}
 	}
-	HeroName = document.getElementById("HeroNameTextEntry").value;
-	document.getElementById("HeroNameTextEntry").remove();
-	document.getElementById("HeroGenderButtonMale").remove();
-	document.getElementById("HeroGenderButtonFemale").remove();
-	document.getElementById("HeroInfoDisplayName").innerHTML = "Name: " + HeroName;
-	document.getElementById("HeroInfoDisplayGender").innerHTML = "Gender: " + HeroGender;
 }
 
 function UpdateInfoBox()
@@ -231,8 +249,8 @@ function UpdateInfoBox()
 		}
     		
 	}
-	document.getElementById("HeroInfoDisplayInventory").innerHTML = InvStr;
-	document.getElementById("HeroInfoDisplayStats").innerHTML = StatStr;
+	document.getElementById(StoryHeroInfoDisplayInventory_ID).innerHTML = InvStr;
+	document.getElementById(StoryHeroInfoDisplayStats_ID).innerHTML = StatStr;
 }
 
 // Debugging commands
@@ -294,9 +312,12 @@ function YourStoryHelp()
 // On page load
 function StartTheAdventure()
 {
-	HeroInv.push("Apple");
+	for (var i = 0; i < DefaultItems.length; i++)
+	{
+		HeroInv.push(DefaultItems[i]);
+	}
 	DoPage(PAGE_START);
-	console.log("The adventure has been started!");
+	console.log(YS_LONG_NAME + " has been started!\nVersion: " + VS_VERSION);
 }
 
 window.onload = StartTheAdventure;
