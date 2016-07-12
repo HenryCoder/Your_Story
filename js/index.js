@@ -8,6 +8,7 @@ var YS_VERSION = "0.7";
 var DefaultStats = 0;
 var DefaultItems = ["Apple"];
 
+var HelpTextPre = "Debugging functions: ";
 var HelpText = "AddInventoryItem, AddHeroStrength, AddHeroIntellect, ClearInventory, ResetStrength, ResetIntellect, ResetStats";
 
 var HeroName = "Unnamed";
@@ -28,6 +29,59 @@ var StoryHeroInfoDisplayName_ID = "HeroInfoDisplayName";
 var StoryHeroInfoDisplayGender_ID = "HeroInfoDisplayGender";
 var StoryHeroInfoDisplayInventory_ID = "HeroInfoDisplayInventory";
 var StoryHeroInfoDisplayStats_ID = "HeroInfoDisplayStats";
+
+///////////////////////////////////////
+////////// CREATE HOOKS HERE //////////
+///////////////////////////////////////
+
+// OnPageDone - Called when a story page is loaded
+// obj - The page object
+// obj_str - The name of the page object
+// inv - The player's inventory
+// strength - The player's current strength
+// intel - The player's current intellect
+function OnPageDone(obj, obj_str, inv, strength, intel)
+{
+	// Do stuff here
+}
+
+// OnInvItemAdded - Called when an item is added to the player's inventory
+// inv - The player's inventory
+// item - The item added
+function OnInvItemAdded(inv, item)
+{
+	// Do stuff here
+}
+
+// OnStatChanged - Called when a stat is changed
+// stat - The stat changed
+// old - The old level
+// new - The new level
+function OnStatChanged(stat, old, new)
+{
+	// Do stuff here
+}
+
+// OnInfoSet - Called when the player chooses their name and gender
+// name - The player's name
+// gender - The gender bool. false = male, true = female
+// gender_str - The gender string
+function OnInfoSet(stat, old, new)
+{
+	// Do stuff here
+}
+
+// OnCommandRun - Called when the player runs a debugging function
+// command - The name of the command
+// args - An array containing the arguments
+function OnCommandRun(command, args)
+{
+	// Do stuff here
+}
+
+///////////////////////////////////////
+////////// CREATE HOOKS HERE //////////
+///////////////////////////////////////
 
 // http://stackoverflow.com/questions/1181575/determine-whether-an-array-contains-a-value
 var contains = function(needle)
@@ -259,6 +313,7 @@ function AddInventoryItem(item)
 	HeroInv.push(item);
 	UpdateInfoBox();
 	console.log(item + " has been added to inventory");
+	OnCommandRun("AddInventoryItem", [item]);
 }
 
 function AddHeroStrength(num)
@@ -266,6 +321,7 @@ function AddHeroStrength(num)
 	HeroStrength += num;
 	UpdateInfoBox();
 	console.log("Hero strength is now " + num);
+	OnCommandRun("AddHeroStrength", [num]);
 }
 
 function AddHeroIntellect(num)
@@ -273,6 +329,7 @@ function AddHeroIntellect(num)
 	HeroIntel += num;
 	UpdateInfoBox();
 	console.log("Hero intellect is now " + num);
+	OnCommandRun("AddHeroIntellect", [num]);
 }
 
 function ClearInventory()
@@ -280,6 +337,7 @@ function ClearInventory()
 	HeroInv = [];
 	UpdateInfoBox();
 	console.log("Inventory cleared");
+	OnCommandRun("ClearInventory", []);
 }
 
 function ResetStrength()
@@ -287,6 +345,7 @@ function ResetStrength()
 	HeroStrength = DefaultStats;
 	UpdateInfoBox();
 	console.log("Strength reset");
+	OnCommandRun("ResetStrength", []);
 }
 
 function ResetIntellect()
@@ -294,6 +353,7 @@ function ResetIntellect()
 	HeroIntel = DefaultStats;
 	UpdateInfoBox();
 	console.log("Intellect reset");
+	OnCommandRun("ResetIntellect", []);
 }
 
 function ResetStats()
@@ -302,11 +362,13 @@ function ResetStats()
 	HeroIntel = DefaultStats;
 	UpdateInfoBox();
 	console.log("Stats reset");
+	OnCommandRun("ResetStats", []);
 }
 
 function YourStoryHelp()
 {
-	console.log("Debugging Functions: " + HelpText);
+	console.log(HelpTextPre + HelpText);
+	OnCommandRun("YourStoryHelp", []);
 }
 
 // On page load
