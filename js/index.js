@@ -317,7 +317,7 @@ function StartTheAdventure()
 		HeroInv.push(DefaultItems[i]);
 	}
 	DoPage(PAGE_START);
-	console.log(YS_LONG_NAME + " has been started!\nVersion: " + VS_VERSION);
+	console.log(YS_LONG_NAME + " has been started!\nVersion: " + YS_VERSION);
 }
 
 window.onload = StartTheAdventure;
