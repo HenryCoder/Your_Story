@@ -202,7 +202,7 @@ function SetHeroGender(gender)
 	}
 	else if (heroName == "Casper")
 		
-		HeroInv.push(" ");
+		HeroInv.push("something a ghost would have");
 		UpdateInfoBox();
 }
 
