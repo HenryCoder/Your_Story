@@ -307,7 +307,40 @@ var PAGE_0 = new CreatePage({
 	left_page : "PAGE_00",
 	right_text : "Go to church", 
 	right_page : "PAGE_01",
-	give_strength : 5
+	give_strength : 5,
+	give_items : ["Knife"]
+});
+
+var PAGE_1 = new CreatePage({
+	page_id : 3,
+	header : "You walk outside and see a path.",
+	main_text : "The path leads to an arena. You look around some more and find another path that leads to a church.",
+	left_text : "Go to arena",
+	left_page : "PAGE_10",
+	right_text : "Go to church", 
+	right_page : "PAGE_11",
+	give_intel : 5,
+	give_items : ["Book"]
+});
+
+var PAGE_00 = new CreatePage({
+	page_id : 3,
+	header : "You walk towards the arena and see that there is a fight.",
+	main_text : "There aren't that many people watching, and there is no security. Do you want to fight or train?",
+	left_text : "Fight",
+	left_page : "PAGE_000",
+	right_text : "Train", 
+	right_page : "PAGE_001",
+});
+
+var PAGE_01 = new CreatePage({
+	page_id : 3,
+	header : "You walk towards the church.",
+	main_text : "There are people. They seem to be waiting for the priest to show up.",
+	left_text : "Sit down with the people",
+	left_page : "PAGE_010",
+	right_text : "Pretend to be a priest", 
+	right_page : "PAGE_011",
 });
 
 ///////////////////////////////////////
