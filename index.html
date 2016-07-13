@@ -4,30 +4,31 @@
 		<title>Your Story</title>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 		<script src="js/index.js"></script>
+		<link rel="icon" href="assets/favicon.png">
+		<link rel="stylesheet"  href="css/styles.css">
 	</head>
 	<body>
-		<link rel="stylesheet"  href="css/styles.css">
 		<div id="StoryWrapper">
 			<div class="GenericMagenta">
-				<h1> Your Story </h1>
+				<h1 id="YourStory">Your Story</h1>
 			</div>
 			<div id="StoryInfo">
-				<p class="InfoLabel">Hero Info:</p>
+				<h2 class="InfoLabel">Hero Info</h2>
 				<input id="HeroNameTextEntry" type="text" value="Name">
 				<div class="GenericPurple">
 					<p id="HeroInfoDisplayName"></p>
 					<p id="HeroInfoDisplayGender"></p>
-					<button type="button" id="HeroGenderButtonMale" class="GenericMagenta" onclick="SetHeroGender(false)">Male</button>
-					<button type="button" id="HeroGenderButtonFemale" class="GenericMagenta" onclick="SetHeroGender(true)">Female</button>
-					<p id="HeroInfoDisplayInventory">Inventory: </p>
+					<button id="HeroGenderButtonMale" type="button" onclick="SetHeroGender(false)">Male</button>
+					<button id="HeroGenderButtonFemale" type="button" onclick="SetHeroGender(true)">Female</button>
+					<p id="HeroInfoDisplayInventory">Inventory:</p>
 					<p id="HeroInfoDisplayStats">Stats: </p>
 				</div>
 			</div>
 			<h2 id="StoryHeader">Story Header</h2>
 			<p id="StoryMainText">Story Main Text</p>
 			<div class="GenericMagenta">
-				<button type="button" id="StoryLeftButton" class="GenericPurple">Left Button</button>
-				<button type="button" id="StoryRightButton" class="GenericPurple">Right Button</button>
+				<button type="button" id="StoryLeftButton">Left Button</button>
+				<button type="button" id="StoryRightButton">Right Button</button>
 			</div>
 		</div>
 	</body>
