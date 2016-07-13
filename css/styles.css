@@ -2,14 +2,15 @@ body {
 	background-color: purple;
 	text-align: center;
 }
-
  h2, p {
 	font-family: fantasy;
 	color: white;
 }
 
 h1{
-	font-sze: 10;
+	font-family: fantasy;
+	color: white;
+	font-size:10;
 }
 
 button {
