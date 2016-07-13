@@ -173,7 +173,7 @@ var PAGE_START = new CreatePage({
 	right_text : "Intellectual",
 	right_page : "PAGE_1"
 	
-var PAGE_START = new CreatePage({
+var PAGE_0 = new CreatePage({
 	page_id : 1,
 	main_text : "You can focus your training on physical prowess or academics",
 	header : "Your Story: Middle Ages",
@@ -181,6 +181,15 @@ var PAGE_START = new CreatePage({
 	left_page : "PAGE_0",
 	right_text : "academics",
 	right_page : "PAGE_1"
+	
+var PAGE_1 = new CreatePage({
+	page_id : 1,
+	main_text : "You can focus your training on physical prowess or academics",
+	header : "Your Story: Middle Ages",
+	left_text : "physical prowess",
+	left_page : "PAGE_00",
+	right_text : "academics",
+	right_page : "PAGE_11"
 });
 var PAGE_LOSE = new CreatePage({
 	page_id : 2,
