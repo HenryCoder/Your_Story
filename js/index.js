@@ -431,7 +431,7 @@ var PAGE_WARRIOR = new CreatePage({
 	left_text : "physical prowess",
 	left_page : "PAGE_PHYSICAL PROWESS",
 	right_text : "acedemics", 
-	right_page : "PAGE_LOSE,
+	right_page : "PAGE_LOSE",
 	give_intel : 10,
 	
 });
