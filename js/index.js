@@ -167,7 +167,7 @@ function CreatePage(tab)
 var PAGE_START = new CreatePage({
 	page_id : 1,
 	main_text : "You wake up in a small house. There is a table with an apple, knife, and book on it. You pick up the apple and decide if you are going to take the knife or the book.",
-	header : "Welcome to You Story",
+	header : "Welcome to Your Story",
 	left_text : "Pick up knife",
 	left_page : "PAGE_0",
 	right_text : "Pick up book",
