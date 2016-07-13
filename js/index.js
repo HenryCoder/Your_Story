@@ -169,11 +169,11 @@ var PAGE_START = new CreatePage({
 	main_text : "You are in Middle Ages. You can be a Warrior or an Intellectual",
 	header : "Your Story: Middle Ages",
 	left_text : "Warrior",
-	left_page : "PAGE_0",
+	left_page : "PAGE_WARRIOR",
 	right_text : "Intellectual",
-	right_page : "PAGE_1"
+	right_page : "PAGE_INTELLECTUAL"
 	
-var PAGE_0 = new CreatePage({
+var PAGE_WARRIOR = new CreatePage({
 	page_id : 1,
 	main_text : "You can focus your training on physical prowess or academics",
 	header : "Your Story: Middle Ages",
