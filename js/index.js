@@ -166,11 +166,11 @@ function CreatePage(tab)
 // Create default pages, feel free to edit values but do not change object name
 var PAGE_START = new CreatePage({
 	page_id : 1,
-	main_text : "You wake up in a small house. There is a table with an apple, knife, and book on it. You pick up the apple and decide if you are going to take the knife or the book.",
-	header : "Welcome to You Story",
-	left_text : "Pick up knife",
+	main_text : "You are in Middle Ages. You can be a Warrior or an Intellectual",
+	header : "Your Story: Middle Ages",
+	left_text : "Warrior",
 	left_page : "PAGE_0",
-	right_text : "Pick up book",
+	right_text : "Intellectual",
 	right_page : "PAGE_1"
 });
 var PAGE_LOSE = new CreatePage({
