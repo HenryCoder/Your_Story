@@ -303,6 +303,10 @@ function SetHeroGender(gender)
 			HeroInv.push("iPhone");
 			UpdateInfoBox();
 		}
+		else if(HeroName == "Cat Dog Team")
+		{
+			HeroInv.push("pugtato and grumpy cat");
+			UpdateInfoBox();
 	}
 }
 
