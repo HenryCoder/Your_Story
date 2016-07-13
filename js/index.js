@@ -413,37 +413,27 @@ window.onload = StartTheAdventure;
 ///////////////////////////////////////
 ////////// CREATE PAGES HERE //////////
 ///////////////////////////////////////
-
-var PAGE_0 = new CreatePage({
+var PAGE_INTELLECTUAL = new CreatePage({
 	page_id : 3,
-	header : "You walk outside and see a path.",
-	main_text : "The path leads to an arena. You look around some more and find another path that leads to a church.",
-	left_text : "Go to arena",
-	left_page : "PAGE_ARENA",
-	right_text : "Go to church", 
-	right_page : "PAGE_CHURCH",
-	give_strength : 5,
-	give_items : ["Knife"]
+	header : "You can choose how you train.",
+	main_text : "You can focus your training on physical prowess, or acedemics.",
+	left_text : "physical prowess",
+	left_page : "PAGE_LOSE",
+	right_text : "acedemics", 
+	right_page : "PAGE_ACADEMICS",
+	give_intel : 10,
+	
 });
-var PAGE_1 = new CreatePage({
+var PAGE_WARRIOR = new CreatePage({
 	page_id : 3,
-	header : "You walk outside and see a path.",
-	main_text : "The path leads to an arena. You look around some more and find another path that leads to a church.",
-	left_text : "Go to arena",
-	left_page : "PAGE_ARENA",
-	right_text : "Go to church", 
-	right_page : "PAGE_CHURCH",
-	give_intel : 5,
-	give_items : ["Book"]
-});
-var PAGE_ARENA = new CreatePage({
-	page_id : 3,
-	header : "You walk towards the arena and see that there is a fight.",
-	main_text : "There aren't that many people watching, and there is no security. Do you want to fight or train?",
-	left_text : "Fight",
-	left_page : "PAGE_FIGHT",
-	right_text : "Train", 
-	right_page : "PAGE_TRAIN"
+	header : "You can choose how you train.",
+	main_text : "You can focus your training on physical prowess, or acedemics.",
+	left_text : "physical prowess",
+	left_page : "PAGE_PHYSICAL PROWESS",
+	right_text : "acedemics", 
+	right_page : "PAGE_LOSE,
+	give_intel : 10,
+	
 });
 var PAGE_FIGHT = new CreatePage({
 	page_id : 3,
@@ -594,7 +584,6 @@ var PAGE_RUN = new CreatePage({
 	right_text : "Go to the town", 
 	right_page : "PAGE_TOWN"
 });
-
 ///////////////////////////////////////
 ////// ACTUAL STORY BELOW HERE ////////
 ///////////////////////////////////////
