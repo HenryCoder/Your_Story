@@ -230,6 +230,8 @@ function DoPage(page)
 		{
 			if  (!contains.call(HeroInv, page.item_punish[i]))
 			{
+				// eval is needed because page.punish_page is a string containing the
+				// name of the page, not the actual page object
 				DoPage(eval(page.punish_page));
 			}
 		}
@@ -238,6 +240,8 @@ function DoPage(page)
 	HeroIntel += page.give_intel;
 	if (HeroStrength < page.needed_strength || HeroIntel < page.needed_intel)
 	{
+		// eval is needed because page.punish_page is a string containing the
+		// name of the page, not the actual page object
 		DoPage(eval(page.punish_page));
 	}
 	UpdateInfoBox();
@@ -261,14 +265,18 @@ function SetHeroGender(gender)
 	document.getElementById(StoryHeroInfoDisplayGender_ID).innerHTML = "Gender: " + HeroGender;
 	if (gender) // Make a new if statement so we have the update HeroName and HeroGender in our scope
 	{
+		// Female easter eggs
+		/*
 		if (HeroName == "Marie Curie")
 		{
 			HeroInv.push("Radiation posioning"); // That's pretty dark
-			UpdateInfoBox();
+			UpdateInfoBox(); // Actually a bit too dark
 		}
+		*/
 	}
 	else
 	{
+		// Male easter eggs
 		if (HeroName == "Tai Lopez")
 		{
 			HeroInv.push("Lamborghini");
@@ -298,12 +306,15 @@ function UpdateInfoBox()
 	var StatStr = "Stats: Strength: " + HeroStrength + ", Intellect: " + HeroIntel;
 	for (var i = 0; i < HeroInv.length; i++)
 	{
-		if (HeroInv[i] == HeroInv.length)
+		// Check for last inventory item
+		if (i == HeroInv.length - 1)
 		{
+			// No comma
 			InvStr += HeroInv[i];
 		}
 		else
 		{
+			// Append comma
 			InvStr += HeroInv[i] + ", ";	
 		}
     		
