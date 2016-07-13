@@ -166,30 +166,12 @@ function CreatePage(tab)
 // Create default pages, feel free to edit values but do not change object name
 var PAGE_START = new CreatePage({
 	page_id : 1,
-	main_text : "You are in Middle Ages. You can be a Warrior or an Intellectual",
-	header : "Your Story: Middle Ages",
-	left_text : "Warrior",
-	left_page : "PAGE_WARRIOR",
-	right_text : "Intellectual",
-	right_page : "PAGE_INTELLECTUAL"
-	
-var PAGE_WARRIOR = new CreatePage({
-	page_id : 1,
-	main_text : "You can focus your training on physical prowess or academics",
-	header : "Your Story: Middle Ages",
-	left_text : "physical prowess",
+	main_text : "You wake up in a small house. There is a table with an apple, knife, and book on it. You pick up the apple and decide if you are going to take the knife or the book.",
+	header : "Welcome to You Story",
+	left_text : "Pick up knife",
 	left_page : "PAGE_0",
-	right_text : "academics",
+	right_text : "Pick up book",
 	right_page : "PAGE_1"
-	
-var PAGE_1 = new CreatePage({
-	page_id : 1,
-	main_text : "You can focus your training on physical prowess or academics",
-	header : "Your Story: Middle Ages",
-	left_text : "physical prowess",
-	left_page : "PAGE_00",
-	right_text : "academics",
-	right_page : "PAGE_11"
 });
 var PAGE_LOSE = new CreatePage({
 	page_id : 2,
@@ -422,10 +404,6 @@ window.onload = StartTheAdventure;
 ////////// CREATE PAGES HERE //////////
 ///////////////////////////////////////
 
-// Comment this out, this isn't the actual story
-
-/*
-
 var PAGE_0 = new CreatePage({
 	page_id : 3,
 	header : "You walk outside and see a path.",
@@ -437,7 +415,6 @@ var PAGE_0 = new CreatePage({
 	give_strength : 5,
 	give_items : ["Knife"]
 });
-
 var PAGE_1 = new CreatePage({
 	page_id : 3,
 	header : "You walk outside and see a path.",
@@ -449,7 +426,6 @@ var PAGE_1 = new CreatePage({
 	give_intel : 5,
 	give_items : ["Book"]
 });
-
 var PAGE_ARENA = new CreatePage({
 	page_id : 3,
 	header : "You walk towards the arena and see that there is a fight.",
@@ -459,7 +435,6 @@ var PAGE_ARENA = new CreatePage({
 	right_text : "Train", 
 	right_page : "PAGE_TRAIN"
 });
-
 var PAGE_FIGHT = new CreatePage({
 	page_id : 3,
 	header : "You decide to fight.",
@@ -469,7 +444,6 @@ var PAGE_FIGHT = new CreatePage({
 	right_text : "Tactics", 
 	right_page : "PAGE_TACTICS"
 });
-
 var PAGE_BRUTE = new CreatePage({
 	page_id : 3,
 	header : "You use brute force to fight.",
@@ -479,7 +453,6 @@ var PAGE_BRUTE = new CreatePage({
 	right_text : "Block", 
 	right_page : "PAGE_BLOCK"
 });
-
 var PAGE_BLOCK = new CreatePage({
 	page_id : 3,
 	header : "You attempt to block.",
@@ -489,7 +462,6 @@ var PAGE_BLOCK = new CreatePage({
 	right_text : "Wake up", 
 	right_page : "PAGE_START"
 });
-
 var PAGE_BRUTE_ATTACK = new CreatePage({
 	page_id : 3,
 	header : "You attack brutally.",
@@ -501,7 +473,6 @@ var PAGE_BRUTE_ATTACK = new CreatePage({
 	punish_page : "PAGE_WEAK",
 	needed_strength : 10
 });
-
 var PAGE_TACTIC_ATTACK = new CreatePage({
 	page_id : 3,
 	header : "You flank your opponent.",
@@ -513,17 +484,15 @@ var PAGE_TACTIC_ATTACK = new CreatePage({
 	punish_page : "PAGE_WEAK",
 	needed_intel : 10
 });
-
 var PAGE_WEAK = new CreatePage({
 	page_id : 3,
 	header : "You are too weak to fight.",
-	main_text : "You swing and stab with all your might, but you are too weak. Your enemy's sword hits you square in the neck, killing you instantly.",
+	main_text : "You swing and stab with all your might, but you are too weak. Your enemy's sword hits you, and you die.",
 	left_text : "Accept defeat",
 	left_page : "PAGE_LOSE",
 	right_text : "Accept defeat", 
 	right_page : "PAGE_LOSE"
 });
-
 var PAGE_CHURCH = new CreatePage({
 	page_id : 3,
 	header : "You walk towards the church.",
@@ -533,7 +502,6 @@ var PAGE_CHURCH = new CreatePage({
 	right_text : "Pretend to be a priest", 
 	right_page : "PAGE_PRIEST"
 });
-
 var PAGE_CHURCH_SIT = new CreatePage({
 	page_id : 3,
 	header : "You sit down on one of the pues.",
@@ -543,7 +511,6 @@ var PAGE_CHURCH_SIT = new CreatePage({
 	right_text : "Wait", 
 	right_page : "PAGE_WAIT"
 });
-
 var PAGE_WAIT = new CreatePage({
 	page_id : 3,
 	header : "You wait.",
@@ -553,29 +520,70 @@ var PAGE_WAIT = new CreatePage({
 	right_text : "Accept defeat", 
 	right_page : "PAGE_LOSE"
 });
-
 var PAGE_PRIEST = new CreatePage({
 	page_id : 3,
 	header : "You get up on to the stand.",
 	main_text : "The people start clapping. They think you are the priest. What do you say.",
-	left_text : "Praise God",
+	left_text : "Praise",
 	left_page : "PAGE_PRAISE",
-	right_text : "Praise Satan", 
-	right_page : "PAGE_PRAISE"
+	right_text : "Start a song", 
+	right_page : "PAGE_SONG"
 });
-
 var PAGE_PRAISE = new CreatePage({
 	page_id : 3,
 	header : "You praise.",
 	main_text : "The people clap for your praise. You realise how good of a priest you are.",
-	left_text : "Praise God",
-	left_page : "PAGE_PRAISE",
-	right_text : "Praise Satan", 
-	right_page : "PAGE_PRAISE",
+	left_text : "Leave",
+	left_page : "PAGE_LEAVE_CHURCH",
+	right_text : "More praise", 
+	right_page : "PAGE_MORE_PRAISE",
 	give_intel : 5
 });
-
-*/
+var PAGE_SONG = new CreatePage({
+	page_id : 3,
+	header : "You sit down at the organ.",
+	main_text : "You begin to play and the people start singing. Before long, they realise you cannot play the organ, and you are obviously a fake priest. You are stoned and beaten to death.",
+	left_text : "Accept defeat",
+	left_page : "PAGE_LOSE",
+	right_text : "Accept defeat", 
+	right_page : "PAGE_LOSE"
+});
+var PAGE_MORE_PRAISE = new CreatePage({
+	page_id : 3,
+	header : "You praise again.",
+	main_text : "You continue to and the people continue to clap until the stop. You keep going. You are revealed as a fake. You are stoned and beaten to death.",
+	left_text : "Accept defeat",
+	left_page : "PAGE_LOSE",
+	right_text : "Accept defeat", 
+	right_page : "PAGE_LOSE"
+});
+var PAGE_LEAVE_CHURCH = new CreatePage({
+	page_id : 3,
+	header : "You leave.",
+	main_text : "You walk out of the church, the people's claps and cheers become quiet. A rather puzzled looking man walks up to the door you left from.",
+	left_text : "Run away",
+	left_page : "PAGE_RUN",
+	right_text : "Walk away slowly", 
+	right_page : "PAGE_CHURCH_WALK"
+});
+var PAGE_CHURCH_WALK = new CreatePage({
+	page_id : 3,
+	header : "You walk.",
+	main_text : "As you walk away slowly, a crowd of people run from the church, pitchforks and torches in hand. The man was the priest. He told the people. The crowd catches up to you and kills you. Faker.",
+	left_text : "Accept defeat",
+	left_page : "PAGE_LOSE",
+	right_text : "Accept defeat", 
+	right_page : "PAGE_LOSE"
+});
+var PAGE_RUN = new CreatePage({
+	page_id : 3,
+	header : "You run away.",
+	main_text : "You run as fast as you can to the forest. As you finally get there and hide in the bushes, you can see another town",
+	left_text : "Explore the forest",
+	left_page : "PAGE_FOREST",
+	right_text : "Go to the town", 
+	right_page : "PAGE_TOWN"
+});
 
 ///////////////////////////////////////
 ////// ACTUAL STORY BELOW HERE ////////
