@@ -421,7 +421,7 @@ var PAGE_INTELLECTUAL = new CreatePage({
 	left_page : "PAGE_LOSE",
 	right_text : "acedemics", 
 	right_page : "PAGE_ACADEMICS",
-	give_intel : 10,
+	give_intel : 10
 	
 });
 var PAGE_WARRIOR = new CreatePage({
@@ -432,7 +432,7 @@ var PAGE_WARRIOR = new CreatePage({
 	left_page : "PAGE_PHYSICAL PROWESS",
 	right_text : "acedemics", 
 	right_page : "PAGE_LOSE",
-	give_intel : 10,
+	give_intel : 10
 	
 });
 var PAGE_FIGHT = new CreatePage({
