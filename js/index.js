@@ -244,6 +244,12 @@ function DoPage(page)
 		// name of the page, not the actual page object
 		DoPage(eval(page.punish_page));
 	}
+	if (page.lose)
+	{
+		HeroStrength += DefaultStats;
+		HeroIntel += DefaultStats;
+		HeroInv = DefaultItems;
+	}
 	UpdateInfoBox();
 }
 
