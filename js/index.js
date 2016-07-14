@@ -440,7 +440,7 @@ var PAGE_WARRIOR = new CreatePage({
 	give_strength: 5
 });
 var PAGE_INTELLECTUAL = new CreatePage({
-page_id : 1,
+	page_id : 1,
 	main_text : "You can focus your training on physical prowess or acedemics",
 	header : "Your Story: Middle Ages",
 	left_text : "physical prowess",
@@ -448,6 +448,7 @@ page_id : 1,
 	right_text : "ACEDEMICS",
 	right_page : "PAGE_ACEDEMICS",
 	give_intel: 5
+});
 var PAGE_0 = new CreatePage({
 	page_id : 3,
 	header : "You walk outside and see a path.",
