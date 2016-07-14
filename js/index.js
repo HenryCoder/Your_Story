@@ -4,7 +4,7 @@ var YS_LOADING = true;
 var YS_LONG_NAME = "Your Story";
 var YS_SHORT_NAME = "YS";
 var YS_DESCRIPTION = "A choose your own adventure game.";
-var YS_VERSION = "Alpha 0.8";
+var YS_VERSION = "Beta 1.0";
 
 // Default values, feel free to edit
 var DefaultStats = 0;
