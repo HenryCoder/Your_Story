@@ -253,6 +253,17 @@ function DoPage(page)
 	UpdateInfoBox();
 }
 
+// Backwards compatibility
+EasterEggs = EasterEggs || [];
+
+function EasterEgg(nam, strgth, intl, itms)
+{
+	this.name = nam || "Bob";
+	this.strength = strgth || 0;
+	this.intel = intl || 0;
+	this.items = itms || [];
+}
+
 function SetHeroGender(gender)
 {
 	if (gender)
@@ -343,7 +354,7 @@ function AddHeroStrength(num)
 {
 	HeroStrength += num;
 	UpdateInfoBox();
-	console.log("Hero strength is now " + num);
+	console.log("Hero strength is now " + HeroStrength);
 	OnCommandRun("AddHeroStrength", [num]);
 }
 
@@ -351,7 +362,7 @@ function AddHeroIntellect(num)
 {
 	HeroIntel += num;
 	UpdateInfoBox();
-	console.log("Hero intellect is now " + num);
+	console.log("Hero intellect is now " + HeroIntel);
 	OnCommandRun("AddHeroIntellect", [num]);
 }
 
