@@ -166,12 +166,32 @@ function CreatePage(tab)
 // Create default pages, feel free to edit values but do not change object name
 var PAGE_START = new CreatePage({
 	page_id : 1,
-	main_text : "You wake up in a small house. There is a table with an apple, knife, and book on it. You pick up the apple and decide if you are going to take the knife or the book.",
-	header : "Welcome to Your Story",
-	left_text : "Pick up knife",
-	left_page : "PAGE_0",
-	right_text : "Pick up book",
-	right_page : "PAGE_1"
+	main_text : "You are in the Middle Ages. You can be a Warrior or an Intellectual".
+	header : "Your Story: Middle Ages",
+	left_text : "Warrior",
+	left_page : "PAGE_WARRIOR",
+	right_text : "Intellectual",
+	right_page : "PAGE_INTELLECTUAL"
+});
+var PAGE_WARRIOR = new CreatePage({
+	page_id : 1,
+	main_text : "You can focus your training on physical prowess or acedemics".
+	header : "Your Story: Middle Ages",
+	left_text : "physical prowess",
+	left_page : "PAGE_PHYSICAL",
+	right_text : "ACEDEMICS",
+	right_page : "PAGE_LOSE"
+	give_strength: 5
+});
+var PAGE_INTELLECTUAL = new CreatePage({
+page_id : 1,
+	main_text : "You can focus your training on physical prowess or acedemics".
+	header : "Your Story: Middle Ages",
+	left_text : "physical prowess",
+	left_page : "PAGE_LOSE",
+	right_text : "ACEDEMICS",
+	right_page : "PAGE_ACEDEMICS"
+	give_intel: 5
 });
 var PAGE_LOSE = new CreatePage({
 	page_id : 2,
@@ -409,7 +429,25 @@ window.onload = StartTheAdventure;
 ///////////////////////////////////////
 ////////// CREATE PAGES HERE //////////
 ///////////////////////////////////////
-
+var PAGE_WARRIOR = new CreatePage({
+	page_id : 1,
+	main_text : "You can focus your training on physical prowess or acedemics".
+	header : "Your Story: Middle Ages",
+	left_text : "physical prowess",
+	left_page : "PAGE_PHYSICAL",
+	right_text : "ACEDEMICS",
+	right_page : "PAGE_LOSE"
+	give_strength: 5
+});
+var PAGE_INTELLECTUAL = new CreatePage({
+page_id : 1,
+	main_text : "You can focus your training on physical prowess or acedemics".
+	header : "Your Story: Middle Ages",
+	left_text : "physical prowess",
+	left_page : "PAGE_LOSE",
+	right_text : "ACEDEMICS",
+	right_page : "PAGE_ACEDEMICS"
+	give_intel: 5
 var PAGE_0 = new CreatePage({
 	page_id : 3,
 	header : "You walk outside and see a path.",
