@@ -292,10 +292,11 @@ function SetHeroGender(gender)
 		{
 			HeroInv.push("Small loan of $1,000,000");
 			UpdateInfoBox();
+			HeroIntel += -100000000;
 		}
 		else if (HeroName == "John Cena")
 		{
-			HeroStrength += 100000000;
+			
 			UpdateInfoBox();
 		}
 		else if (HeroName == "Steve Jobs")
