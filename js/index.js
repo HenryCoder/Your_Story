@@ -200,7 +200,8 @@ var PAGE_LOSE = new CreatePage({
 	left_text : "Start over",
 	left_page : "PAGE_START",
 	right_text : "Start over",
-	right_page : "PAGE_START"
+	right_page : "PAGE_START",
+	lose : true
 });
 var PAGE_WIN = new CreatePage({
 	page_id : 3,
@@ -266,8 +267,8 @@ function DoPage(page)
 	}
 	if (page.lose)
 	{
-		HeroStrength += DefaultStats;
-		HeroIntel += DefaultStats;
+		HeroStrength = DefaultStats;
+		HeroIntel = DefaultStats;
 		HeroInv = DefaultItems;
 	}
 	UpdateInfoBox();
