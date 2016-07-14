@@ -166,15 +166,33 @@ function CreatePage(tab)
 // Create default pages, feel free to edit values but do not change object name
 var PAGE_START = new CreatePage({
 	page_id : 1,
-	main_text : "You are in the Middle Ages. You can be a Warrior or an Intellectual",
+	main_text : "You are in the Middle Ages. You can be a Warrior or an Intellectual".
 	header : "Your Story: Middle Ages",
 	left_text : "Warrior",
 	left_page : "PAGE_WARRIOR",
 	right_text : "Intellectual",
 	right_page : "PAGE_INTELLECTUAL"
 });
-
-
+var PAGE_WARRIOR = new CreatePage({
+	page_id : 1,
+	main_text : "You can focus your training on physical prowess or acedemics".
+	header : "Your Story: Middle Ages",
+	left_text : "physical prowess",
+	left_page : "PAGE_PHYSICAL",
+	right_text : "ACEDEMICS",
+	right_page : "PAGE_LOSE"
+	give_strength: 5
+});
+var PAGE_INTELLECTUAL = new CreatePage({
+page_id : 1,
+	main_text : "You can focus your training on physical prowess or acedemics".
+	header : "Your Story: Middle Ages",
+	left_text : "physical prowess",
+	left_page : "PAGE_LOSE",
+	right_text : "ACEDEMICS",
+	right_page : "PAGE_ACEDEMICS"
+	give_intel: 5
+});
 var PAGE_LOSE = new CreatePage({
 	page_id : 2,
 	main_text : "You have lost.",
@@ -413,7 +431,7 @@ window.onload = StartTheAdventure;
 ///////////////////////////////////////
 var PAGE_WARRIOR = new CreatePage({
 	page_id : 1,
-	main_text : "You can focus your training on physical prowess or acedemics".
+	main_text : "You can focus your training on physical prowess or acedemics",
 	header : "Your Story: Middle Ages",
 	left_text : "physical prowess",
 	left_page : "PAGE_PHYSICAL",
@@ -423,49 +441,27 @@ var PAGE_WARRIOR = new CreatePage({
 });
 var PAGE_INTELLECTUAL = new CreatePage({
 page_id : 1,
-	main_text : "You can focus your training on physical prowess or acedemics".
-	header : "",
+	main_text : "You can focus your training on physical prowess or acedemics",
+	header : "Your Story: Middle Ages",
 	left_text : "physical prowess",
 	left_page : "PAGE_LOSE",
 	right_text : "ACEDEMICS",
 	right_page : "PAGE_ACEDEMICS"
 	give_intel: 5
-var PAGE_ACEDEMICS = new CreatePage({
+var PAGE_0 = new CreatePage({
 	page_id : 3,
-	header : "Your Story: Middle Ages",
-	main_text : "You can select sword and bow /w quiver and arrows or a book on tactics",
-	left_text : "sword and bow /w quiver and arrows",
-	left_page : "PAGE_LOSE",
-	right_text : "book on tactics", 
-	right_page : "PAGE_BOOK",
-	give_intel : 10,
-	give_items : ["Book"]
+	header : "You walk outside and see a path.",
+	main_text : "The path leads to an arena. You look around some more and find another path that leads to a church.",
+	left_text : "Go to arena",
+	left_page : "PAGE_ARENA",
+	right_text : "Go to church", 
+	right_page : "PAGE_CHURCH",
+	give_strength : 5,
+	give_items : ["Knife"]
 });
-var PAGE_PHYSICAL = new CreatePage({
+var PAGE_1 = new CreatePage({
 	page_id : 3,
-	header : "Your Story: Middle Ages",
-	main_text : "You can select sword and bow /w quiver and arrows or a book on tactics",
-	left_text : "sword and bow /w quiver and arrows",
-	left_page : "PAGE_WEAPONS",
-	right_text : "book on tactics", 
-	right_page : "PAGE_LOSE",
-	give_strength : 10,
-	give_items : [sword and bow /w quiver and arrows]
-});
-var PAGE_BOOK = new CreatePage({
-	page_id : 3,
-	header : "Your Story: Middle Ages",
-	main_text : "You need to battle a group of thugs that are constantly attacking the castle. Do you want to think of a strategy, wasting precious time, or go into battle without a plan?"
-	left_text : "Straight into battle",
-	left_page : "PAGE_LOSE",
-	right_text : "Think of a strategy", 
-	right_page : "PAGE_STRATS",
-	give_intel : 5,
-});
-
-var Page = new CreatePage({
-	page_id : 3,
-	header : "Your Story: Middle Ages",
+	header : "You walk outside and see a path.",
 	main_text : "The path leads to an arena. You look around some more and find another path that leads to a church.",
 	left_text : "Go to arena",
 	left_page : "PAGE_ARENA",
