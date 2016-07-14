@@ -273,7 +273,7 @@ function SetHeroGender(gender)
 	{
 		// Female easter eggs
 		/*
-		if (HeroName == "Marie Curie")
+		if (HeroName.toLowerCase() == "marie curie")
 		{
 			HeroInv.push("Radiation posioning"); // That's pretty dark
 			UpdateInfoBox(); // Actually a bit too dark
@@ -283,23 +283,23 @@ function SetHeroGender(gender)
 	else
 	{
 		// Male easter eggs
-		if (HeroName == "Tai Lopez")
+		if (HeroName.toLowerCase() == "tai lopez")
 		{
 			HeroInv.push("Lamborghini");
 			UpdateInfoBox();
 		}
-		else if (HeroName == "Donald Trump")
+		else if (HeroName.toLowerCase() == "donald trump")
 		{
 			HeroInv.push("Small loan of $1,000,000");
 			HeroIntel -= 100000000;
 			UpdateInfoBox();
 		}
-		else if (HeroName == "John Cena")
+		else if (HeroName.toLowerCase() == "john cena")
 		{
 			HeroStrength += 100000000;
 			UpdateInfoBox();
 		}
-		else if (HeroName == "Steve Jobs")
+		else if (HeroName.toLowerCase() == "steve jobs")
 		{
 			HeroInv.push("iPhone");
 			UpdateInfoBox();
