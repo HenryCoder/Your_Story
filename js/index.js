@@ -166,7 +166,7 @@ function CreatePage(tab)
 // Create default pages, feel free to edit values but do not change object name
 var PAGE_START = new CreatePage({
 	page_id : 1,
-	main_text : "You are in the Middle Ages. You can be a Warrior or an Intellectual".
+	main_text : "You are in the Middle Ages. You can be a Warrior or an Intellectual",
 	header : "Your Story: Middle Ages",
 	left_text : "Warrior",
 	left_page : "PAGE_WARRIOR",
@@ -175,7 +175,7 @@ var PAGE_START = new CreatePage({
 });
 var PAGE_WARRIOR = new CreatePage({
 	page_id : 1,
-	main_text : "You can focus your training on physical prowess or acedemics".
+	main_text : "You can focus your training on physical prowess or acedemics",
 	header : "Your Story: Middle Ages",
 	left_text : "physical prowess",
 	left_page : "PAGE_PHYSICAL",
@@ -185,7 +185,7 @@ var PAGE_WARRIOR = new CreatePage({
 });
 var PAGE_INTELLECTUAL = new CreatePage({
 page_id : 1,
-	main_text : "You can focus your training on physical prowess or acedemics".
+	main_text : "You can focus your training on physical prowess or acedemics",
 	header : "Your Story: Middle Ages",
 	left_text : "physical prowess",
 	left_page : "PAGE_LOSE",
