@@ -157,7 +157,6 @@ function CreatePage(tab)
 	this.punish_page = 	tab.punish_page || 	"PAGE_LOSE";	// What page "kills" the player? (See item_punish)
 	this.take_items = 	tab.take_items || 	[];		// Take these items from the player if they have them
 	this.lose =		tab.lose || 		false;		// Does the player lose on this page?
-	this.win = 		tab.win || 		false;		// Does the player win on this page?
 }
 
 // Set them to a value so they aren't undefined before "creation" - NO LONGER NECESSARY, JUST KEEPING
@@ -166,32 +165,12 @@ function CreatePage(tab)
 // Create default pages, feel free to edit values but do not change object name
 var PAGE_START = new CreatePage({
 	page_id : 1,
-	main_text : "You are in the Middle Ages. You can be a Warrior or an Intellectual",
-	header : "Your Story: Middle Ages",
-	left_text : "Warrior",
-	left_page : "PAGE_WARRIOR",
-	right_text : "Intellectual",
-	right_page : "PAGE_INTELLECTUAL"
-});
-var PAGE_WARRIOR = new CreatePage({
-	page_id : 1,
-	main_text : "You can focus your training on physical prowess or acedemics",
-	header : "Your Story: Middle Ages",
-	left_text : "physical prowess",
-	left_page : "PAGE_PHYSICAL",
-	right_text : "ACEDEMICS",
-	right_page : "PAGE_LOSE",
-	give_strength: 5
-});
-var PAGE_INTELLECTUAL = new CreatePage({
-page_id : 1,
-	main_text : "You can focus your training on physical prowess or acedemics",
-	header : "Your Story: Middle Ages",
-	left_text : "physical prowess",
-	left_page : "PAGE_LOSE",
-	right_text : "ACEDEMICS",
-	right_page : "PAGE_ACEDEMICS",
-	give_intel: 5
+	main_text : "You wake up in a small house. There is a table with an apple, knife, and book on it. You pick up the apple and decide if you are going to take the knife or the book.",
+	header : "Welcome to Your Story",
+	left_text : "Pick up knife",
+	left_page : "PAGE_0",
+	right_text : "Pick up book",
+	right_page : "PAGE_1"
 });
 var PAGE_LOSE = new CreatePage({
 	page_id : 2,
@@ -430,26 +409,7 @@ window.onload = StartTheAdventure;
 ///////////////////////////////////////
 ////////// CREATE PAGES HERE //////////
 ///////////////////////////////////////
-var PAGE_WARRIOR = new CreatePage({
-	page_id : 1,
-	main_text : "You can focus your training on physical prowess or acedemics",
-	header : "Your Story: Middle Ages",
-	left_text : "physical prowess",
-	left_page : "PAGE_PHYSICAL",
-	right_text : "ACEDEMICS",
-	right_page : "PAGE_LOSE",
-	give_strength: 5
-});
-var PAGE_INTELLECTUAL = new CreatePage({
-	page_id : 1,
-	main_text : "You can focus your training on physical prowess or acedemics",
-	header : "Your Story: Middle Ages",
-	left_text : "physical prowess",
-	left_page : "PAGE_LOSE",
-	right_text : "ACEDEMICS",
-	right_page : "PAGE_ACEDEMICS",
-	give_intel: 5
-});
+
 var PAGE_0 = new CreatePage({
 	page_id : 3,
 	header : "You walk outside and see a path.",
@@ -533,7 +493,7 @@ var PAGE_TACTIC_ATTACK = new CreatePage({
 var PAGE_WEAK = new CreatePage({
 	page_id : 3,
 	header : "You are too weak to fight.",
-	main_text : "You swing and stab with all your might, but you are too weak. Your enemy's sword hits you, and you die.",
+	main_text : "You swing and stab with all your might, but you are too weak. Your enemy hits you.",
 	left_text : "Accept defeat",
 	left_page : "PAGE_LOSE",
 	right_text : "Accept defeat", 
@@ -560,7 +520,7 @@ var PAGE_CHURCH_SIT = new CreatePage({
 var PAGE_WAIT = new CreatePage({
 	page_id : 3,
 	header : "You wait.",
-	main_text : "And you wait. And you wait. Everybody leaves. You keep waiting. You die where you sit. You never stopped waiting, even break your thirst.",
+	main_text : "And you wait. And you wait. Everybody leaves. You keep waiting. You never stopped waiting.",
 	left_text : "Accept defeat",
 	left_page : "PAGE_LOSE",
 	right_text : "Accept defeat", 
@@ -569,7 +529,7 @@ var PAGE_WAIT = new CreatePage({
 var PAGE_PRIEST = new CreatePage({
 	page_id : 3,
 	header : "You get up on to the stand.",
-	main_text : "The people start clapping. They think you are the priest. What do you say.",
+	main_text : "The people start clapping. They think you are the priest. You try to decide what to do.",
 	left_text : "Praise",
 	left_page : "PAGE_PRAISE",
 	right_text : "Start a song", 
@@ -578,7 +538,7 @@ var PAGE_PRIEST = new CreatePage({
 var PAGE_PRAISE = new CreatePage({
 	page_id : 3,
 	header : "You praise.",
-	main_text : "The people clap for your praise. You realise how good of a priest you are.",
+	main_text : "The people clap for your praise. You realize how good of a priest you are.",
 	left_text : "Leave",
 	left_page : "PAGE_LEAVE_CHURCH",
 	right_text : "More praise", 
@@ -588,7 +548,7 @@ var PAGE_PRAISE = new CreatePage({
 var PAGE_SONG = new CreatePage({
 	page_id : 3,
 	header : "You sit down at the organ.",
-	main_text : "You begin to play and the people start singing. Before long, they realise you cannot play the organ, and you are obviously a fake priest. You are stoned and beaten to death.",
+	main_text : "You begin to play and the people start singing. Before long, they realize you cannot play the organ, and you are obviously a fake priest.",
 	left_text : "Accept defeat",
 	left_page : "PAGE_LOSE",
 	right_text : "Accept defeat", 
@@ -597,7 +557,7 @@ var PAGE_SONG = new CreatePage({
 var PAGE_MORE_PRAISE = new CreatePage({
 	page_id : 3,
 	header : "You praise again.",
-	main_text : "You continue to and the people continue to clap until the stop. You keep going. You are revealed as a fake. You are stoned and beaten to death.",
+	main_text : "You continue to and the people continue to clap until the stop. You keep going. You are revealed as a fake.",
 	left_text : "Accept defeat",
 	left_page : "PAGE_LOSE",
 	right_text : "Accept defeat", 
@@ -615,7 +575,7 @@ var PAGE_LEAVE_CHURCH = new CreatePage({
 var PAGE_CHURCH_WALK = new CreatePage({
 	page_id : 3,
 	header : "You walk.",
-	main_text : "As you walk away slowly, a crowd of people run from the church, pitchforks and torches in hand. The man was the priest. He told the people. The crowd catches up to you and kills you. Faker.",
+	main_text : "As you walk away slowly, a crowd of people run from the church, pitchforks and torches in hand. The man was the priest. He told the people. The crowd catches up to you and grabs you.",
 	left_text : "Accept defeat",
 	left_page : "PAGE_LOSE",
 	right_text : "Accept defeat", 
@@ -628,7 +588,8 @@ var PAGE_RUN = new CreatePage({
 	left_text : "Explore the forest",
 	left_page : "PAGE_FOREST",
 	right_text : "Go to the town", 
-	right_page : "PAGE_TOWN"
+	right_page : "PAGE_TOWN",
+	give_strength : 5
 });
 
 ///////////////////////////////////////
