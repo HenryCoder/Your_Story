@@ -436,7 +436,7 @@ var PAGE_WARRIOR = new CreatePage({
 	left_text : "physical prowess",
 	left_page : "PAGE_PHYSICAL",
 	right_text : "ACEDEMICS",
-	right_page : "PAGE_LOSE"
+	right_page : "PAGE_LOSE",
 	give_strength: 5
 });
 var PAGE_INTELLECTUAL = new CreatePage({
@@ -446,7 +446,7 @@ page_id : 1,
 	left_text : "physical prowess",
 	left_page : "PAGE_LOSE",
 	right_text : "ACEDEMICS",
-	right_page : "PAGE_ACEDEMICS"
+	right_page : "PAGE_ACEDEMICS",
 	give_intel: 5
 var PAGE_0 = new CreatePage({
 	page_id : 3,
