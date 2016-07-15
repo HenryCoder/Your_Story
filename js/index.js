@@ -293,6 +293,7 @@ function SetHeroGender(gender)
 		{
 			document.getElementById("JohnCena").outerHTML = "<img id=\"JohnCena\" src=\"assets/cena.gif\">";
 			var trumpet = new Audio("assets/cena.mp3");
+			trumpet.loop = true;
 			trumpet.play();
 		}
 		else if (HeroName.toLowerCase() == "steve jobs")
