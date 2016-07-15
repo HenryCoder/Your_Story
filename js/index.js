@@ -253,17 +253,6 @@ function DoPage(page)
 	UpdateInfoBox();
 }
 
-// Backwards compatibility
-EasterEggs = EasterEggs || [];
-
-function EasterEgg(nam, strgth, intl, itms)
-{
-	this.name = nam || "Bob";
-	this.strength = strgth || 0;
-	this.intel = intl || 0;
-	this.items = itms || [];
-}
-
 function SetHeroGender(gender)
 {
 	if (gender)
@@ -280,16 +269,11 @@ function SetHeroGender(gender)
 	document.getElementById(StoryHeroGenderButtonFemale_ID).remove();
 	document.getElementById(StoryHeroInfoDisplayName_ID).innerHTML = "Name: " + HeroName;
 	document.getElementById(StoryHeroInfoDisplayGender_ID).innerHTML = "Gender: " + HeroGender;
-	if (gender) // Make a new if statement so we have the update HeroName and HeroGender in our scope
+	// Make a new if statement so we have the update HeroName and HeroGender in our scope
+	if (gender)
 	{
 		// Female easter eggs
-		/*
-		if (HeroName.toLowerCase() == "marie curie")
-		{
-			HeroInv.push("Radiation posioning"); // That's pretty dark
-			UpdateInfoBox(); // Actually a bit too dark
-		}
-		*/
+		// None yet
 	}
 	else
 	{
@@ -308,6 +292,7 @@ function SetHeroGender(gender)
 		else if (HeroName.toLowerCase() == "john cena")
 		{
 			HeroStrength += 100000000;
+			document.getElementById("JohnCena").outerHTML = "<img id=\"JohnCena\" src=\"assets/cena.gif\">;
 			UpdateInfoBox();
 		}
 		else if (HeroName.toLowerCase() == "steve jobs")
