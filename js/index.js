@@ -291,9 +291,9 @@ function SetHeroGender(gender)
 		}
 		else if (HeroName.toLowerCase() == "john cena")
 		{
-			HeroStrength += 100000000;
 			document.getElementById("JohnCena").outerHTML = "<img id=\"JohnCena\" src=\"assets/cena.gif\">";
-			UpdateInfoBox();
+			var trumpet = new Audio("assets/cena.mp3");
+			trumpet.play();
 		}
 		else if (HeroName.toLowerCase() == "steve jobs")
 		{
