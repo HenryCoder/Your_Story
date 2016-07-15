@@ -292,7 +292,7 @@ function SetHeroGender(gender)
 		else if (HeroName.toLowerCase() == "john cena")
 		{
 			HeroStrength += 100000000;
-			document.getElementById("JohnCena").outerHTML = "<img id=\"JohnCena\" src=\"assets/cena.gif\">;
+			document.getElementById("JohnCena").outerHTML = "<img id=\"JohnCena\" src=\"assets/cena.gif\">";
 			UpdateInfoBox();
 		}
 		else if (HeroName.toLowerCase() == "steve jobs")
