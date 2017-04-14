@@ -589,6 +589,16 @@ var PAGE_RUN = new CreatePage({
 	right_page : "PAGE_TOWN",
 	give_strength : 5
 });
+var PAGE_TOWN = new CreatePage({
+	page_id : 3,
+	header : "Town.",
+	main_text : "You Walk into a town you have not seen before. A old man come up to you and asks you a favor. A dragon comes by every month and thretens them. He requires gives you a sword to fend of the dragon with. ",
+	left_text : "Quest",
+	left_page : "PAGE_QUEST",
+	right_text : "denine the offer", 
+	right_page : "PAGE_TOWN_CONTINUED",
+	give_strength : 5
+});
 
 ///////////////////////////////////////
 ////// ACTUAL STORY BELOW HERE ////////
