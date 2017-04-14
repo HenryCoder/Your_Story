@@ -608,7 +608,7 @@ var PAGE_QUEST = new CreatePage({
 	left_page : "PAGE_QUEST_HELP",
 	right_text : "Leave the man", 
 	right_page : "PAGE_QUEST_NOPE",
-	give_strength : 10
+	give_strength : 5
 });
 
 var PAGE_QUEST_HELP = new CreatePage({
