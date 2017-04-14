@@ -600,6 +600,28 @@ var PAGE_TOWN = new CreatePage({
 	give_strength : 5
 });
 
+var PAGE_QUEST = new CreatePage({
+	page_id : 3,
+	header : "Quest.",
+	main_text : "You take the sword and get directions to the dragons nest cave. On the way, so stop and see a tired man leening on a tree. He asks for food and water, but can not pay you in return. ",
+	left_text : "Ask the man why he is here",
+	left_page : "PAGE_QUEST_HELP",
+	right_text : "Leave the man", 
+	right_page : "PAGE_QUEST_NOPE",
+	give_strength : 10
+});
+
+var PAGE_QUEST_HELP = new CreatePage({
+	page_id : 3,
+	header : "You listen as the man speaks.",
+	main_text : "I have been exiled from the village. I tried to warn them about the a beast i saw lurking in the woods, but they would not listen to me. They thought me a freak and exiled me. If you help me i will help you in any way i can.",
+	left_text : "Help the man",
+	left_page : "PAGE_CAVE",
+	right_text : "Leave the man", 
+	right_page : "PAGE_QUEST_NOPE",
+	give_strength : 5
+});
+
 ///////////////////////////////////////
 ////// ACTUAL STORY BELOW HERE ////////
 ///////////////////////////////////////
