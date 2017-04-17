@@ -301,6 +301,27 @@ function SetHeroGender(gender)
 			HeroInv.push("iPhone");
 			UpdateInfoBox();
 		}
+		else if (HeroName.toLowerCase() == "con artist")
+		{
+			HeroInv.push("I Fone");
+			HeroInv.push("Con tools...")
+			UpdateInfoBox();
+		}
+		else if (HeroName.toLowerCase() == "Gimli")
+		{
+			HeroInv.push("Broken axe");
+			UpdateInfoBox();
+		}
+		else if (HeroName.toLowerCase() == "Staff")
+		{
+			HeroInv.push("Used staff");
+			UpdateInfoBox();
+		}
+		else if (HeroName.toLowerCase() == "Xavier")
+		{
+			HeroInv.push("Bow 'n Arrows");
+			UpdateInfoBox();
+		}
 	}
 }
 
