@@ -462,12 +462,12 @@ var PAGE_ARENA = new CreatePage({
 });
 var PAGE_TRAIN = new CreatePage({
 	page_id : 3,
-	header : "You ask around and are led into a room, resembling a gym..",
-	main_text : "A punching bag is in a corner, and you practice to increase your strength.",
+	header : "You ask around and are led into a room, resembling a gym.",
+	main_text : "A punching bag is in the corner, and you practice to increase your strength.",
 	left_text : "Fight",
 	left_page : "PAGE_FIGHT",
 	right_text : "Train", 
-	right_page : "PAGE_TRAIN"
+	right_page : "PAGE_TRAIN",
 	give_strength : 5,
 });
 var PAGE_FIGHT = new CreatePage({
