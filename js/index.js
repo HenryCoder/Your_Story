@@ -479,6 +479,7 @@ var PAGE_FIGHT = new CreatePage({
 	right_text : "Tactics", 
 	right_page : "PAGE_TACTICS"
 });
+
 var PAGE_TACTICS = new CreatePage({
 	page_id : 3,
 	header : "You decide to strategize.",
@@ -487,6 +488,24 @@ var PAGE_TACTICS = new CreatePage({
 	left_page : "PAGE_ATTACK",
 	right_text : "Dodge", 
 	right_page : "PAGE_DODGE"
+});
+var PAGE_ATTACK = new CreatePage({
+	page_id : 3,
+	header : "You stab at your enemy.",
+	main_text : "He brings up his shield, blocking your attack.",
+	left_text : "Attack Again",
+	left_page : "PAGE_ATTACKTWO",
+	right_text : "Dodge", 
+	right_page : "PAGE_DODGE"
+});
+var PAGE_ATTACKTWO = new CreatePage({
+	page_id : 3,
+	header : "You stab at your enemy again.",
+	main_text : "He prepares his block, but is knocked off his feet.",
+	left_text : "Walk out",
+	left_page : "PAGE_ARENAEXIT",
+	right_text : "Coninue Fighting", 
+	right_page : "PAGE_ARENA"
 });
 var PAGE_BRUTE = new CreatePage({
 	page_id : 3,
