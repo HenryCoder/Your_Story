@@ -479,6 +479,15 @@ var PAGE_FIGHT = new CreatePage({
 	right_text : "Tactics", 
 	right_page : "PAGE_TACTICS"
 });
+var PAGE_TACTICS = new CreatePage({
+	page_id : 3,
+	header : "You decide to strategize.",
+	main_text : "You create your plan of attack, instead of rushing head on.",
+	left_text : "Attack",
+	left_page : "PAGE_ATTACK",
+	right_text : "Dodge", 
+	right_page : "PAGE_DODGE"
+});
 var PAGE_BRUTE = new CreatePage({
 	page_id : 3,
 	header : "You use brute force to fight.",
