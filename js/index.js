@@ -307,17 +307,17 @@ function SetHeroGender(gender)
 			HeroInv.push("Con tools...")
 			UpdateInfoBox();
 		}
-		else if (HeroName.toLowerCase() == "Gimli")
+		else if (HeroName.toLowerCase() == "gimli")
 		{
 			HeroInv.push("Broken axe");
 			UpdateInfoBox();
 		}
-		else if (HeroName.toLowerCase() == "Staff")
+		else if (HeroName.toLowerCase() == "staff")
 		{
 			HeroInv.push("Used staff");
 			UpdateInfoBox();
 		}
-		else if (HeroName.toLowerCase() == "Xavier")
+		else if (HeroName.toLowerCase() == "xavier")
 		{
 			HeroInv.push("Bow 'n Arrows");
 			UpdateInfoBox();
@@ -497,6 +497,24 @@ var PAGE_ATTACK = new CreatePage({
 	left_page : "PAGE_ATTACKTWO",
 	right_text : "Dodge", 
 	right_page : "PAGE_DODGE"
+});
+var PAGE_DODGE = new CreatePage({
+	page_id : 3,
+	header : "Your enemy lunges.",
+	main_text : "You dodge his attack, causing him to fall unbalanced.",
+	left_text : "Attack Again",
+	left_page : "PAGE_ATTACKTWO",
+	right_text : "Dodge Again", 
+	right_page : "PAGE_DODGEAGAIN"
+});
+var PAGE_DODGEAGAIN = new CreatePage({
+	page_id : 3,
+	header : "Your enemy lunges.",
+	main_text : "You have done this many time before, and dodge. Your dodging expertise has granted you a legend.",
+	left_text : "You Have Won",
+	left_page : "PAGE_WIN",
+	right_text : "You Have Help", 
+	right_page : "PAGE_WIN"
 });
 var PAGE_ATTACKTWO = new CreatePage({
 	page_id : 3,
