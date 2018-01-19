@@ -513,7 +513,7 @@ var PAGE_DODGEAGAIN = new CreatePage({
 	main_text : "You have done this many time before, and dodge. Your dodging expertise has granted you a legend.",
 	left_text : "You Have Won",
 	left_page : "PAGE_WIN",
-	right_text : "You Have Help", 
+	right_text : "You Have Won", 
 	right_page : "PAGE_WIN"
 });
 var PAGE_ATTACKTWO = new CreatePage({
