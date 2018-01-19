@@ -664,7 +664,47 @@ var PAGE_RUN = new CreatePage({
 	left_page : "PAGE_FOREST",
 	right_text : "Go to the town", 
 	right_page : "PAGE_TOWN",
-	give_strength : 5
+	
+});
+var PAGE_FOREST = new CreatePage({
+	page_id : 3,
+	header : "Forest.",
+	main_text : "You walk around, collecting berries. You don't know if they are poisonous, but take them anyway.",
+	left_text : "Continue Exploring",
+	left_page : "PAGE_EXPLORE",
+	right_text : "Go to the town", 
+	right_page : "PAGE_TOWN",
+	give_items : ["berry, berry"]
+});
+var PAGE_FOREST = new CreatePage({
+	page_id : 3,
+	header : "You explore deeper into the forest.",
+	main_text : "As you walk deeper, the trees thicken above you, turning the forest dark.",
+	left_text : "Continue Exploring",
+	left_page : "PAGE_EXPLORETWO",
+	right_text : "Go to the town", 
+	right_page : "PAGE_TOWN",
+	
+});
+var PAGE_FOREST = new CreatePage({
+	page_id : 3,
+	header : "You continue walking, through the gloomy forest.",
+	main_text : "Eventually, you stumble across a den.",
+	left_text : "Look Into The Den",
+	left_page : "PAGE_Den",
+	right_text : "Go to the town", 
+	right_page : "PAGE_TOWN",
+	
+});
+var PAGE_FOREST = new CreatePage({
+	page_id : 3,
+	header : "Den.",
+	main_text : "You look into the den, but realize you cannot fit.",
+	left_text : "Find Help",
+	left_page : "PAGE_Den",
+	right_text : "Go to the town", 
+	right_page : "PAGE_TOWN",
+
 });
 var PAGE_TOWN = new CreatePage({
 	page_id : 3,
@@ -674,7 +714,7 @@ var PAGE_TOWN = new CreatePage({
 	left_page : "PAGE_QUEST",
 	right_text : "denine the offer", 
 	right_page : "PAGE_TOWN_CONTINUED",
-	give_strength : 5
+	
 });
 
 var PAGE_QUEST = new CreatePage({
@@ -685,7 +725,7 @@ var PAGE_QUEST = new CreatePage({
 	left_page : "PAGE_QUEST_HELP",
 	right_text : "Leave the man", 
 	right_page : "PAGE_QUEST_NOPE",
-	give_strength : 5
+	
 });
 
 var PAGE_QUEST_HELP = new CreatePage({
@@ -696,7 +736,7 @@ var PAGE_QUEST_HELP = new CreatePage({
 	left_page : "PAGE_CAVE",
 	right_text : "Leave the man", 
 	right_page : "PAGE_QUEST_NOPE",
-	give_strength : 5
+	
 });
 
 ///////////////////////////////////////
