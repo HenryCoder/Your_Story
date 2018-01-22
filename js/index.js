@@ -676,7 +676,7 @@ var PAGE_FOREST = new CreatePage({
 	right_page : "PAGE_TOWN",
 	give_items : ["berry, berry"]
 });
-var PAGE_FOREST = new CreatePage({
+var PAGE_EXPLORE = new CreatePage({
 	page_id : 3,
 	header : "You explore deeper into the forest.",
 	main_text : "As you walk deeper, the trees thicken above you, turning the forest dark.",
@@ -686,17 +686,17 @@ var PAGE_FOREST = new CreatePage({
 	right_page : "PAGE_TOWN",
 	
 });
-var PAGE_FOREST = new CreatePage({
+var PAGE_EXPLORETWO = new CreatePage({
 	page_id : 3,
 	header : "You continue walking, through the gloomy forest.",
 	main_text : "Eventually, you stumble across a den.",
 	left_text : "Look Into The Den",
-	left_page : "PAGE_Den",
+	left_page : "PAGE_DEN",
 	right_text : "Go to the town", 
 	right_page : "PAGE_TOWN",
 	
 });
-var PAGE_FOREST = new CreatePage({
+var PAGE_DEN = new CreatePage({
 	page_id : 3,
 	header : "Den.",
 	main_text : "You look into the den, but realize you cannot fit.",
