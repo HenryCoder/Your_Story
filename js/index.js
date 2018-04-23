@@ -317,6 +317,11 @@ function SetHeroGender(gender)
 			HeroInv.push("Broken axe");
 			UpdateInfoBox();
 		}
+		else if (HeroName.toLowerCase() == "Name")
+		{
+			HeroInv.push("potato");
+			UpdateInfoBox();
+		}
 		else if (HeroName.toLowerCase() == "staff")
 		{
 			HeroInv.push("Used staff");
