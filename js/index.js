@@ -301,6 +301,11 @@ function SetHeroGender(gender)
 			HeroInv.push("iPhone");
 			UpdateInfoBox();
 		}
+		else if (HeroName.toLowerCase() == "aiden")
+		{
+			HeroInv.push("cat");
+			UpdateInfoBox();
+		}
 		else if (HeroName.toLowerCase() == "con artist")
 		{
 			HeroInv.push("I Fone");
