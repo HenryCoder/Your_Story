@@ -642,7 +642,7 @@ var PAGE_SONG = new CreatePage({
 var PAGE_MORE_PRAISE = new CreatePage({
 	page_id : 3,
 	header : "You praise again.",
-	main_text : "You continue to and the people continue to clap until the stop. You keep going. You are revealed as a fake.",
+	main_text : "You continue to and the people continue to clap until the stop. You keep going. Turns out you praised the wrong religion.",
 	left_text : "Accept defeat",
 	left_page : "PAGE_LOSE",
 	right_text : "Accept defeat", 
@@ -651,7 +651,7 @@ var PAGE_MORE_PRAISE = new CreatePage({
 var PAGE_LEAVE_CHURCH = new CreatePage({
 	page_id : 3,
 	header : "You leave.",
-	main_text : "You walk out of the church, the people's claps and cheers become quiet. A rather puzzled looking man walks up to the door you left from.",
+	main_text : "As you walk out of the church, the people's claps and cheers become quiet. A rather puzzled looking man walks up to the door you left from.",
 	left_text : "Run away",
 	left_page : "PAGE_RUN",
 	right_text : "Walk away slowly", 
@@ -660,7 +660,7 @@ var PAGE_LEAVE_CHURCH = new CreatePage({
 var PAGE_CHURCH_WALK = new CreatePage({
 	page_id : 3,
 	header : "You walk.",
-	main_text : "As you walk away slowly, a crowd of people run from the church, pitchforks and torches in hand. The man was the priest. He told the people. The crowd catches up to you and grabs you.",
+	main_text : "As you walk away slowly, a crowd of people run from the church, pitchforks and torches in hand. The puzzeled man was the priest, who the people reconized told the people. The crowd catches up to you and grabs you.",
 	left_text : "Accept defeat",
 	left_page : "PAGE_LOSE",
 	right_text : "Accept defeat", 
@@ -669,7 +669,7 @@ var PAGE_CHURCH_WALK = new CreatePage({
 var PAGE_RUN = new CreatePage({
 	page_id : 3,
 	header : "You run away.",
-	main_text : "You run as fast as you can to the forest. As you finally get there and hide in the bushes, you can see another town",
+	main_text : "You run as fast as you can to the forest. As you finally get there and hide in the bushes, were you can see another town",
 	left_text : "Explore the forest",
 	left_page : "PAGE_FOREST",
 	right_text : "Go to the town", 
@@ -679,7 +679,7 @@ var PAGE_RUN = new CreatePage({
 var PAGE_FOREST = new CreatePage({
 	page_id : 3,
 	header : "Forest.",
-	main_text : "You walk around, collecting berries. You don't know if they are poisonous, but take them anyway.",
+	main_text : "You walk around, exploring. You stop at a short, shrubby bush, and start collecting berries. You don't know if they are poisonous, but you decide to take them anyway.",
 	left_text : "Continue Exploring",
 	left_page : "PAGE_EXPLORE",
 	right_text : "Go to the town", 
@@ -689,7 +689,7 @@ var PAGE_FOREST = new CreatePage({
 var PAGE_EXPLORE = new CreatePage({
 	page_id : 3,
 	header : "You explore deeper into the forest.",
-	main_text : "As you walk deeper, the trees thicken above you, turning the forest dark.",
+	main_text : "As you walk deeper, the trees thicken above you, turning the forest dark. The tress seem to shrink the path you are walking on, like they're cutting you off",
 	left_text : "Continue Exploring",
 	left_page : "PAGE_EXPLORETWO",
 	right_text : "Go to the town", 
@@ -698,8 +698,8 @@ var PAGE_EXPLORE = new CreatePage({
 });
 var PAGE_EXPLORETWO = new CreatePage({
 	page_id : 3,
-	header : "You continue walking, through the gloomy forest.",
-	main_text : "Eventually, you stumble across a den.",
+	header : "You continue walking through the gloomy forest.",
+	main_text : "Eventually, you stumble across a den. The den-like cave is covered in moss, with dark shrubbery surrounding it.",
 	left_text : "Look Into The Den",
 	left_page : "PAGE_DEN",
 	right_text : "Go to the town", 
@@ -709,17 +709,37 @@ var PAGE_EXPLORETWO = new CreatePage({
 var PAGE_DEN = new CreatePage({
 	page_id : 3,
 	header : "Den.",
-	main_text : "You look into the den, but realize you cannot fit.",
+	main_text : "You look into the shaded den, but realize you cannot fit.",
 	left_text : "Find Help",
-	left_page : "PAGE_Den",
+	left_page : "PAGE_DENHELP",
 	right_text : "Go to the town", 
 	right_page : "PAGE_TOWN",
+
+});
+var PAGE_DENHELP = new CreatePage({
+	page_id : 3,
+	header : "The den is positioned by a rock outpost, so you climb towards the top",
+	main_text : "Once on the outpost, you spot a seeming deserted town and some smoke.",
+	left_text : "Follow Smoke",
+	left_page : "PAGE_SMOKE",
+	right_text : "Go to the town", 
+	right_page : "PAGE_DESERTED",
+
+});
+var PAGE_DESERTED = new CreatePage({
+	page_id : 3,
+	header : "You walk catiously towards the town",
+	main_text : "You watch it through waist-high bushes; you see dilapidated houses and an abandoned tavern .",
+	left_text : "Explore Tavern",
+	left_page : "PAGE_TAVERN",
+	right_text : "Continue Exploring", 
+	right_page : "PAGE_DESERTEDEXPLORE",
 
 });
 var PAGE_TOWN = new CreatePage({
 	page_id : 3,
 	header : "Town.",
-	main_text : "You Walk into a town you have not seen before. A old man come up to you and asks you a favor. A dragon comes by every month and thretens them. He requires gives you a sword to fend of the dragon with. ",
+	main_text : "You Walk into a town you have not seen before. A old man come up to you and asks you a favor. A dragon comes by every month and threatens them. He  gives you a sword to fend of the dragon with. ",
 	left_text : "Quest",
 	left_page : "PAGE_QUEST",
 	right_text : "denine the offer", 
