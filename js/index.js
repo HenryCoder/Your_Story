@@ -272,7 +272,7 @@ function SetHeroGender(gender)
 	// Make a new if statement so we have the update HeroName and HeroGender in our scope
 	if (gender)
 	{
-		if (HeroName.toLowerCase() == "barbra bush")
+		if (HeroName.toLowerCase() == "barbara bush")
 		{
 			HeroInv.push("used microphone");
 			UpdateInfoBox();
