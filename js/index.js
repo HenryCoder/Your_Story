@@ -549,9 +549,36 @@ var PAGE_BLOCK = new CreatePage({
 	header : "You attempt to block.",
 	main_text : "You are struck with a heavy, blunt attack and pass out.",
 	left_text : "Wake up",
-	left_page : "PAGE_START",
+	left_page : "PAGE_DUNGEON",
 	right_text : "Wake up", 
-	right_page : "PAGE_START"
+	right_page : "PAGE_DUNGEON"
+});
+var PAGE_DUNGEON = new CreatePage({
+	page_id : 3,
+	header : "You wake in in dark, damp cell.",
+	main_text : "Brackish water drips from the ceiling, creating a pool by your feet.",
+	left_text : "Look down",
+	left_page : "PAGE_LOOKDOWN",
+	right_text : "Look up", 
+	right_page : "PAGE_LOOKUP"
+});
+var PAGE_LOOKUP = new CreatePage({
+	page_id : 3,
+	header : "You look up at the mossy, stone roof.",
+	main_text : "Another drop of tinted water falls through a crack.",
+	left_text : "Look down",
+	left_page : "PAGE_LOOKDOWN",
+	right_text : "Look Around", 
+	right_page : "PAGE_LOOK"
+});
+var PAGE_LOOKDOWN = new CreatePage({
+	page_id : 3,
+	header : "You look down at the puddle.",
+	main_text : "You see a face you do not reconize, then it morphes into your regular reflection.",
+	left_text : "Look up",
+	left_page : "PAGE_LOOKUP",
+	right_text : "Look around", 
+	right_page : "PAGE_LOOKAROUND"
 });
 var PAGE_BRUTE_ATTACK = new CreatePage({
 	page_id : 3,
@@ -573,7 +600,7 @@ var PAGE_TACTIC_ATTACK = new CreatePage({
 	right_text : "Block", 
 	right_page : "PAGE_BLOCK",
 	punish_page : "PAGE_WEAK",
-	needed_intel : 10
+	needed_intel : 20
 });
 var PAGE_WEAK = new CreatePage({
 	page_id : 3,
