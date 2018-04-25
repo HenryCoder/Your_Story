@@ -546,7 +546,7 @@ var PAGE_BRUTE = new CreatePage({
 });
 var PAGE_BLOCK = new CreatePage({
 	page_id : 3,
-	header : "You attempt to block.",
+	header : "Your oponent weilds his broadsword and prepares to attack, while you attempt to block.",
 	main_text : "You are struck with a heavy, blunt attack and pass out.",
 	left_text : "Wake up",
 	left_page : "PAGE_DUNGEON",
@@ -574,7 +574,7 @@ var PAGE_LOOKUP = new CreatePage({
 var PAGE_LOOKDOWN = new CreatePage({
 	page_id : 3,
 	header : "You look down at the puddle.",
-	main_text : "You see a face you do not reconize, then it morphes into your regular reflection.",
+	main_text : "You see a face you do not reconize, with piercing eyes and dark hair, then it morphes into your regular reflection.",
 	left_text : "Look up",
 	left_page : "PAGE_LOOKUP",
 	right_text : "Look around", 
