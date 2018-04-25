@@ -573,7 +573,7 @@ var PAGE_LOOKUP = new CreatePage({
 });
 var PAGE_LOOKDOWN = new CreatePage({
 	page_id : 3,
-	header : "You look down at the puddle.",
+	header : "You look down at the murky puddle.",
 	main_text : "You see a face you do not reconize, with piercing eyes and dark hair, then it morphes into your regular reflection.",
 	left_text : "Look up",
 	left_page : "PAGE_LOOKUP",
