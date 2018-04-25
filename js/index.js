@@ -272,8 +272,11 @@ function SetHeroGender(gender)
 	// Make a new if statement so we have the update HeroName and HeroGender in our scope
 	if (gender)
 	{
-		// Female easter eggs
-		// None yet
+		if (HeroName.toLowerCase() == "barbra bush")
+		{
+			HeroInv.push("used microphone");
+			UpdateInfoBox();
+		}
 	}
 	else
 	{
