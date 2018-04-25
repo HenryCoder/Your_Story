@@ -317,7 +317,7 @@ function SetHeroGender(gender)
 			HeroInv.push("Broken axe");
 			UpdateInfoBox();
 		}
-		else if (HeroName.toLowerCase() == "Name")
+		else if (HeroName.toLowerCase() == "name")
 		{
 			HeroInv.push("potato");
 			UpdateInfoBox();
@@ -746,7 +746,7 @@ var PAGE_DEN = new CreatePage({
 var PAGE_DENHELP = new CreatePage({
 	page_id : 3,
 	header : "The den is positioned by a rock outpost, so you climb towards the top",
-	main_text : "Once on the outpost, you spot a seeming deserted town and some smoke.",
+	main_text : "Once on the outpost, you spot a seeming deserted town to the east and smoke rising in the west.",
 	left_text : "Follow Smoke",
 	left_page : "PAGE_SMOKE",
 	right_text : "Go to the town", 
@@ -759,8 +759,80 @@ var PAGE_DESERTED = new CreatePage({
 	main_text : "You watch it through waist-high bushes; you see dilapidated houses and an abandoned tavern .",
 	left_text : "Explore Tavern",
 	left_page : "PAGE_TAVERN",
-	right_text : "Continue Exploring", 
+	right_text : "Walk towards town square", 
 	right_page : "PAGE_DESERTEDEXPLORE",
+
+});
+var PAGE_TAVERN = new CreatePage({
+	page_id : 3,
+	header : "You hurry quietly towards the tavern",
+	main_text : "You look inside; tables are flipped and broken, while glass is shattered across the ground.",
+	left_text : "Explore Tavern",
+	left_page : "PAGE_EXPLORETAVERN",
+	right_text : "Exit", 
+	right_page : "PAGE_DESERTEDEXPLORE",
+});
+	
+var PAGE_DESERTEDEXPLORE = new CreatePage({
+	page_id : 3,
+	header : "As you're walking towards the middle of the town, you notice boarded houses and collapsing buildings",
+	main_text : "You feel like you saw a dark figure out of the corner of your eye, but when you turn to look, only grassy cobblestone.",
+	left_text : "Look Around",
+	left_page : "PAGE_OBSERVE",
+	right_text : "Continue Walking", 
+	right_page : "PAGE_DESERTEDCONTINUE",
+
+});
+
+var PAGE_OBSERVE= new CreatePage({
+	page_id : 3,
+	header : "You look around, but nothing seems threatening ",
+	main_text : "As you continue to walk, you hear a shout, then a barel falling.",
+	left_text : "Explore shout",
+	left_page : "PAGE_OBSERVESHOUT",
+	right_text : "Continue Walking", 
+	right_page : "PAGE_DESERTEDCONTINUE",
+
+});
+var PAGE_DESERTEDCONTINUE = new CreatePage({
+	page_id : 3,
+	header : "You reach the end of the ruined town, but nothing stands out",
+	main_text : "You head back towards the town square.",
+	left_text : "Look Around",
+	left_page : "PAGE_OBSERVE",
+	right_text : "Look Around", 
+	right_page : "PAGE_OBSERVE",
+
+});
+var PAGE_OBSERVESHOUT= new CreatePage({
+	page_id : 3,
+	header : "While walking toward the now non-existant shout, a branch snaps behind you ",
+	main_text : "DONT MOVE A MUSCLE!",
+	left_text : "Look Around",
+	left_page : "PAGE_WARRIORDEATH",
+	right_text : "Talk to Mysterious Figure", 
+	right_page : "PAGE_TALK",
+
+});
+var PAGE_WARRIORDEATH= new CreatePage({
+	page_id : 3,
+	header : "You look around and notice a warrior with a bow trained on you ",
+	main_text : "It's to late, and you fall to the ground while the clouds let lose grey rain",
+	left_text : "You have died",
+	left_page : "PAGE_LOSE",
+	right_text : "You have died", 
+	right_page : "PAGE_LOSE",
+
+});
+var PAGE_EXPLORETAVERN = new CreatePage({
+	page_id : 3,
+	header : "You slowly move throughout the room, avoiding glass and splinters",
+	main_text : "You find a book on the counter, but all else is deemed useless.",
+	left_text : "Exit",
+	left_page : "PAGE_EXITTAVERN",
+	right_text : "Exit", 
+	right_page : "PAGE_EXITTAVERS",
+	give_items : ["Tavern Book"]
 
 });
 var PAGE_TOWN = new CreatePage({
