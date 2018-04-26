@@ -277,6 +277,18 @@ function SetHeroGender(gender)
 			HeroInv.push("used microphone");
 			UpdateInfoBox();
 		}
+		
+		else if (HeroName.toLowerCase() == "name")
+		{
+			HeroInv.push("creativity");
+			UpdateInfoBox();
+		}
+		
+		else if (HeroName.toLowerCase() == "gay")
+		{
+			HeroInv.push("happiness");
+			UpdateInfoBox();
+		}
 	}
 	else
 	{
@@ -284,6 +296,16 @@ function SetHeroGender(gender)
 		if (HeroName.toLowerCase() == "tai lopez")
 		{
 			HeroInv.push("Lamborghini");
+			UpdateInfoBox();
+		}
+		else if (HeroName.toLowerCase() == "atheist")
+		{
+			HeroInv.push("memes");
+			UpdateInfoBox();
+		}
+		else if (HeroName.toLowerCase() == "gay")
+		{
+			HeroInv.push("happiness");
 			UpdateInfoBox();
 		}
 		else if (HeroName.toLowerCase() == "donald trump")
@@ -322,7 +344,7 @@ function SetHeroGender(gender)
 		}
 		else if (HeroName.toLowerCase() == "name")
 		{
-			HeroInv.push("potato");
+			HeroInv.push("creativity");
 			UpdateInfoBox();
 		}
 		else if (HeroName.toLowerCase() == "staff")
