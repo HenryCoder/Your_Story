@@ -9,6 +9,7 @@ var YS_VERSION = "Beta 1.3";
 // Default values, feel free to edit
 var DefaultStats = 0;
 var DefaultItems = ["Apple"];
+var DefaultItems = ["headache"];
 
 // Help text
 var HelpTextPre = "Debugging functions: ";
@@ -833,7 +834,7 @@ var PAGE_DESERTEDEXPLORE = new CreatePage({
 var PAGE_OBSERVE= new CreatePage({
 	page_id : 3,
 	header : "You look around, but nothing seems threatening ",
-	main_text : "As you continue to walk, you hear a shout, then a barel falling.",
+	main_text : "As you continue to walk, you hear a shout, then a barrel falling.",
 	left_text : "Explore shout",
 	left_page : "PAGE_OBSERVESHOUT",
 	right_text : "Continue Walking", 
@@ -852,12 +853,38 @@ var PAGE_DESERTEDCONTINUE = new CreatePage({
 });
 var PAGE_OBSERVESHOUT= new CreatePage({
 	page_id : 3,
-	header : "While walking toward the now non-existant shout, a branch snaps behind you ",
-	main_text : "DONT MOVE A MUSCLE!",
+	header : "While walking toward the now non-existant shout, a branch snaps behind you. DONT MOVE A MUSCLE! ",
+	main_text : "",
 	left_text : "Look Around",
 	left_page : "PAGE_WARRIORDEATH",
 	right_text : "Talk to Mysterious Figure", 
 	right_page : "PAGE_TALK",
+	HeroInv : [],
+	give_items : ["worse headache"],
+	give_items : ["apple"].
+	
+
+});
+var PAGE_TALK= new CreatePage({
+	page_id : 3,
+	header : "Who are you? What do you want? ",
+	main_text : "",
+	left_text : "I'm an adventurer",
+	left_page : "PAGE_TALKADVENTURER",
+	right_text : "I am lost", 
+	right_page : "PAGE_TALKADVENTURER",
+	
+
+});
+var PAGE_TALKADVENTURER= new CreatePage({
+	page_id : 3,
+	header : "I'll let you go, just- ",
+	main_text : "All of a sudden, you headache gets much worse. You turn to explain, but instead of talking, you yell SORTU. Your items fly out of your hands, priercing the warrior through the heart",
+	left_text : "Run",
+	left_page : "PAGE_TALKTHENRUN",
+	right_text : "Talk", 
+	right_page : "PAGE_TALKDEATH",
+	
 
 });
 var PAGE_WARRIORDEATH= new CreatePage({
