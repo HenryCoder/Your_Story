@@ -859,9 +859,8 @@ var PAGE_OBSERVESHOUT= new CreatePage({
 	left_page : "PAGE_WARRIORDEATH",
 	right_text : "Talk to Mysterious Figure", 
 	right_page : "PAGE_TALK",
-	HeroInv : [],
 	give_items : ["worse headache"],
-	give_items : ["apple"].
+	
 	
 
 });
