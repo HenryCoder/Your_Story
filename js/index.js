@@ -595,6 +595,13 @@ var PAGE_LOOKUP = new CreatePage({
 	left_page : "PAGE_LOOKDOWN",
 	right_text : "Look Around", 
 	right_page : "PAGE_LOOK"
+	
+function changeBackground(color) {
+   document.body.style.background = color;
+}
+
+<BODY onload="changeBackground('green');">
+				 
 });
 var PAGE_LOOKDOWN = new CreatePage({
 	page_id : 3,
