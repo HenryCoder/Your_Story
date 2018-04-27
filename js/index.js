@@ -497,7 +497,7 @@ var PAGE_ARENA = new CreatePage({
 });
 var PAGE_TRAIN = new CreatePage({
 	page_id : 3,
-	header : "You ask around and are led into a room, resembling a gym.",
+	header : "You ask around and are led into a room smokeresembling a gym.",
 	main_text : "A punching bag is in the corner, and you practice to increase your strength.",
 	left_text : "Fight",
 	left_page : "PAGE_FIGHT",
@@ -776,6 +776,26 @@ var PAGE_DENHELP = new CreatePage({
 	left_page : "PAGE_SMOKE",
 	right_text : "Go to the town", 
 	right_page : "PAGE_DESERTED",
+
+});
+var PAGE_SMOKE = new CreatePage({
+	page_id : 3,
+	header : "You walk west towards the smoke",
+	main_text : "The forest soon starts to smell charred. You notice strange scratch marks scaring injured trees.",
+	left_text : "Follow Smoke",
+	left_page : "PAGE_SMOKE2",
+	right_text : "Backtrack", 
+	right_page : "PAGE_DENHELP",
+
+});
+var PAGE_SMOKE2 = new CreatePage({
+	page_id : 3,
+	header : "The tress splinter and fall around you",
+	main_text : "A gaint beast lumbers into sight.",
+	left_text : "Follow Smoke",
+	left_page : "PAGE_SMOKE2",
+	right_text : "Backtrack", 
+	right_page : "PAGE_SMOKE",
 
 });
 var PAGE_DESERTED = new CreatePage({
