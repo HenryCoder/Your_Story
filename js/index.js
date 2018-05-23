@@ -559,7 +559,53 @@ var PAGE_ATTACKTWO = new CreatePage({
 	left_text : "Walk out",
 	left_page : "PAGE_ARENAEXIT",
 	right_text : "Coninue Fighting", 
-	right_page : "PAGE_ARENA"
+	right_page : "PAGE_STILLFIGHT"
+});
+var PAGE_STILLFIGHT = new CreatePage({
+	page_id : 3,
+	header : "The riptose is sucsessful, breaking your opponent's poise.",
+	main_text : "Suddenly a man shouts from the audience, challenging you.",
+	left_text : "Accept Challenge",
+	left_page : "PAGE_ACCEPTCHALLENGE",
+	right_text : "Ignore", 
+	right_page : "PAGE_IGNORE"
+});
+var PAGE_IGNORE = new CreatePage({
+	page_id : 3,
+	header : "You try to ignore the man's shouts, but soon the audience joins in.",
+	main_text : "Now men and women through the stadium are shouting your name.",
+	left_text : "Accept Challenge",
+	left_page : "PAGE_ACCEPTCHALLENGE",
+	right_text : "Accept Challenge", 
+	right_page : "PAGE_IGNORE"
+});
+var PAGE_ACCEPTCHALLENGE = new CreatePage({
+	page_id : 3,
+	header : "You accept the stranger's challenge.",
+	main_text : "As he walks down the center aisle you notice he is a little taller than you and clad in strange and coulorful garbs.",
+	left_text : "Greet Man",
+	left_page : "PAGE_CHALLENGEGREET",
+	right_text : "Increase Crowd Morale", 
+	right_page : "PAGE_CROWDCHEER"
+});
+var PAGE_CHALLENGEGREET = new CreatePage({
+	page_id : 3,
+	header : "You start to wish your opponent luck.",
+	main_text : "Before you finish, he interupts, saying he does not need any luck.",
+	left_text : "Start",
+	left_page : "PAGE_START",
+	right_text : "Start", 
+	right_page : "PAGE_START"
+	
+});
+var PAGE_CROWDCHEER = new CreatePage({
+	page_id : 3,
+	header : "You yell to the crowd.",
+	main_text : "Soon they start cheering you on;your opponent in unphased.",
+	left_text : "Start",
+	left_page : "PAGE_START",
+	right_text : "Start", 
+	right_page : "PAGE_START"
 });
 var PAGE_BRUTE = new CreatePage({
 	page_id : 3,
