@@ -167,7 +167,7 @@ function CreatePage(tab)
 var PAGE_START = new CreatePage({
 	page_id : 1,
 	main_text : "You wake up in a small house. There is a table with an apple, sword, and book on it. You pick up the apple and decide if you are going to take the sword or the book.",
-	header : "Welcome to Your Story",
+	header : "With your past forgotten, your future uncertain, a new story awaits you.",
 	left_text : "Pick up sword",
 	left_page : "PAGE_0",
 	right_text : "Pick up book",
@@ -809,7 +809,7 @@ var PAGE_EXPLORETWO = new CreatePage({
 var PAGE_DEN = new CreatePage({
 	page_id : 3,
 	header : "Den.",
-	main_text : "You look into the shaded den, but realize you cannot fit.",
+	main_text : "You look into the shaded den. You see a few small shrubs through the small opening.",
 	left_text : "Find Help",
 	left_page : "PAGE_DENHELP",
 	right_text : "Go to the town", 
