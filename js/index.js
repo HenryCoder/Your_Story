@@ -9,7 +9,7 @@ var YS_VERSION = "Beta 1.3";
 // Default values, feel free to edit
 var DefaultStats = 0;
 var DefaultItems = ["Apple"];
-var DefaultItems = ["headache"];
+
 
 // Help text
 var HelpTextPre = "Debugging functions: ";
@@ -899,20 +899,19 @@ var PAGE_DESERTEDCONTINUE = new CreatePage({
 });
 var PAGE_OBSERVESHOUT= new CreatePage({
 	page_id : 3,
-	header : "While walking toward the now non-existant shout, a branch snaps behind you. DONT MOVE A MUSCLE! ",
-	main_text : "",
+	header : "While walking toward the now non-existant shout, a branch snaps behind you. ",
+	main_text : "Hey, who are you!?",
 	left_text : "Look Around",
-	left_page : "PAGE_WARRIORDEATH",
+	left_page : "PAGE_WARRIORAROUND",
 	right_text : "Talk to Mysterious Figure", 
 	right_page : "PAGE_TALK",
-	give_items : ["worse headache"],
 	
 	
-
+	
 });
 var PAGE_TALK= new CreatePage({
 	page_id : 3,
-	header : "Who are you? What do you want? ",
+	header : "Why are you here? What do you want? ",
 	main_text : "",
 	left_text : "I'm an adventurer",
 	left_page : "PAGE_TALKADVENTURER",
@@ -923,8 +922,8 @@ var PAGE_TALK= new CreatePage({
 });
 var PAGE_TALKADVENTURER= new CreatePage({
 	page_id : 3,
-	header : "I'll let you go, just- ",
-	main_text : "All of a sudden, you headache gets much worse. You turn to explain, but instead of talking, you yell SORTU. Your items fly out of your hands, priercing the warrior through the heart",
+	header : "Follow me scoundrel. The Machine sent me back to make sure this place was clear, and lucky me went and got himslef a good randsom. ",
+	main_text : "You start to ask what he meant, but suddenly you push your hands forwards, sending items flying out of your pack, priercing the warrior through the heart",
 	left_text : "Run",
 	left_page : "PAGE_TALKTHENRUN",
 	right_text : "Talk", 
@@ -932,14 +931,14 @@ var PAGE_TALKADVENTURER= new CreatePage({
 	
 
 });
-var PAGE_WARRIORDEATH= new CreatePage({
+var PAGE_WARRIORAROUND= new CreatePage({
 	page_id : 3,
-	header : "You look around and notice a warrior with a bow trained on you ",
-	main_text : "It's to late, and you fall to the ground while the clouds let lose grey rain",
-	left_text : "You have died",
-	left_page : "PAGE_LOSE",
-	right_text : "You have died", 
-	right_page : "PAGE_LOSE",
+	header : "You look around and spot a warrior with a bow trained on you. You notice his rusted uniform.",
+	main_text : "Turn and follow me, keep you hands high.",
+	left_text : "Follow Man",
+	left_page : "PAGE_TALKADVENTURER",
+	right_text : "Escape", 
+	right_page : "PAGE_TALKADVENTURER",
 
 });
 var PAGE_EXPLORETAVERN = new CreatePage({
@@ -955,8 +954,8 @@ var PAGE_EXPLORETAVERN = new CreatePage({
 });
 var PAGE_TOWN = new CreatePage({
 	page_id : 3,
-	header : "Town.",
-	main_text : "You Walk into a town you have not seen before. A old man come up to you and asks you a favor. A dragon comes by every month and threatens them. He  gives you a sword to fend of the dragon with. ",
+	header : "You Walk into a town you have not seen before. A old man comes and asks you a favor. He is dressed in tattered clothes and carries a twisted staff. ",
+	main_text : "The man begins to talk: a dragon comes by every month and threatens them. He asks you end their plight. ",
 	left_text : "Quest",
 	left_page : "PAGE_QUEST",
 	right_text : "denine the offer", 
@@ -966,22 +965,22 @@ var PAGE_TOWN = new CreatePage({
 
 var PAGE_QUEST = new CreatePage({
 	page_id : 3,
-	header : "Quest.",
-	main_text : "You take the sword and get directions to the dragons nest cave. On the way, so stop and see a tired man leening on a tree. He asks for food and water, but can not pay you in return. ",
-	left_text : "Ask the man why he is here",
+	header : "The old man offers you a sword. It's rusted in some places, but it will do.",
+	main_text : "You take the sword and get directions to the dragons lair. On the way, you see a tired girl leening on a tree. She asks for food and water, but can not pay you in return. ",
+	left_text : "Ask the girl why he is here",
 	left_page : "PAGE_QUEST_HELP",
-	right_text : "Leave the man", 
+	right_text : "Leave the girl", 
 	right_page : "PAGE_QUEST_NOPE",
 	
 });
 
 var PAGE_QUEST_HELP = new CreatePage({
 	page_id : 3,
-	header : "You listen as the man speaks.",
-	main_text : "I have been exiled from the village. I tried to warn them about the a beast i saw lurking in the woods, but they would not listen to me. They thought me a freak and exiled me. If you help me i will help you in any way i can.",
-	left_text : "Help the man",
+	header : "You listen as the girl speaks, regularly stopping while she coughs.",
+	main_text : "I have been exiled from my town. I- I tried to warn them about a beast lurking in the woods, but they would not listen to me. Soon afterwards, the- the beast- it attacked. If you help me I will try to repay your kindness.",
+	left_text : "Help the gril",
 	left_page : "PAGE_CAVE",
-	right_text : "Leave the man", 
+	right_text : "Leave the girl", 
 	right_page : "PAGE_QUEST_NOPE",
 	
 });
