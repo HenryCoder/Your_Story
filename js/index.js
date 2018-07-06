@@ -563,7 +563,7 @@ var PAGE_ATTACKTWO = new CreatePage({
 });
 var PAGE_STILLFIGHT = new CreatePage({
 	page_id : 3,
-	header : "The riptose is sucsessful, breaking your opponent's poise.",
+	header : "The riposte is sucsessful, breaking your opponent's poise.",
 	main_text : "Suddenly a man shouts from the audience, challenging you.",
 	left_text : "Accept Challenge",
 	left_page : "PAGE_ACCEPTCHALLENGE",
@@ -573,7 +573,7 @@ var PAGE_STILLFIGHT = new CreatePage({
 var PAGE_IGNORE = new CreatePage({
 	page_id : 3,
 	header : "You try to ignore the man's shouts, but soon the audience joins in.",
-	main_text : "Now men and women through the stadium are shouting your name.",
+	main_text : "Now men and women throughout the stadium are cheering.",
 	left_text : "Accept Challenge",
 	left_page : "PAGE_ACCEPTCHALLENGE",
 	right_text : "Accept Challenge", 
@@ -582,7 +582,7 @@ var PAGE_IGNORE = new CreatePage({
 var PAGE_ACCEPTCHALLENGE = new CreatePage({
 	page_id : 3,
 	header : "You accept the stranger's challenge.",
-	main_text : "As he walks down the center aisle you notice he is a little taller than you and clad in strange and coulorful garbs.",
+	main_text : "As he walks down the center aisle you notice he is a little taller than you and clad in strange and coulorful garb.",
 	left_text : "Greet Man",
 	left_page : "PAGE_CHALLENGEGREET",
 	right_text : "Increase Crowd Morale", 
@@ -647,7 +647,7 @@ var PAGE_LOOKUP = new CreatePage({
 var PAGE_LOOKDOWN = new CreatePage({
 	page_id : 3,
 	header : "You look down at the murky puddle.",
-	main_text : "You see a face you do not reconize, with piercing eyes and dark hair, then it morphes into your regular reflection.",
+	main_text : "You see a face you do not reconize, with piercing eyes and dark hair. Suddenly it morphes into your regular reflection.",
 	left_text : "Look up",
 	left_page : "PAGE_LOOKUP",
 	right_text : "Look around", 
@@ -760,7 +760,7 @@ var PAGE_LEAVE_CHURCH = new CreatePage({
 var PAGE_CHURCH_WALK = new CreatePage({
 	page_id : 3,
 	header : "You walk.",
-	main_text : "As you walk away slowly, a crowd of people run from the church, pitchforks and torches in hand. The puzzeled man was the priest, who the people reconized told the people. The crowd catches up to you and grabs you.",
+	main_text : "As you walk away slowly, a crowd of people run from the church, pitchforks and torches in hand. The puzzeled man was the priest, whom the people reconized. The crowd catches up to you and grabs you.",
 	left_text : "Accept defeat",
 	left_page : "PAGE_LOSE",
 	right_text : "Accept defeat", 
