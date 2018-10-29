@@ -568,7 +568,7 @@ var PAGE_DODGE = new CreatePage({
 var PAGE_DODGEAGAIN = new CreatePage({
 	page_id : 3,
 	header : "Your enemy lunges.",
-	main_text : "He moves in slow motion across the sand. You dodge, as you have done many times before. Your dodging expertise has granted you a legend, and people will come with respect at your newly built statues.",
+	main_text : "He moves in slow motion across the sand. You dodge, as you have done many times before. Your dodging expertise has granted you a legend, and people will come with respect at your newly built statues. However, with your newfound power, you become corrupt. Through fights and challenges you assend to the rank of king and become a tyranic ruler.",
 	left_text : "You Have Won",
 	left_page : "PAGE_WIN",
 	right_text : "You Have Won", 
