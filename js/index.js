@@ -520,7 +520,7 @@ var PAGE_ARENA = new CreatePage({
 });
 var PAGE_TRAIN = new CreatePage({
 	page_id : 3,
-	header : "You ask around and are led into a room smokeresembling a gym.",
+	header : "You ask around and are led into a room resembling a gym.",
 	main_text : "A punching bag is in the corner, and you practice to increase your strength.",
 	left_text : "Fight",
 	left_page : "PAGE_FIGHT",
@@ -531,7 +531,7 @@ var PAGE_TRAIN = new CreatePage({
 var PAGE_FIGHT = new CreatePage({
 	page_id : 3,
 	header : "You decide to fight.",
-	main_text : "You run into the arena. The crowd starts booing. How shall you fight.",
+	main_text : "You run into the arena. The crowd starts booing. How will you fight?",
 	left_text : "Brute force",
 	left_page : "PAGE_BRUTE",
 	right_text : "Tactics", 
@@ -568,7 +568,7 @@ var PAGE_DODGE = new CreatePage({
 var PAGE_DODGEAGAIN = new CreatePage({
 	page_id : 3,
 	header : "Your enemy lunges.",
-	main_text : "You have done this many time before, and dodge. Your dodging expertise has granted you a legend.",
+	main_text : "He moves in slow motion across the sand. You dodge, as you have done many times before. Your dodging expertise has granted you a legend, and people will come with respect at your newly built statues.",
 	left_text : "You Have Won",
 	left_page : "PAGE_WIN",
 	right_text : "You Have Won", 
