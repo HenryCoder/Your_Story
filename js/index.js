@@ -578,10 +578,37 @@ var PAGE_ATTACKTWO = new CreatePage({
 	page_id : 3,
 	header : "You stab at your enemy again.",
 	main_text : "He prepares his block, but is knocked off his feet.",
-	left_text : "Walk out",
+	left_text : "Stop",
 	left_page : "PAGE_ARENAEXIT",
 	right_text : "Coninue Fighting", 
 	right_page : "PAGE_STILLFIGHT"
+});
+var PAGE_ARENAEXIT = new CreatePage({
+	page_id : 3,
+	header : "You throw down your sword and go to leave your enemy.",
+	main_text : "He watches you, but stays kneeling.",
+	left_text : "Vomitorium",
+	left_page : "PAGE_ARENAVOMITORIUM",
+	right_text : "Attack", 
+	right_page : "PAGE_ARENAATTACKBAD"
+});
+var PAGE_ARENAATTACKBAD = new CreatePage({
+	page_id : 3,
+	header : "You pull out a knife, turn around, and throw it.",
+	main_text : "YOU MISS.",
+	left_text : "Vomitorium",
+	left_page : "PAGE_ARENAVOMITORIUMRUN",
+	right_text : "Attack", 
+	right_page : "PAGE_ARENAUHOH"
+});
+var PAGE_ARENAUHOH = new CreatePage({
+	page_id : 3,
+	header : "He starts shaking, then darts at you.",
+	main_text : "Still shocked from the recent miss and unguarded, you soon fall to the silver blade.",
+	left_text : "Accept defeat",
+	left_page : "PAGE_LOSE",
+	right_text : "Accept defeat", 
+	right_page : "PAGE_LOSE"
 });
 var PAGE_STILLFIGHT = new CreatePage({
 	page_id : 3,
