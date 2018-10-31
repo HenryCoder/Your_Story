@@ -492,20 +492,20 @@ var PAGE_ARENADESERT = new CreatePage({
 	header : "You head towards the arena, noticing a pathway heading into a forest nearby.",
 	main_text : "Suddenly, you realize what would happen by walking into an arena without proper weapons. Embarrassed, you head down the alternatre route.",
 	left_text : "Follow path",
-	left_page : "PAGE_FOREST",
+	left_page : "PAGE_CHURCH",
 	right_text : "Follow path", 
-	right_page : "PAGE_FOREST",
+	right_page : "PAGE_CHURCH",
 
 	
 });
-var PAGE_CHRUCHDESERT = new CreatePage({
+var PAGE_CHURCHDESERT = new CreatePage({
 	page_id : 3,
 	header : "You head towards the arena, noticing a nearby pathway heading into a forest.",
 	main_text : "Suddenly, you realize what would happen by walking into a church wielding a sword. Embarrassed, you head down the alternate route.",
-	left_text : "Follow path",
-	left_page : "PAGE_FOREST",
-	right_text : "Follow path", 
-	right_page : "PAGE_FOREST",
+	left_text : "Arena",
+	left_page : "PAGE_ARENA",
+	right_text : "Arena", 
+	right_page : "PAGE_ARENA",
 	
 	
 });
