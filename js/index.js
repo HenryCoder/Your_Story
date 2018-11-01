@@ -714,7 +714,7 @@ var PAGE_LOOKAROUND = new CreatePage({
 var PAGE_DUNGENFOOD = new CreatePage({
 	page_id : 3,
 	header : "A fly lands on the bread, later followed by four more, and you decide not to eat it.",
-	main_text : "Under the slit a plate of bread lays. You can hear a guard outside.",
+	main_text : "You push the plate of bread away.",
 	left_text : "Look around",
 	left_page : "PAGE_DUNGENLOOKMEOW",
 	right_text : "Listen to guard", 
