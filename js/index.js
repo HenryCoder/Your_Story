@@ -702,6 +702,15 @@ var PAGE_LOOKDOWN = new CreatePage({
 	right_text : "Look around", 
 	right_page : "PAGE_LOOKAROUND"
 });
+var PAGE_LOOKAROUND = new CreatePage({
+	page_id : 3,
+	header : "The dungen has no windows and a wooden door with a slit.",
+	main_text : "Under the slit a plate of bread lays. You can hear a guard outside.",
+	left_text : "Food",
+	left_page : "PAGE_DUNGENFOOD",
+	right_text : "Listen to guard", 
+	right_page : "PAGE_DUNGENGUARDLISTEN"
+});
 var PAGE_BRUTE_ATTACK = new CreatePage({
 	page_id : 3,
 	header : "You attack brutally.",
