@@ -690,7 +690,7 @@ var PAGE_LOOKUP = new CreatePage({
 	left_text : "Look down",
 	left_page : "PAGE_LOOKDOWN",
 	right_text : "Look Around", 
-	right_page : "PAGE_LOOK"
+	right_page : "PAGE_LOOKAROUND"
 				 
 });
 var PAGE_LOOKDOWN = new CreatePage({
