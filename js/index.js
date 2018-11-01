@@ -704,7 +704,7 @@ var PAGE_LOOKDOWN = new CreatePage({
 });
 var PAGE_LOOKAROUND = new CreatePage({
 	page_id : 3,
-	header : "The dungen has no windows and a wooden door with a slit.",
+	header : "The dungeon has no windows and a wooden door with a slit.",
 	main_text : "Under the slit a plate of bread lays. You can hear a guard outside.",
 	left_text : "Food",
 	left_page : "PAGE_DUNGENFOOD",
