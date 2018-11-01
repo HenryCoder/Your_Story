@@ -715,8 +715,26 @@ var PAGE_DUNGENFOOD = new CreatePage({
 	page_id : 3,
 	header : "A fly lands on the bread, later followed by four more, and you decide not to eat it.",
 	main_text : "Under the slit a plate of bread lays. You can hear a guard outside.",
-	left_text : "Food",
-	left_page : "PAGE_DUNGENFOOD",
+	left_text : "Look around",
+	left_page : "PAGE_DUNGENLOOKMEOW",
+	right_text : "Listen to guard", 
+	right_page : "PAGE_DUNGENGUARDLISTEN"
+});
+var PAGE_DUNGENLOOKMEOW = new CreatePage({
+	page_id : 3,
+	header : "While looking around the room, you notice something in a corner.",
+	main_text : "Upon futher inspection, you see it's a note.",
+	left_text : "Read the note ",
+	left_page : "PAGE_DUNGENNOTEREAD",
+	right_text : "Listen to guard", 
+	right_page : "PAGE_DUNGENGUARDLISTEN"
+});
+var PAGE_DUNGENNOTEREAD = new CreatePage({
+	page_id : 3,
+	header : "You read then pocket the note. It's splattered with water, and ink has spread in some spaces. It reads:",
+	main_text : "...Jacob, you have been invited... banquet hosted... cyristaline hill. The gladiator trainer... first day of the new year. From ..ng.",
+	left_text : "Listen to guard",
+	left_page : "PAGE_DUNGENGUARDLISTEN",
 	right_text : "Listen to guard", 
 	right_page : "PAGE_DUNGENGUARDLISTEN"
 });
