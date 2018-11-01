@@ -738,6 +738,60 @@ var PAGE_DUNGENNOTEREAD = new CreatePage({
 	right_text : "Listen to guard", 
 	right_page : "PAGE_DUNGENGUARDLISTEN"
 });
+var PAGE_DUNGENGUARDLISTEN = new CreatePage({
+	page_id : 3,
+	header : "Quietly moving up next to the door, you listen to the guard talk.",
+	main_text : "Yeah, he's seemed to go mad. Glory from all of his battles must have effected him. No wonder there's no challengers left.",
+	left_text : "Continue listening",
+	left_page : "PAGE_DUNGENGUARDBLEH",
+	right_text : "Move back", 
+	right_page : "PAGE_DUNGENGUARDBLEH"
+});
+var PAGE_DUNGENGUARDBLEH = new CreatePage({
+	page_id : 3,
+	header : "Suddenly, the guard shouts, but it comes out gibberish.",
+	main_text : "Something thumps against the cell door. You hear some rustling, then keys slide under the door.",
+	left_text : "Pick up keys",
+	left_page : "PAGE_DUNGENKEYS",
+	right_text : "Wait", 
+	right_page : "PAGE_DUNGENWAIT"
+});
+var PAGE_DUNGENWAIT = new CreatePage({
+	page_id : 3,
+	header : "You wait, nervous. Then, somebdy outside the cells speaks:",
+	main_text : "What are you waiting for?",
+	left_text : "Pick up keys",
+	left_page : "PAGE_DUNGENKEYS",
+	right_text : "Pick up keys", 
+	right_page : "PAGE_DUNGENKEYS"
+});
+var PAGE_DUNGENKEYS = new CreatePage({
+	page_id : 3,
+	header : "You pick up the rusted, iron keys. Then the voice speaks:",
+	main_text : "Idiot, idiot... Hey, pass me the keys, will you?",
+	left_text : "Pass the keys",
+	left_page : "PAGE_DUNGENKEYSPASS",
+	right_text : "Keep keys", 
+	right_page : "PAGE_DUNGENKEYSKEEP"
+});
+var PAGE_DUNGENKEYSPASS = new CreatePage({
+	page_id : 3,
+	header : "You slide the keys under the door. Something picks them up. The door opens and you walk through into a moist corridor.",
+	main_text : "Looking around, you see a guard leaned up against your cell door, but nobdy else in sight.",
+	left_text : "Check the guard",
+	left_page : "PAGE_CORRIDORCHECK",
+	right_text : "Look around", 
+	right_page : "PAGE_CORRIDORLOOKAROUND"
+});
+var PAGE_CORRIDORCHECK = new CreatePage({
+	page_id : 3,
+	header : "You bend over the guard. A spot near his ribs is bleeding.",
+	main_text : "You lay the body down. It releases its final breath.",
+	left_text : "Look around",
+	left_page : "PAGE_CORRIDORLOOKAROUND",
+	right_text : "Look around", 
+	right_page : "PAGE_CORRIDORLOOKAROUND"
+});
 var PAGE_BRUTE_ATTACK = new CreatePage({
 	page_id : 3,
 	header : "You attack brutally.",
