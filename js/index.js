@@ -634,7 +634,7 @@ var PAGE_ACCEPTCHALLENGE = new CreatePage({
 	main_text : "As he walks down the center aisle you notice he is a little taller than you and clad in strange and coulorful garb.",
 	left_text : "Greet Man",
 	left_page : "PAGE_CHALLENGEGREET",
-	right_text : "Increase Crowd Morale", 
+	right_text : "Excite ", 
 	right_page : "PAGE_CROWDCHEER"
 });
 var PAGE_CHALLENGEGREET = new CreatePage({
@@ -1093,20 +1093,20 @@ var PAGE_EXPLORETAVERN = new CreatePage({
 });
 var PAGE_TOWN = new CreatePage({
 	page_id : 3,
-	header : "You Walk into a town you have not seen before. A old man comes and asks you a favor. He is dressed in tattered clothes and carries a twisted staff. ",
-	main_text : "The man begins to talk: a dragon comes by every month and threatens them. He asks you end their plight. ",
+	header : "You walk into a town you have not seen before. An old man comes and asks a favor of you. He is dressed in tattered clothes and carries a twisted staff. ",
+	main_text : "The man begins to talk: a dragon comes by every month and threatens them. He asks you to come to their aid and end their plight. ",
 	left_text : "Quest",
 	left_page : "PAGE_QUEST",
-	right_text : "denine the offer", 
+	right_text : "Deny the Offer", 
 	right_page : "PAGE_TOWN_CONTINUED",
 	
 });
 
 var PAGE_QUEST = new CreatePage({
 	page_id : 3,
-	header : "The old man offers you a sword. It's rusted in some places, but it will do.",
-	main_text : "You take the sword and get directions to the dragons lair. On the way, you see a tired girl leening on a tree. She asks for food and water, but can not pay you in return. ",
-	left_text : "Ask the girl why he is here",
+	header : "The old man offers you a sword. It's rusted in some places, but it will do for now.",
+	main_text : "You take the sword and get directions to the dragons lair. On the way, you see a tired girl leaning on a tree. She asks for food and water, but can not pay you in return. ",
+	left_text : "Ask the girl why she is here",
 	left_page : "PAGE_QUEST_HELP",
 	right_text : "Leave the girl", 
 	right_page : "PAGE_QUEST_NOPE",
