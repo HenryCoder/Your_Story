@@ -622,7 +622,7 @@ var PAGE_STILLFIGHT = new CreatePage({
 var PAGE_IGNORE = new CreatePage({
 	page_id : 3,
 	header : "You try to ignore the man's shouts, but soon the audience joins in.",
-	main_text : "Now men and women throughout the stadium are cheering.",
+	main_text : "Now men and women throughout the stadium are shouting and cheering.",
 	left_text : "Accept Challenge",
 	left_page : "PAGE_ACCEPTCHALLENGE",
 	right_text : "Accept Challenge", 
@@ -634,23 +634,23 @@ var PAGE_ACCEPTCHALLENGE = new CreatePage({
 	main_text : "As he walks down the center aisle you notice he is a little taller than you and clad in strange and coulorful garb.",
 	left_text : "Greet Man",
 	left_page : "PAGE_CHALLENGEGREET",
-	right_text : "Excite ", 
+	right_text : "Rouse Crowd", 
 	right_page : "PAGE_CROWDCHEER"
 });
 var PAGE_CHALLENGEGREET = new CreatePage({
 	page_id : 3,
 	header : "You start to wish your opponent luck.",
-	main_text : "Before you finish, he interupts, saying he does not need any luck.",
-	left_text : "Start",
-	left_page : "PAGE_START",
-	right_text : "Start", 
-	right_page : "PAGE_START"
+	main_text : "He interupts before you've finished, saying he does not need any of this luck.",
+	left_text : "Start Fight",
+	left_page : "PAGE_ARENAFIGHTTWOSTART",
+	right_text : "Run Away", 
+	right_page : "PAGE_ARENARUNAWAY"
 	
 });
 var PAGE_CROWDCHEER = new CreatePage({
 	page_id : 3,
 	header : "You yell to the crowd.",
-	main_text : "Soon they start cheering you on;your opponent in unphased.",
+	main_text : "Soon they start cheering you on; your opponent in unphased.",
 	left_text : "Start",
 	left_page : "PAGE_START",
 	right_text : "Start", 
@@ -1087,7 +1087,7 @@ var PAGE_EXPLORETAVERN = new CreatePage({
 	left_text : "Exit",
 	left_page : "PAGE_EXITTAVERN",
 	right_text : "Exit", 
-	right_page : "PAGE_EXITTAVERS",
+	right_page : "PAGE_EXITTAVERn",
 	give_items : ["Tavern Book"]
 
 });
