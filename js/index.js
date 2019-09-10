@@ -1085,9 +1085,9 @@ var PAGE_EXPLORETAVERN = new CreatePage({
 	header : "You slowly move throughout the room, avoiding glass and splinters",
 	main_text : "You find a book on the counter, but all else is deemed useless.",
 	left_text : "Exit",
-	left_page : "PAGE_EXITTAVERN",
+	left_page : "PAGE_DESERTEDEXPLORE",
 	right_text : "Exit", 
-	right_page : "PAGE_EXITTAVERn",
+	right_page : "PAGE_DESERTEDEXPLORE",
 	give_items : ["Tavern Book"]
 
 });
